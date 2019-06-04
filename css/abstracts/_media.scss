@@ -1,0 +1,34 @@
+// Media Queries
+
+// Phones
+@mixin mobile-small {
+  @media(max-width: 600px) {
+    @content;
+  }
+}
+
+// Tablets
+@mixin mobile {
+  @media(max-width: 899px) {
+    @content;
+  }
+}
+
+// Small Desktops + wide tablets
+@mixin desktop {
+  @media(min-width: 900px) {
+    @content;
+  }
+}
+
+@mixin desktop-mid {
+  @media(min-width: 1249px) {
+    @content;
+  }
+}
+
+@mixin desktop-large {
+  @media(min-width: 1800px) {
+    @content;
+  }
+}

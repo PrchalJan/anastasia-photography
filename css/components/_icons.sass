@@ -1,0 +1,40 @@
+// Style your icons here
+
+// General Icon styles
+.icon
+  margin: 0 auto
+  font-size: 1em
+
+  box-sizing: content-box
+  width: 1em
+  height: 1em
+  .icon__line
+    background: $dark
+    width: 1em
+    // Connected to the margin in open-menu!
+    height: .08em
+
+
+  // Specific styles to Open Icon
+.icon--open-menu
+  .icon__line
+    // Connected to line height!
+    margin: calc(.76em / 4) 0
+    
+
+  // Specific styles to Close Icon
+.icon--close-menu
+  position: relative
+  .icon__line
+    position: absolute
+    top: 50%
+    // These two are connected and must be changed together!
+    left: -0.15em
+    width: 1.3em
+
+  .icon__line:nth-of-type(1)
+    transform: translateY(-50%) rotate(45deg)
+  .icon__line:nth-of-type(2)
+    transform: translateY(-50%) rotate(-45deg)
+  .icon__line:nth-of-type(3)
+    display: none
