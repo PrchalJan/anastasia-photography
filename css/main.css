@@ -359,7 +359,7 @@ body {
 
 @media (max-width: 899px) {
   .header {
-    background-color: grey;
+    background-color: #d2d2d2;
     height: 6rem;
     display: -webkit-box;
     display: -ms-flexbox;
