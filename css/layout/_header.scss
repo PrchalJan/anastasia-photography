@@ -23,12 +23,11 @@ $header-mobile-height: 6rem;
 .header__h1 {
   @include mobile {
     padding-left: .5em;
-    font-weight: $font-bold;
-    font-size: 2.5rem;
+    font-weight: $font-normal;
+    font-size: 2.3rem;
   }
   @include mobile-small {
-    font-size: 2.3rem;
-    font-weight: $font-normal;
+    font-size: 2.1rem;
   }
 }
 .header__menu-icon {
