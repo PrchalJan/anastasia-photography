@@ -19,16 +19,15 @@ $header-mobile-height: 6rem;
     align-items: center;
   }
   
-
 }
 .header__h1 {
   @include mobile {
     padding-left: .5em;
     font-weight: $font-bold;
-    font-size: 2.6rem;
+    font-size: 2.5rem;
   }
   @include mobile-small {
-    font-size: 2.4rem;
+    font-size: 2.3rem;
     font-weight: $font-normal;
   }
 }
@@ -43,7 +42,7 @@ $header-mobile-height: 6rem;
     font-size: 3.3rem;
   }
   @include mobile-small {
-    font-size: 3rem;
+    font-size: 2.8rem;
   }
   
 }
