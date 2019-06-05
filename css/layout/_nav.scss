@@ -43,10 +43,16 @@
 .nav__main-li {
   background-color: green;
   position: relative;
+  font-size: 2rem;
+  padding: 1em 1.8em;
+  border-bottom: 1px solid $dark;
 }
 .nav__expand-icon {
   position: absolute;
-  // top: 0;
+  font-size: 0.65em;
+  top: 50%;
+  left: 1em;
+  transform: translateY(-50%);
 }
 .nav__secondary-ul {
   display: none;

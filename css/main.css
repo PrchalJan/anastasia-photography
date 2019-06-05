@@ -467,10 +467,18 @@ body {
 .nav__main-li {
   background-color: green;
   position: relative;
+  font-size: 2rem;
+  padding: 1em 1.8em;
+  border-bottom: 1px solid #222;
 }
 
 .nav__expand-icon {
   position: absolute;
+  font-size: 0.65em;
+  top: 50%;
+  left: 1em;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 .nav__secondary-ul {
