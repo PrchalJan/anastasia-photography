@@ -386,13 +386,13 @@ body {
   .header__h1 {
     padding-left: .5em;
     font-weight: 300;
-    font-size: 2.3rem;
+    font-size: 2.4rem;
   }
 }
 
 @media (max-width: 600px) {
   .header__h1 {
-    font-size: 2.1rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -403,9 +403,6 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
@@ -415,8 +412,69 @@ body {
 
 @media (max-width: 600px) {
   .header__menu-icon {
-    font-size: 2.8rem;
+    font-size: 2.7rem;
   }
+}
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #222;
+}
+
+@media (max-width: 899px) {
+  .nav__menu-icon {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 6rem;
+    width: 6rem;
+    font-size: 3.3rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav__menu-icon {
+    font-size: 2.7rem;
+  }
+}
+
+.nav__card {
+  background-color: #f4f4f4;
+  width: 80%;
+  min-width: 300px;
+  height: 100%;
+}
+
+.nav__main-ul {
+  background-color: red;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__main-li {
+  background-color: green;
+  position: relative;
+}
+
+.nav__expand-icon {
+  position: absolute;
+}
+
+.nav__secondary-ul {
+  display: none;
 }
 
 .icon {
@@ -431,11 +489,11 @@ body {
 .icon .icon__line {
   background: #222;
   width: 1em;
-  height: .08em;
+  height: .075em;
 }
 
 .icon--open-menu .icon__line {
-  margin: calc(.76em / 4) 0;
+  margin: calc(.775em / 4) 0;
 }
 
 .icon--close-menu {
@@ -460,6 +518,24 @@ body {
 }
 
 .icon--close-menu .icon__line:nth-of-type(3) {
+  display: none;
+}
+
+.icon--expand .icon__line {
+  width: .7em;
+}
+
+.icon--expand .icon__line:nth-of-type(1) {
+  -webkit-transform: translateX(0.2em) translateY(0.24em) rotate(45deg);
+          transform: translateX(0.2em) translateY(0.24em) rotate(45deg);
+}
+
+.icon--expand .icon__line:nth-of-type(2) {
+  -webkit-transform: translateX(0.2em) translateY(0.61em) rotate(-45deg);
+          transform: translateX(0.2em) translateY(0.61em) rotate(-45deg);
+}
+
+.icon--expand .icon__line:nth-of-type(3) {
   display: none;
 }
 /*# sourceMappingURL=main.css.map */
