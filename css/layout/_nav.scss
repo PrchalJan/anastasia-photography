@@ -1,13 +1,28 @@
 
 
 .nav {
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  color: $dark;
+  @include desktop {
+
+  }
+  @include mobile {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    color: $dark;
+    display: flex;
+    justify-content: flex-end;
+    // hidden by default
+    transform: translateX(100%);
+  }
+  @include mobile-small {
+    //hidden by default
+    justify-content: flex-start;
+    transform: translateX(-100%);
+  }
+  
 }
 .nav__menu-icon {
   @include mobile {
@@ -19,6 +34,7 @@
     font-size: 3.3rem;
     display: flex;
     align-items: center;
+    z-index: 1;
   }
   @include mobile-small {
     font-size: 2.7rem;
@@ -28,47 +44,77 @@
 }
 
 .nav__card {
-  background-color: $light;
-  width: 80%;
-  min-width: 300px;
-  height: 100%;
-  overflow-y: auto;
+  @include mobile {
+    background-color: $light;
+    width: 75%;
+    min-width: 400px;
+    height: 100%;
+    overflow-y: auto;
+  }
+  @include mobile-small {
+    width: 82%;
+    min-width: 250px;
+  }
+  
 }
 .nav__main-ul {
   background-color: red;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
+  @include mobile {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    margin-right: $header-mobile-height;
+  }
+  @include mobile-small {
+    margin-right: 0;
+  }
+  
 }
 .nav__main-li {
   background-color: green;
-  position: relative;
-  font-size: 2rem;
-  font-weight: $font-normal;
-  padding: 1em 0 1em 1.8em;
-  border-bottom: 1px solid $dark;
+  @include mobile {
+    position: relative;
+    font-size: 2rem;
+    font-weight: $font-normal;
+    padding: 1em 0 1em 1.8em;
+    border-bottom: 1px solid $dark;
+  }
+  
 }
 .nav__expand-icon {
-  position: absolute;
-  font-size: 0.65em;
-  top: 50%;
-  left: 1em;
-  transform: translateY(-50%);
+  @include mobile {
+    position: absolute;
+    font-size: 0.65em;
+    top: 50%;
+    left: 1em;
+    transform: translateY(-50%);
+  }
+  
 }
 .nav__secondary-ul {
-  // display: none;
-  background: yellow;
-  margin: 0;
-  padding: 0;
-  
-  list-style-type: none;
+  @include mobile {
+    //  display: none;
+    background: yellow;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    // when closed
+    height: 0;
+    overflow: hidden;
+  }
+ 
 }
 .nav__secondary-li {
-  background: red;
-  padding: .3em 0 .3em 1em;
-  font-size: 1.7rem;
+  @include mobile {
+    background: red;
+    padding: .3em 0 .3em 1em;
+    font-size: 1.7rem;
+  }
+  
 }
 .nav__secondary-li:first-of-type {
-  padding-top: .5em;
+  @include mobile {
+    padding-top: .5em;
+  }
 }
