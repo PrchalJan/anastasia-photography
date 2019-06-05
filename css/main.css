@@ -620,13 +620,13 @@ ul {
 
 @media (max-width: 899px) {
   .footer__contact-ul {
-    padding-top: 2em;
+    padding-top: 1.5em;
   }
 }
 
 @media (max-width: 899px) {
   .footer__contact-li {
-    padding: .3em 0;
+    padding: .5em 0;
   }
 }
 
@@ -655,8 +655,7 @@ ul {
 }
 
 .footer__copy {
-  margin: 0;
-  margin-bottom: 3em;
+  margin: 2em 0 4em 0;
 }
 
 .icon {
