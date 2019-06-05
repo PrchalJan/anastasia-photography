@@ -470,7 +470,7 @@ body {
   position: relative;
   font-size: 2rem;
   font-weight: 300;
-  padding: 1em 1.8em;
+  padding: 1em 0 1em 1.8em;
   border-bottom: 1px solid #222;
 }
 
@@ -491,7 +491,13 @@ body {
 }
 
 .nav__secondary-li {
+  background: red;
   padding: .3em 0 .3em 1em;
+  font-size: 1.7rem;
+}
+
+.nav__secondary-li:first-of-type {
+  padding-top: .5em;
 }
 
 .icon {
