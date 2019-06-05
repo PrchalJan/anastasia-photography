@@ -364,6 +364,13 @@ main {
 }
 
 @media (max-width: 899px) {
+  .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 899px) {
   .header {
     background-color: #d2d2d2;
     height: 6rem;
@@ -586,7 +593,12 @@ main {
 
 .footer {
   border: 5px solid blue;
-  height: 200px;
+}
+
+@media (max-width: 899px) {
+  .footer {
+    text-align: center;
+  }
 }
 
 .icon {
@@ -649,5 +661,11 @@ main {
 
 .icon--expand .icon__line:nth-of-type(3) {
   display: none;
+}
+
+.i--instagram {
+  display: inline-block;
+  height: 1em;
+  width: auto;
 }
 /*# sourceMappingURL=main.css.map */
