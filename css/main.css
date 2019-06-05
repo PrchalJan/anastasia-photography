@@ -454,6 +454,7 @@ body {
   width: 80%;
   min-width: 300px;
   height: 100%;
+  overflow-y: auto;
 }
 
 .nav__main-ul {
@@ -468,6 +469,7 @@ body {
   background-color: green;
   position: relative;
   font-size: 2rem;
+  font-weight: 300;
   padding: 1em 1.8em;
   border-bottom: 1px solid #222;
 }
@@ -482,7 +484,14 @@ body {
 }
 
 .nav__secondary-ul {
-  display: none;
+  background: yellow;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.nav__secondary-li {
+  padding: .3em 0 .3em 1em;
 }
 
 .icon {
