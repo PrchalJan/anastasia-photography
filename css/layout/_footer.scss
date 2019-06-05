@@ -1,7 +1,7 @@
 
 .footer {
   // border: 5px solid blue;
-  // background-color: $grey;
+  background-color: #eee;
 
   @include mobile {
     text-align: center;
@@ -49,6 +49,6 @@
   }
 }
 .footer__copy {
-  margin: 1em 0 5em 0;
+  margin: 1em 0 4em 0;
 }
 

@@ -385,7 +385,7 @@ ul {
 
 @media (max-width: 899px) {
   .header {
-    background-color: #d2d2d2;
+    background-color: #eee;
     height: 6rem;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -432,13 +432,13 @@ ul {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    font-size: 3.3rem;
+    font-size: 3rem;
   }
 }
 
 @media (max-width: 600px) {
   .header__menu-icon {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
   }
 }
 
@@ -604,6 +604,10 @@ ul {
   background-position: center;
 }
 
+.footer {
+  background-color: #eee;
+}
+
 @media (max-width: 899px) {
   .footer {
     text-align: center;
@@ -655,7 +659,7 @@ ul {
 }
 
 .footer__copy {
-  margin: 1em 0 5em 0;
+  margin: 1em 0 4em 0;
 }
 
 .icon {

@@ -4,7 +4,8 @@ $header-mobile-height: 6rem;
   // background-color: red;
 
   @include mobile {
-    background-color: $grey;
+    // background-color: $grey;
+    background-color: #eee;
     height: $header-mobile-height;
     display: flex;
     justify-content: space-between;
@@ -39,10 +40,10 @@ $header-mobile-height: 6rem;
     display: flex;
     // justify-content: center;
     align-items: center;
-    font-size: 3.3rem;
+    font-size: 3rem;
   }
   @include mobile-small {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
   }
   
 }
