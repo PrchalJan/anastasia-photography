@@ -650,12 +650,12 @@ ul {
 @media (max-width: 899px) {
   .footer__icons-link {
     display: block;
-    padding: .5em .5em .5em .5em;
+    padding: .5em .4em .5em .4em;
   }
 }
 
 .footer__copy {
-  margin: 2em 0 4em 0;
+  margin: 1em 0 5em 0;
 }
 
 .icon {
