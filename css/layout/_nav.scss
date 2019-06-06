@@ -64,8 +64,8 @@
     width: 82%;
     min-width: 250px;
     transform: translateX(-100%);
-    transition: transform $menu-animation-duration;
-    border-right: 1px solid $dark;
+    transition: transform $menu-animation-duration ease-in-out;
+    border-right: 1px solid $menu-lines;
   }
   
 }
@@ -95,7 +95,7 @@
   @include mobile {
     font-weight: $font-normal;
     padding: 1em 0 1em 1.8em;
-    border-bottom: 1px solid $dark;
+    border-bottom: 1px solid $menu-lines;
     font-size: 2rem;
     
   }

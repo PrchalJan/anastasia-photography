@@ -470,6 +470,7 @@ ul {
         -ms-flex-align: center;
             align-items: center;
     font-size: 2.7rem;
+    opacity: 1;
   }
 }
 
@@ -489,6 +490,12 @@ ul {
   .home--clicked .header {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+@media (max-width: 899px) {
+  .nav-mobile-open .header__menu-icon {
+    opacity: 0;
   }
 }
 
@@ -589,11 +596,11 @@ ul {
     min-width: 250px;
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
-    -webkit-transition: -webkit-transform 350ms;
-    transition: -webkit-transform 350ms;
-    transition: transform 350ms;
-    transition: transform 350ms, -webkit-transform 350ms;
-    border-right: 1px solid #111;
+    -webkit-transition: -webkit-transform 350ms ease-in-out;
+    transition: -webkit-transform 350ms ease-in-out;
+    transition: transform 350ms ease-in-out;
+    transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
+    border-right: 1px solid #ddd;
   }
 }
 
@@ -623,7 +630,7 @@ ul {
   .nav__main-li {
     font-weight: 400;
     padding: 1em 0 1em 1.8em;
-    border-bottom: 1px solid #111;
+    border-bottom: 1px solid #ddd;
     font-size: 2rem;
   }
 }

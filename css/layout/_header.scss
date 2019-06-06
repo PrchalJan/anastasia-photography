@@ -66,6 +66,7 @@ $side-margins: 5rem;
     // justify-content: center;
     align-items: center;
     font-size: 2.7rem;
+    opacity: 1;
   }
   @include mobile-small {
     font-size: 2.5rem;
@@ -80,6 +81,15 @@ $side-margins: 5rem;
   .header {
     @include desktop {
       transform: translateX(0);
+    }
+  }
+}
+
+
+.nav-mobile-open {
+  .header__menu-icon {
+    @include mobile {
+      opacity: 0;
     }
   }
 }
