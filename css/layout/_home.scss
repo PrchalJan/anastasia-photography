@@ -2,7 +2,7 @@
 $home-image-margins: 1rem;
 
 .home {
-  border: 3px solid yellow;
+  // border: 3px solid yellow;
   @include mobile {
     height: 100%;
     margin-top: - $header-mobile-height;
@@ -18,7 +18,7 @@ $home-image-margins: 1rem;
   }
 }
 .home__image-container {
-  border: 5px solid red;
+  // border: 5px solid red;
   @include mobile {
     width: 100%;
     height: 100%;
@@ -33,7 +33,7 @@ $home-image-margins: 1rem;
   }
 }
 .home__image {
-  border: 5px solid blue;
+  // border: 5px solid blue;
   background-image: url(../../img/header/home/desktop/1280/01.jpg);
   background-size: cover;
   background-position: center;
@@ -60,6 +60,7 @@ $home-image-margins: 1rem;
       top: $home-image-margins;
       right: $home-image-margins;
       bottom: $home-image-margins;
+      left: $home-image-margins;
     }
   }
 }

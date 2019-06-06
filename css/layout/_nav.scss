@@ -1,7 +1,7 @@
 
 
 .nav {
-  border: 5px solid red;
+  // border: 5px solid red;
   color: $dark;
   left: 0;
   @include mobile {
@@ -9,16 +9,17 @@
     top: 0;
     bottom: 0;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgba(255, 255, 255, 0.0);
     display: flex;
     justify-content: flex-end;
+    transition: background-color 800ms;
     // hidden by default
     // transform: translateX(100%);
   }
   @include mobile-small {
     //hidden by default
     justify-content: flex-start;
-    // transform: translateX(-100%);
+    transform: translateX(-100%);
   }
   @include desktop {
     position: absolute;
@@ -30,6 +31,7 @@
 }
 .nav__menu-icon {
   // border: 3px solid yellow;
+  cursor: pointer;
   @include mobile {
     position: absolute;
     top: 0;
@@ -61,6 +63,9 @@
   @include mobile-small {
     width: 82%;
     min-width: 250px;
+    transform: translateX(-100%);
+    transition: transform $menu-animation-duration;
+    border-right: 1px solid $dark;
   }
   
 }
@@ -159,6 +164,27 @@
   @include desktop {
     padding-bottom: 1em;
   }
+}
+
+
+
+// Open main navigation on mobile
+.nav-mobile-open {
+  .nav {
+    @include mobile {
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    @include mobile-small {
+      transform: translateX(0);
+    }
+  }
+  .nav__card {
+    @include mobile-small {
+      transform: translateX(0);
+    }
+    
+  }
+  
 }
 
 // When You open the secondary Navigation

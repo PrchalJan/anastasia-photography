@@ -1,7 +1,7 @@
 
 states = {
   clicked: false,
-
+  navMobileOpen: false,
 }
 
 
@@ -22,4 +22,10 @@ navSections = {
   artworks: document.querySelector('.nav__secondary-ul--artworks'),
   magazines: document.querySelector('.nav__secondary-ul--magazines'),
 }
+
+
+// Debugger
+window.document.addEventListener('click', function(e) {
+  console.log(e.target);
+})
 
