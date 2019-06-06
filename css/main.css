@@ -625,6 +625,10 @@ ul {
 
 .nav__expand-icon {
   position: absolute;
+  -webkit-transition: -webkit-transform 100ms;
+  transition: -webkit-transform 100ms;
+  transition: transform 100ms;
+  transition: transform 100ms, -webkit-transform 100ms;
 }
 
 @media (max-width: 899px) {
@@ -646,6 +650,8 @@ ul {
 .nav__secondary-ul {
   height: 0;
   overflow: hidden;
+  -webkit-transition: height 200ms;
+  transition: height 200ms;
 }
 
 @media (max-width: 899px) {
@@ -692,11 +698,15 @@ ul {
   }
 }
 
-.nav__secondary-ul--open .nav__secondary-ul {
-  height: auto;
+.nav__main-li--open .nav__secondary-ul--artworks {
+  height: 242px;
 }
 
-.nav__secondary-ul--open .nav__expand-icon {
+.nav__main-li--open .nav__secondary-ul--magazines {
+  height: 273px;
+}
+
+.nav__main-li--open .nav__expand-icon {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }

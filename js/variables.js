@@ -1,7 +1,7 @@
 
 states = {
   clicked: false,
-  
+
 }
 
 
@@ -10,11 +10,16 @@ icon = {
   closeMenu: document.querySelector('.nav__menu-icon'),
 }
 
-navButton = {
+navButtons = {
   artworks: document.querySelector('.nav__main-li--artworks'),
   magazines: document.querySelector('.nav__main-li--magazines'),
   archive: document.querySelector('.nav__main-li--archive'),
   about: document.querySelector('.nav__main-li--about'),
   contact: document.querySelector('.nav__main-li--contact'),
+}
+
+navSections = {
+  artworks: document.querySelector('.nav__secondary-ul--artworks'),
+  magazines: document.querySelector('.nav__secondary-ul--magazines'),
 }
 

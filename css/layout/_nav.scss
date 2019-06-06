@@ -108,6 +108,7 @@
   
   // top: 50%;
   // transform: translateY(-50%);
+  transition: transform 100ms;
   @include mobile {
     font-size: 0.65em;
     left: 1em;
@@ -124,6 +125,7 @@
   // when closed
     height: 0;
     overflow: hidden;
+    transition: height 200ms;
   @include mobile {
     //  display: none;
     background: yellow;
@@ -160,9 +162,14 @@
 }
 
 // When You open the secondary Navigation
-.nav__secondary-ul--open {
-  .nav__secondary-ul {
-    height: auto;
+.nav__main-li--open {
+  .nav__secondary-ul--artworks {
+    // Hard coded! must be changed if items are added/removed
+    height: 242px;
+  }
+  .nav__secondary-ul--magazines {
+    // Hard coded! must be changed if items are added/removed
+    height: 273px;
   }
   .nav__expand-icon {
     transform: rotate(90deg);
