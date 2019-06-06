@@ -600,7 +600,7 @@ ul {
     transition: -webkit-transform 350ms ease-in-out;
     transition: transform 350ms ease-in-out;
     transition: transform 350ms ease-in-out, -webkit-transform 350ms ease-in-out;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #ccc;
   }
 }
 
@@ -621,7 +621,6 @@ ul {
 }
 
 .nav__main-li {
-  border-bottom: 1px solid yellow;
   position: relative;
   cursor: pointer;
 }
@@ -630,7 +629,7 @@ ul {
   .nav__main-li {
     font-weight: 400;
     padding: 1em 0 1em 1.8em;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #ccc;
     font-size: 2rem;
   }
 }
@@ -677,20 +676,16 @@ ul {
 
 @media (max-width: 899px) {
   .nav__secondary-ul {
-    background: yellow;
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 }
 
-.nav__secondary-li {
-  background: red;
-}
-
 @media (max-width: 899px) {
   .nav__secondary-li {
-    padding: .3em 0 .3em 1em;
+    padding: .3em 0 .3em 0em;
+    font-size: 1.8rem;
   }
 }
 
@@ -740,11 +735,11 @@ ul {
 }
 
 .nav__main-li--open .nav__secondary-ul--artworks {
-  height: 242px;
+  height: 13.5em;
 }
 
 .nav__main-li--open .nav__secondary-ul--magazines {
-  height: 273px;
+  height: 15em;
 }
 
 .nav__main-li--open .nav__expand-icon {

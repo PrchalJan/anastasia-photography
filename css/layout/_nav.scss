@@ -88,7 +88,7 @@
 }
 .nav__main-li {
   // background-color: green;
-  border-bottom: 1px solid yellow;
+  // border-bottom: 1px solid yellow;
   position: relative;
   cursor: pointer;
   
@@ -133,17 +133,19 @@
     transition: height 200ms;
   @include mobile {
     //  display: none;
-    background: yellow;
+    // background: yellow;
     margin: 0;
     padding: 0;
     list-style-type: none;
+
   }
  
 }
 .nav__secondary-li {
-  background: red;
+  // background: red;
   @include mobile {
-    padding: .3em 0 .3em 1em;
+    padding: .3em 0 .3em 0em;
+    font-size: 1.8rem;
     
   }
   @include desktop {
@@ -191,11 +193,11 @@
 .nav__main-li--open {
   .nav__secondary-ul--artworks {
     // Hard coded! must be changed if items are added/removed
-    height: 242px;
+    height: 13.5em;
   }
   .nav__secondary-ul--magazines {
     // Hard coded! must be changed if items are added/removed
-    height: 273px;
+    height: 15em;
   }
   .nav__expand-icon {
     transform: rotate(90deg);
