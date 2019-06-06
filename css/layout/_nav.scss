@@ -24,6 +24,8 @@
     position: absolute;
     top: $header-desktop-height;
     width: $header-desktop-width;
+    transform: translateX(-100%);
+    transition: transform $home-animation-duration;
   }
 }
 .nav__menu-icon {
@@ -63,7 +65,7 @@
   
 }
 .nav__main-ul {
-  background-color: red;
+  // background-color: red;
   @include mobile {
     height: 100%;
     margin: 0;
@@ -80,9 +82,10 @@
   
 }
 .nav__main-li {
-  background-color: green;
+  // background-color: green;
   border-bottom: 1px solid yellow;
   position: relative;
+  cursor: pointer;
   
   @include mobile {
     font-weight: $font-normal;
@@ -165,6 +168,14 @@
     transform: rotate(90deg);
     @include mobile {
 
+    }
+  }
+}
+
+.home--clicked {
+  .nav {
+    @include desktop {
+      transform: translateX(0);
     }
   }
 }

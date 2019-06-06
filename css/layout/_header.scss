@@ -22,7 +22,8 @@ $side-margins: 5rem;
     left: 0;
     width: $header-desktop-width;
     height: $header-desktop-height;
-    
+    transform: translateX(-100%);
+    transition: transform $home-animation-duration;
   }
 
   
@@ -72,4 +73,12 @@ $side-margins: 5rem;
     display: none;
   }
   
+}
+
+.home--clicked {
+  .header {
+    @include desktop {
+      transform: translateX(0);
+    }
+  }
 }

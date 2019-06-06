@@ -407,6 +407,12 @@ ul {
     left: 0;
     width: 22.2rem;
     height: 12rem;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 800ms;
+    transition: -webkit-transform 800ms;
+    transition: transform 800ms;
+    transition: transform 800ms, -webkit-transform 800ms;
   }
 }
 
@@ -479,6 +485,13 @@ ul {
   }
 }
 
+@media (min-width: 900px) {
+  .home--clicked .header {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .nav {
   border: 5px solid red;
   color: #111;
@@ -514,6 +527,12 @@ ul {
     position: absolute;
     top: 12rem;
     width: 22.2rem;
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+    -webkit-transition: -webkit-transform 800ms;
+    transition: -webkit-transform 800ms;
+    transition: transform 800ms;
+    transition: transform 800ms, -webkit-transform 800ms;
   }
 }
 
@@ -564,10 +583,6 @@ ul {
   }
 }
 
-.nav__main-ul {
-  background-color: red;
-}
-
 @media (max-width: 899px) {
   .nav__main-ul {
     height: 100%;
@@ -585,9 +600,9 @@ ul {
 }
 
 .nav__main-li {
-  background-color: green;
   border-bottom: 1px solid yellow;
   position: relative;
+  cursor: pointer;
 }
 
 @media (max-width: 899px) {
@@ -686,6 +701,13 @@ ul {
           transform: rotate(90deg);
 }
 
+@media (min-width: 900px) {
+  .home--clicked .nav {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
 .home {
   border: 3px solid yellow;
 }
@@ -703,20 +725,39 @@ ul {
     position: absolute;
     top: 0;
     right: 0;
-    left: 22.2rem;
+    left: 0;
     height: 100%;
+    -webkit-transition: left 800ms;
+    transition: left 800ms;
   }
 }
 
 .home__image-container {
   border: 5px solid red;
-  width: 100%;
-  height: 100%;
+}
+
+@media (max-width: 899px) {
+  .home__image-container {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@media (min-width: 900px) {
+  .home__image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    -webkit-transition: all 800ms;
+    transition: all 800ms;
+  }
 }
 
 .home__image {
   border: 5px solid blue;
-  background-image: url(../../img/header/home/mobile/1280/header1.jpg);
+  background-image: url(../../img/header/home/desktop/1280/01.jpg);
   background-size: cover;
   background-position: center;
   width: 100%;
@@ -724,8 +765,16 @@ ul {
 }
 
 @media (min-width: 900px) {
-  .home--full-screen .home {
-    left: 0;
+  .home--clicked .home {
+    left: 22.2rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .home--clicked .home__image-container {
+    top: 1rem;
+    right: 1rem;
+    bottom: 1rem;
   }
 }
 
