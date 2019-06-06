@@ -1,30 +1,33 @@
 
 
 .nav {
-  @include desktop {
-
-  }
+  border: 5px solid red;
+  color: $dark;
+  left: 0;
   @include mobile {
     position: fixed;
     top: 0;
-    left: 0;
     bottom: 0;
     width: 100%;
     background-color: rgba(255, 255, 255, 0.9);
-    color: $dark;
     display: flex;
     justify-content: flex-end;
     // hidden by default
-    transform: translateX(100%);
+    // transform: translateX(100%);
   }
   @include mobile-small {
     //hidden by default
     justify-content: flex-start;
-    transform: translateX(-100%);
+    // transform: translateX(-100%);
   }
-  
+  @include desktop {
+    position: absolute;
+    top: $header-desktop-height;
+    width: $header-desktop-width;
+  }
 }
 .nav__menu-icon {
+  // border: 3px solid yellow;
   @include mobile {
     position: absolute;
     top: 0;
@@ -39,7 +42,9 @@
   @include mobile-small {
     font-size: 2.7rem;
   }
-  
+  @include desktop {
+    display: none;
+  }
 
 }
 
@@ -69,46 +74,70 @@
   @include mobile-small {
     margin-right: 0;
   }
+  @include desktop {
+    
+  }
   
 }
 .nav__main-li {
   background-color: green;
+  border-bottom: 1px solid yellow;
+  position: relative;
+  
   @include mobile {
-    position: relative;
-    font-size: 2rem;
     font-weight: $font-normal;
     padding: 1em 0 1em 1.8em;
     border-bottom: 1px solid $dark;
+    font-size: 2rem;
+    
+  }
+  @include desktop {
+    padding: .5em 0;
+    padding-left: $header-desktop-left-margin;
+    font-weight: $font-light;
+    font-size: 1.8rem;
+    
   }
   
 }
 .nav__expand-icon {
+  position: absolute;
+  
+  // top: 50%;
+  // transform: translateY(-50%);
   @include mobile {
-    position: absolute;
     font-size: 0.65em;
-    top: 50%;
     left: 1em;
-    transform: translateY(-50%);
+    top: 2.15em;
+  }
+  @include desktop {
+    left: .5em;
+    top: 2em;
+    font-size: .5em;
   }
   
 }
 .nav__secondary-ul {
+  // when closed
+    height: 0;
+    overflow: hidden;
   @include mobile {
     //  display: none;
     background: yellow;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    // when closed
-    height: 0;
-    overflow: hidden;
   }
  
 }
 .nav__secondary-li {
+  background: red;
   @include mobile {
-    background: red;
     padding: .3em 0 .3em 1em;
+    
+  }
+  @include desktop {
+    padding: .2em 0 .2em .5em;
     font-size: 1.7rem;
   }
   
@@ -116,5 +145,26 @@
 .nav__secondary-li:first-of-type {
   @include mobile {
     padding-top: .5em;
+  }
+  @include desktop {
+    padding-top: .5em;
+  }
+}
+.nav__secondary-li:last-of-type {
+  @include desktop {
+    padding-bottom: 1em;
+  }
+}
+
+// When You open the secondary Navigation
+.nav__secondary-ul--open {
+  .nav__secondary-ul {
+    height: auto;
+  }
+  .nav__expand-icon {
+    transform: rotate(90deg);
+    @include mobile {
+
+    }
   }
 }

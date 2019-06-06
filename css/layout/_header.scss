@@ -1,14 +1,28 @@
 $header-mobile-height: 6rem;
 
-.header {
-  // background-color: red;
+$header-desktop-height: 12rem;
+$header-desktop-width: 22.2rem;
+$header-desktop-left-margin: 2rem;
 
+$top-margin: 3rem;
+$side-margins: 5rem;
+
+.header {
+  border: 5px solid red;
   @include mobile {
     // background-color: $grey;
     background-color: #eee;
     height: $header-mobile-height;
     display: flex;
     justify-content: space-between;
+  }
+  @include desktop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: $header-desktop-width;
+    height: $header-desktop-height;
+    
   }
 
   
@@ -19,15 +33,24 @@ $header-mobile-height: 6rem;
     display: flex;
     align-items: center;
   }
+  @include desktop {
+    margin-top: $top-margin;
+    margin-left: $header-desktop-left-margin;
+  }
   
 }
 .header__h1 {
+  font-weight: $font-light;
+  line-height: 1.4;
   @include mobile {
     padding-left: .5em;
-    font-weight: $font-normal;
-    font-size: 2.4rem;
+    
+    font-size: 2.3rem;
   }
   @include mobile-small {
+    font-size: 2.1rem;
+  }
+  @include desktop {
     font-size: 2.2rem;
   }
 }
@@ -40,10 +63,13 @@ $header-mobile-height: 6rem;
     display: flex;
     // justify-content: center;
     align-items: center;
-    font-size: 3rem;
+    font-size: 2.7rem;
   }
   @include mobile-small {
     font-size: 2.5rem;
+  }
+  @include desktop {
+    display: none;
   }
   
 }
