@@ -14,7 +14,7 @@
     justify-content: flex-end;
     transition: background-color 800ms;
     // hidden by default
-    // transform: translateX(100%);
+    transform: translateX(100%);
   }
   @include mobile-small {
     //hidden by default
@@ -38,13 +38,14 @@
     right: 0;
     height: $header-mobile-height;
     width: $header-mobile-height;
-    font-size: 3.3rem;
+    font-size: 2.7rem;
     display: flex;
     align-items: center;
     z-index: 1;
+    color: $dark;
   }
   @include mobile-small {
-    font-size: 2.7rem;
+    font-size: 2.5rem;
   }
   @include desktop {
     display: none;
@@ -59,12 +60,15 @@
     min-width: 400px;
     height: 100%;
     overflow-y: auto;
+    transform: translateX(100%);
+    transition: transform $menu-animation-duration ease-in-out;
+    border-left: 1px solid $menu-lines;
   }
   @include mobile-small {
     width: 82%;
     min-width: 250px;
     transform: translateX(-100%);
-    transition: transform $menu-animation-duration ease-in-out;
+    // transition: transform $menu-animation-duration ease-in-out;
     border-right: 1px solid $menu-lines;
   }
   
@@ -72,14 +76,16 @@
 .nav__main-ul {
   // background-color: red;
   @include mobile {
-    height: 100%;
+    // height: 100%;
     margin: 0;
     padding: 0;
     list-style-type: none;
-    margin-right: $header-mobile-height;
+    // margin-right: $header-mobile-height;
+    // margin-top: $header-mobile-height;
   }
   @include mobile-small {
-    margin-right: 0;
+    // margin-right: 0;
+    // margin-top: 0;
   }
   @include desktop {
     
@@ -104,9 +110,15 @@
     padding-left: $header-desktop-left-margin;
     font-weight: $font-light;
     font-size: 1.8rem;
-    
   }
-  
+}
+.nav__main-li:first-of-type {
+  @include mobile {
+    // border-top: 1px solid $menu-lines;
+  }
+  @include mobile-small {
+    // border-top: none;
+  }
 }
 .nav__expand-icon {
   position: absolute;
@@ -120,8 +132,8 @@
     top: 2.15em;
   }
   @include desktop {
-    left: 1.1em;
-    top: 2.05em;
+    left: 1.3em;
+    top: 2.1em;
     font-size: .45em;
   }
   
@@ -175,14 +187,18 @@
   .nav {
     @include mobile {
       background-color: rgba(255, 255, 255, 0.8);
+      transform: translateX(0);
     }
     @include mobile-small {
-      transform: translateX(0);
+      // transform: translateX(0);
     }
   }
   .nav__card {
-    @include mobile-small {
+    @include mobile {
       transform: translateX(0);
+    }
+    @include mobile-small {
+      // transform: translateX(0);
     }
     
   }

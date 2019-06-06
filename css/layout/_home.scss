@@ -14,7 +14,9 @@ $home-image-margins: 1rem;
     right: 0;
     left: 0;
     height: 100%;
-    transition: left $home-animation-duration;
+    // doesn't work don't know why...
+    transform: translateZ(0);
+    transition: left $home-animation-duration, transform $home-animation-duration;
   }
 }
 .home__image-container {
@@ -29,6 +31,8 @@ $home-image-margins: 1rem;
     right: 0;
     bottom: 0;
     left: 0;
+    // doesn't work... don't know why..
+    transform: translateZ(0);
     transition: all $home-animation-duration;
   }
 }
@@ -53,6 +57,7 @@ $home-image-margins: 1rem;
   .home {
     @include desktop {
       left: $header-desktop-width;
+      transform: translateZ(0);
     }
   }
   .home__image-container {
@@ -61,6 +66,7 @@ $home-image-margins: 1rem;
       right: $home-image-margins;
       bottom: $home-image-margins;
       left: $home-image-margins;
+      transform: translateZ(0);
     }
   }
 }
