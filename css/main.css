@@ -357,12 +357,7 @@ html {
 body {
   font-size: 16px;
   height: 100%;
-  -webkit-transform: translateZ(0);
-          transform: translateZ(0);
-  -webkit-backface-visibility: hidden;
-          backface-visibility: hidden;
-  -webkit-perspective: 1000;
-          perspective: 1000;
+  overflow: hidden;
 }
 
 main {
@@ -526,7 +521,6 @@ ul {
 
 @media (max-width: 899px) {
   .nav {
-    overflow: hidden;
     position: fixed;
     top: 0;
     right: 0;
@@ -535,9 +529,6 @@ ul {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: end;
-        -ms-flex-pack: end;
-            justify-content: flex-end;
     -webkit-transition: background-color 800ms;
     transition: background-color 800ms;
     -webkit-transform: translateX(100%);
