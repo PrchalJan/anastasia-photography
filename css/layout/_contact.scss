@@ -22,13 +22,13 @@
   // border: 3px solid yellow;
   @include mobile {
     display: block;
-    padding: .4em 0;
+    padding: .5em 0;
   }
 }
 .contact__link--icon {
   @include mobile {
     display: flex;
-    line-height: 2.1em;
+    line-height: 1.5em;
     
     
   }
@@ -36,7 +36,7 @@
 .contact__i {
   // border: 1px solid red;
   @include mobile {
-    font-size: 3rem;
+    font-size: 2.2rem;
   }
 }
 .contact__icon-text {
