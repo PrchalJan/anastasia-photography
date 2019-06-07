@@ -23,6 +23,11 @@ navSections = {
   magazines: document.querySelector('.nav__secondary-ul--magazines'),
 }
 
+// Main Sections
+sections = {
+  nav: document.querySelector('.nav'),
+}
+
 
 // Debugger
 window.document.addEventListener('click', function(e) {

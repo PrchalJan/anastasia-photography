@@ -9,9 +9,13 @@
     color: $dark;
     @include font($font-light);
   }
+  @include desktop {
+    display: none;
+  }
 
 }
 .footer__contact-ul {
+  // border: 5px solid red;
   margin: 0;
   padding: 0;
   @include mobile {
@@ -19,21 +23,20 @@
   }
 }
 .footer__contact-li {
-  // border: 1px solid black;
+  border: 1px solid black;
   
   @include mobile {
     padding: .5em 0;
   }
 }
 
-.footer__icons-ul {
-  // border: 2px solid blue;
+.footer__icons-ul-primary {
+  border: 2px solid blue;
   @include mobile {
-    display: flex;
-    justify-content: center;
+ 
   }
 }
-.footer__icons-li {
+.footer__icons-li-row {
   // border: 2px solid green;
   @include mobile {
     font-size: 3rem;
@@ -42,14 +45,27 @@
     // align-items: center;
   }
 }
+.footer__icons-ul-nested {
+  border: 2px solid red;
+  @include mobile {
+    display: flex;
+    justify-content: center;
+  }
+}
+.footer__icons-li-column {
+  border: 3px solid green;
+  @include mobile {
+
+  }
+}
 .footer__icons-link {
-  // border: 2px solid yellow;
+  border: 2px solid yellow;
   @include mobile {
     display: block;
-    padding: .5em .4em .5em .4em;
+    padding: .4em .6em .2em .6em;
   }
 }
 .footer__copy {
-  padding: 1em 0 4em 0;
+  padding: 1em 0 2em 0;
 }
 
