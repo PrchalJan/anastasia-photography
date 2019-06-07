@@ -863,7 +863,13 @@ ul {
 
 @media (max-width: 899px) {
   .footer__contact-li {
-    padding: .5em 0;
+    padding: .4em 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .footer__icons-ul-primary {
+    margin: 1.5em;
   }
 }
 
@@ -887,7 +893,7 @@ ul {
 @media (max-width: 899px) {
   .footer__icons-link {
     display: block;
-    padding: .4em .6em .2em .6em;
+    padding: .3em .4em .2em .4em;
   }
 }
 

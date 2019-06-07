@@ -26,14 +26,14 @@
   // border: 1px solid black;
   
   @include mobile {
-    padding: .5em 0;
+    padding: .4em 0;
   }
 }
 
 .footer__icons-ul-primary {
   // border: 2px solid blue;
   @include mobile {
- 
+    margin: 1.5em;
   }
 }
 .footer__icons-li-row {
@@ -62,7 +62,7 @@
   // border: 2px solid yellow;
   @include mobile {
     display: block;
-    padding: .4em .6em .2em .6em;
+    padding: .3em .4em .2em .4em;
   }
 }
 .footer__copy {
