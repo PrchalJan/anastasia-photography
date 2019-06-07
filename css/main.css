@@ -357,7 +357,6 @@ html {
 body {
   font-size: 16px;
   height: 100%;
-  overflow: hidden;
 }
 
 main {
@@ -369,6 +368,7 @@ nav * {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 header * {
@@ -376,6 +376,7 @@ header * {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @media (max-width: 899px) {
