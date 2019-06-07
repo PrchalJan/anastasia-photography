@@ -835,10 +835,6 @@ ul {
   }
 }
 
-.footer {
-  background-color: #eee;
-}
-
 @media (max-width: 899px) {
   .footer {
     text-align: center;
