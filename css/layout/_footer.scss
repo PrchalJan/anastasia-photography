@@ -23,7 +23,7 @@
   }
 }
 .footer__contact-li {
-  border: 1px solid black;
+  // border: 1px solid black;
   
   @include mobile {
     padding: .5em 0;
@@ -31,7 +31,7 @@
 }
 
 .footer__icons-ul-primary {
-  border: 2px solid blue;
+  // border: 2px solid blue;
   @include mobile {
  
   }
@@ -39,27 +39,27 @@
 .footer__icons-li-row {
   // border: 2px solid green;
   @include mobile {
-    font-size: 3rem;
+    font-size: 2.5rem;
     
     // display: flex;
     // align-items: center;
   }
 }
 .footer__icons-ul-nested {
-  border: 2px solid red;
+  // border: 2px solid red;
   @include mobile {
     display: flex;
     justify-content: center;
   }
 }
 .footer__icons-li-column {
-  border: 3px solid green;
+  // border: 3px solid green;
   @include mobile {
 
   }
 }
 .footer__icons-link {
-  border: 2px solid yellow;
+  // border: 2px solid yellow;
   @include mobile {
     display: block;
     padding: .4em .6em .2em .6em;

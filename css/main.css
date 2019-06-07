@@ -865,28 +865,16 @@ ul {
   }
 }
 
-.footer__contact-li {
-  border: 1px solid black;
-}
-
 @media (max-width: 899px) {
   .footer__contact-li {
     padding: .5em 0;
   }
 }
 
-.footer__icons-ul-primary {
-  border: 2px solid blue;
-}
-
 @media (max-width: 899px) {
   .footer__icons-li-row {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
-}
-
-.footer__icons-ul-nested {
-  border: 2px solid red;
 }
 
 @media (max-width: 899px) {
@@ -898,14 +886,6 @@ ul {
         -ms-flex-pack: center;
             justify-content: center;
   }
-}
-
-.footer__icons-li-column {
-  border: 3px solid green;
-}
-
-.footer__icons-link {
-  border: 2px solid yellow;
 }
 
 @media (max-width: 899px) {
