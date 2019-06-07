@@ -60,7 +60,7 @@
     width: 75%;
     min-width: 400px;
     height: 100%;
-    // overflow-y: auto;
+    overflow-y: auto;
     transform: translateX(100%);
     transition: transform $menu-animation-duration ease-in-out;
     border-left: 1px solid $menu-lines;

@@ -606,6 +606,7 @@ ul {
     width: 75%;
     min-width: 400px;
     height: 100%;
+    overflow-y: auto;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
     -webkit-transition: -webkit-transform 350ms ease-in-out;
