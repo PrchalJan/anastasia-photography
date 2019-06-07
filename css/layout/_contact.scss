@@ -1,0 +1,45 @@
+.contact {
+  @include font($font-light);
+}
+.contact__h2 {
+  font-weight: $font-light;
+  @include mobile {
+    margin-top: 1.5em;
+    font-size: 2rem;
+  }
+}
+.contact__ul {
+  // border: 3px solid green;
+}
+.contact__li {
+  // border: 3px solid blue;
+  @include mobile {
+    vertical-align: text-top;
+  }
+}
+.contact__li--number,
+.contact__link {
+  // border: 3px solid yellow;
+  @include mobile {
+    display: block;
+    padding: .4em 0;
+  }
+}
+.contact__link--icon {
+  @include mobile {
+    display: flex;
+    line-height: 2.1em;
+    
+    
+  }
+}
+.contact__i {
+  // border: 1px solid red;
+  @include mobile {
+    font-size: 3rem;
+  }
+}
+.contact__icon-text {
+  // border: 1px solid red;
+  padding-left: .4em;
+}
