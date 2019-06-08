@@ -107,7 +107,7 @@
     
   }
   @include desktop {
-    padding: .5em 0;
+    padding: .3em 0;
     padding-left: $header-desktop-left-margin;
     font-weight: $font-light;
     font-size: 1.8rem;
@@ -134,7 +134,7 @@
   }
   @include desktop {
     left: 1.3em;
-    top: 2.1em;
+    top: 1.7em;
     font-size: .45em;
   }
   
@@ -211,11 +211,22 @@
 .nav__main-li--open {
   .nav__secondary-ul--artworks {
     // Hard coded! must be changed if items are added/removed
-    height: 13.5em;
+    @include mobile {
+      height: 13.5em;
+    }
+    @include desktop {
+      height: 12.5em;
+    }
+    
   }
   .nav__secondary-ul--magazines {
     // Hard coded! must be changed if items are added/removed
-    height: 15em;
+    @include mobile {
+      height: 15em;
+    }
+    @include desktop {
+      height: 14em;
+    }
   }
   .nav__expand-icon {
     transform: rotate(90deg);
