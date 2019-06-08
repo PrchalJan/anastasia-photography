@@ -7,6 +7,11 @@
 .artworks__figure + figure {
   margin-top: 4vh;
 }
+.artworks__figure:first-of-type {
+  @include desktop {
+    margin-top: 4vh;
+  }
+}
 .artworks__img {
   @include desktop {
     max-height: 90vh;
