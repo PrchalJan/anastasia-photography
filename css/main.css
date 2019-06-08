@@ -370,7 +370,29 @@ body {
 }
 
 main {
-  height: 100%;
+  z-index: -1;
+}
+
+@media (min-width: 900px) {
+  main {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 100%;
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-transition: left 800ms, -webkit-transform 800ms;
+    transition: left 800ms, -webkit-transform 800ms;
+    transition: left 800ms, transform 800ms;
+    transition: left 800ms, transform 800ms, -webkit-transform 800ms;
+  }
+}
+
+@media (min-width: 900px) {
+  .home--clicked main {
+    left: 22.2rem;
+  }
 }
 
 nav * {
@@ -775,9 +797,7 @@ ul {
 
 @media (max-width: 899px) {
   .home {
-    height: 100%;
-    margin-top: -6rem;
-    padding-top: 6rem;
+    height: calc(100vh - 60px);
   }
 }
 
@@ -790,10 +810,10 @@ ul {
     height: 100%;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
-    -webkit-transition: left 800ms, -webkit-transform 800ms;
-    transition: left 800ms, -webkit-transform 800ms;
-    transition: left 800ms, transform 800ms;
-    transition: left 800ms, transform 800ms, -webkit-transform 800ms;
+    -webkit-transition: -webkit-transform 800ms;
+    transition: -webkit-transform 800ms;
+    transition: transform 800ms;
+    transition: transform 800ms, -webkit-transform 800ms;
   }
 }
 
@@ -828,7 +848,6 @@ ul {
 
 @media (min-width: 900px) {
   .home--clicked .home {
-    left: 22.2rem;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
   }

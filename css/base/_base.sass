@@ -17,9 +17,27 @@ body
 
 
 main
-  height: 100%
+  
   // border: 3px solid red
+ 
+  z-index: -1
+  @include mobile
+    
+  @include desktop
+    position: absolute
+    top: 0
+    right: 0
+    left: 0
+    height: 100%
+    transform: translateZ(0);
+    transition: left $home-animation-duration, transform $home-animation-duration
+    
 
+.home--clicked
+  main
+    @include desktop
+      left: $header-desktop-width
+    
 nav
   *
     user-select: none
