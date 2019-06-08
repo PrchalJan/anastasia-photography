@@ -1,0 +1,33 @@
+.artworks {
+
+}
+.artworks__figure {
+
+}
+.artworks__figure + figure {
+  margin-top: 4vh;
+}
+.artworks__img {
+  @include desktop {
+    max-height: 90vh;
+  }
+}
+.artworks__h2 {
+  font-weight: $font-normal;
+  @include mobile {
+    padding-top: 1em;
+  }
+  @include desktop {
+    padding-top: 1.5em;
+  }
+}
+.artworks__p {
+    font-weight: $font-light;
+    font-size: 1.6rem;
+  }
+  @include desktop {
+    
+}
+.artworks__p:last-child {
+  padding-bottom: 3em;
+}

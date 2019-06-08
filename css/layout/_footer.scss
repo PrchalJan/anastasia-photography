@@ -2,7 +2,7 @@
 .footer {
   // display: none;
   // border: 5px solid blue;
-  // background-color: #eee;
+  background-color: $grey;
 
   @include mobile {
     text-align: center;
@@ -10,7 +10,7 @@
     @include font($font-light);
   }
   @include desktop {
-    display: none;
+    // display: none;
   }
 
 }

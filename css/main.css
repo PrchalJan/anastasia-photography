@@ -379,7 +379,7 @@ main {
     top: 0;
     right: 0;
     left: 0;
-    height: 100%;
+    min-height: 100%;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
     -webkit-transition: left 800ms, -webkit-transform 800ms;
@@ -416,6 +416,41 @@ header * {
     width: 90%;
     margin: 0 auto;
   }
+}
+
+@media (min-width: 900px) {
+  .container {
+    width: 90%;
+    max-width: 800px;
+    margin-left: 10%;
+  }
+}
+
+@media (min-width: 900px) {
+  .textContainer {
+    max-width: 800px;
+  }
+}
+
+@media (min-width: 900px) {
+  .imageContainer {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+figure {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  margin: 0 auto;
 }
 
 a {
@@ -682,7 +717,7 @@ ul {
 
 @media (min-width: 900px) {
   .nav__main-li {
-    padding: .3em 0;
+    padding: .25em 0;
     padding-left: 2.5rem;
     font-weight: 300;
     font-size: 1.8rem;
@@ -708,7 +743,7 @@ ul {
 @media (min-width: 900px) {
   .nav__expand-icon {
     left: 1.3em;
-    top: 1.7em;
+    top: 1.6em;
     font-size: .45em;
   }
 }
@@ -880,6 +915,49 @@ ul {
   }
 }
 
+.artworks__figure + figure {
+  margin-top: 4vh;
+}
+
+@media (min-width: 900px) {
+  .artworks__img {
+    max-height: 90vh;
+  }
+}
+
+.artworks__h2 {
+  font-weight: 400;
+}
+
+@media (max-width: 899px) {
+  .artworks__h2 {
+    padding-top: 1em;
+  }
+}
+
+@media (min-width: 900px) {
+  .artworks__h2 {
+    padding-top: 1.5em;
+  }
+}
+
+.artworks__p {
+  font-weight: 300;
+  font-size: 1.6rem;
+}
+
+.artworks__p:last-child {
+  padding-bottom: 3em;
+}
+
+.about__h2 {
+  font-weight: 300;
+}
+
+.about__p {
+  font-weight: 300;
+}
+
 .contact {
   font-family: "Roboto", sans-serif;
   font-weight: 300;
@@ -929,18 +1007,16 @@ ul {
   padding-left: .4em;
 }
 
+.footer {
+  background-color: #d2d2d2;
+}
+
 @media (max-width: 899px) {
   .footer {
     text-align: center;
     color: #111;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
-  }
-}
-
-@media (min-width: 900px) {
-  .footer {
-    display: none;
   }
 }
 

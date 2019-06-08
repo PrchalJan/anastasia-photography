@@ -107,7 +107,7 @@
     
   }
   @include desktop {
-    padding: .3em 0;
+    padding: .25em 0;
     padding-left: $header-desktop-left-margin;
     font-weight: $font-light;
     font-size: 1.8rem;
@@ -134,7 +134,7 @@
   }
   @include desktop {
     left: 1.3em;
-    top: 1.7em;
+    top: 1.6em;
     font-size: .45em;
   }
   
