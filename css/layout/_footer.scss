@@ -20,7 +20,7 @@
   padding: 0;
   @include mobile {
     padding-top: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
 }
 .footer__contact-li {
@@ -70,9 +70,15 @@
   // border: 2px solid yellow;
   @include mobile {
     display: block;
-    padding: .3em .4em .2em .4em;
+    padding: 0em .4em .1em .4em;
   }
 }
+.i--vogue {
+  @include mobile {
+    font-size: 2rem;
+  }
+}
+
 .footer__copy {
   padding: 1em 0 2em 0;
   font-size: 1.5rem;

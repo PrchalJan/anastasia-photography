@@ -1028,7 +1028,7 @@ ul {
 @media (max-width: 899px) {
   .footer__contact-ul {
     padding-top: 2em;
-    padding-bottom: 1em;
+    padding-bottom: 2em;
   }
 }
 
@@ -1069,7 +1069,13 @@ ul {
 @media (max-width: 899px) {
   .footer__icons-link {
     display: block;
-    padding: .3em .4em .2em .4em;
+    padding: 0em .4em .1em .4em;
+  }
+}
+
+@media (max-width: 899px) {
+  .i--vogue {
+    font-size: 2rem;
   }
 }
 
