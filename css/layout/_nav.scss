@@ -103,7 +103,7 @@
     font-weight: $font-normal;
     padding: 1em 0 1em 1.8em;
     border-bottom: 1px solid $menu-lines;
-    font-size: 2rem;
+    font-size: 1.8rem;
     
   }
   @include desktop {
@@ -128,9 +128,9 @@
   // transform: translateY(-50%);
   transition: transform 100ms;
   @include mobile {
-    font-size: 0.65em;
-    left: 1.1em;
-    top: 2.15em;
+    font-size: 0.5em;
+    left: 1.7em;
+    top: 2.85em;
   }
   @include desktop {
     left: 1.3em;
@@ -158,12 +158,12 @@
   // background: red;
   @include mobile {
     padding: .3em 0 .3em 0em;
-    font-size: 1.8rem;
+    font-size: 1.6rem;
     
   }
   @include desktop {
     padding: .2em 0 .2em .1em;
-    font-size: 1.7rem;
+    font-size: 1.6rem;
   }
   
 }

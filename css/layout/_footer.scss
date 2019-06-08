@@ -19,14 +19,16 @@
   margin: 0;
   padding: 0;
   @include mobile {
-    padding-top: 1.5em;
+    padding-top: 2em;
+    padding-bottom: 1em;
   }
 }
 .footer__contact-li {
   // border: 1px solid black;
   
   @include mobile {
-    padding: .4em 0;
+    padding: .3em 0;
+    font-size: 1.5rem;
   }
 }
 
@@ -73,5 +75,6 @@
 }
 .footer__copy {
   padding: 1em 0 2em 0;
+  font-size: 1.5rem;
 }
 
