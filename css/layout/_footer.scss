@@ -10,24 +10,24 @@
     @include font($font-light);
   }
   @include desktop {
-    padding-left :$header-desktop-width;
+    
   }
   .container {
     @include desktop {
       position: relative;
       right: calc(#{$header-desktop-width} /2);
+      display: flex;
+      justify-content: space-between;
+      padding-top: 3em;
     }
   }
  
 }
 .footer__content {
-  // border: 3px solid red;
+  // border: 3px solid blue;
   @include desktop {
-    display: flex;
-    justify-content: space-between;
-    max-width: 800px;
-    margin: 0 auto;
-    padding-top: 3em;
+    margin-left :$header-desktop-width;
+
   }
 }
 
