@@ -18,7 +18,7 @@
       right: calc(#{$header-desktop-width} /2);
       display: flex;
       justify-content: space-between;
-      padding-top: 3em;
+      padding-top: 3.5em;
     }
   }
  
@@ -37,7 +37,7 @@
   margin: 0;
   padding: 0;
   @include mobile {
-    padding-top: 2em;
+    padding-top: 3.5em;
     padding-bottom: 2em;
   }
 }
@@ -126,7 +126,7 @@
   text-align: center;
   @include desktop {
     padding-top: 2em;
-    padding-bottom: 2em;
+    padding-bottom: 4em;
     position: relative;
     right: calc(#{$header-desktop-width} /2);
   }
