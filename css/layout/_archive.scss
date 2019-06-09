@@ -1,20 +1,79 @@
-.archive__content {
+
+// I'm also styling diaryofagirl section here
+
+.archive,
+.diary {
+  @include desktop {
+    padding-top: $top-margin;
+  }
+}
+.archive__content,
+.diary__images {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
   @include mobile {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    // margin: 1rem;
+    padding: 0.75rem;
+  }
+  @include mobile-small {
+    padding: .5rem;
+  }
+  @include desktop {
+    padding: .1rem;
+  }
+}
+.archive__figure,
+.diary__figure {
+  
+  @include mobile {
+    width: calc(33.33% - .5rem);
+    margin: 0.75rem 0 0 0;
+    min-height: 10rem;
+  }
+  @include mobile-small {
+    width: calc(50% - .25rem);
+    margin: .5rem 0 0 0;
+  }
+  @include desktop {
+    width: calc(33.33% - .5rem);
+    margin: 0.75rem 0 0 0;
+    min-height: 15rem;
+  }
+  @include desktop-mid {
+    width: calc(33.33% - 2rem);
+    margin: 3rem 0 0 0;
+    min-height: 15rem;
+  }
+}
+.archive__figure:nth-child(1) {
+  margin: 0;
+  @include mobile {
 
   }
+  
 }
-.archive__figure {
+.archive__figure:nth-child(2) {
+  margin: 0;
   @include mobile {
-    width: calc(50% - 1rem);
-    margin: .5rem 0 .5rem 0;
+    
+  }  
+}
+.archive__figure:nth-child(3) {
+  margin: 0;
+  @include mobile {
+    
+  }  
+  @include mobile-small {
+    margin: .5rem 0 0 0;
   }
 }
-// .archive__figure + figure {
-//   @include mobile {
-    
-//   }
-// }
+
+
+// Diary specific
+
+.diary__icon {
+  height: 1.8rem;
+  width: 1.8rem;
+  display: inline-block;
+}

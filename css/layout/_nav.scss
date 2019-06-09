@@ -57,7 +57,7 @@
 .nav__card {
   @include mobile {
     background-color: $light;
-    width: 75%;
+    width: 70%;
     min-width: 400px;
     height: 100%;
     overflow-y: auto;
