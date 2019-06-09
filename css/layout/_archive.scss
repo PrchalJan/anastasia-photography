@@ -77,13 +77,13 @@
 // Diary specific
 .diary__images {
   @include mobile-small {
-    padding: .4rem 0;
+    padding: .3rem 0;
   }
 }
 .diary__figure {
   @include mobile-small {
     width: calc(33.33% - .2rem);
-    margin: 0.4rem 0 0 0;
+    margin: 0.3rem 0 0 0;
   }
 }
 .diary__figure:nth-child(3) {

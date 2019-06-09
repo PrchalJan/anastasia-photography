@@ -1056,14 +1056,14 @@ ul {
 
 @media (max-width: 600px) {
   .diary__images {
-    padding: .4rem 0;
+    padding: .3rem 0;
   }
 }
 
 @media (max-width: 600px) {
   .diary__figure {
     width: calc(33.33% - .2rem);
-    margin: 0.4rem 0 0 0;
+    margin: 0.3rem 0 0 0;
   }
 }
 
