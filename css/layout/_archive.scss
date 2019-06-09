@@ -1,0 +1,20 @@
+.archive__content {
+  @include mobile {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    // margin: 1rem;
+
+  }
+}
+.archive__figure {
+  @include mobile {
+    width: calc(50% - 1rem);
+    margin: .5rem 0 .5rem 0;
+  }
+}
+// .archive__figure + figure {
+//   @include mobile {
+    
+//   }
+// }
