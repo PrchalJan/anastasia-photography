@@ -1,5 +1,10 @@
 .artworks {
-
+  .container {
+    @include desktop {
+      position: relative;
+      right: calc(#{$header-desktop-width} /2);
+    }
+  }
 }
 .artworks__figure {
 

@@ -1,7 +1,7 @@
 
 .footer {
   // display: none;
-  // border: 5px solid blue;
+  border: 1px solid $grey;
   background-color: $grey;
 
   @include mobile {
@@ -10,8 +10,15 @@
     @include font($font-light);
   }
   @include desktop {
-    // display: none;
+    padding-left :$header-desktop-width;
   }
+  .container {
+    @include desktop {
+      position: relative;
+      right: calc(#{$header-desktop-width} /2);
+    }
+  }
+ 
 }
 .footer__content {
   // border: 3px solid red;
@@ -120,6 +127,8 @@
   @include desktop {
     padding-top: 2em;
     padding-bottom: 2em;
+    position: relative;
+    right: calc(#{$header-desktop-width} /2);
   }
 }
 
