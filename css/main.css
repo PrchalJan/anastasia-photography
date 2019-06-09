@@ -442,6 +442,7 @@ img {
   max-height: 100%;
   height: auto;
   margin: 0 auto;
+  pointer-events: none;
 }
 
 a {
@@ -930,7 +931,8 @@ ul {
 }
 
 .artworks__h2 {
-  font-weight: 400;
+  font-weight: 300;
+  font-size: 2.4rem;
 }
 
 @media (max-width: 899px) {
