@@ -2,7 +2,7 @@ $lightbox-margins: 5rem;
 
 .lightbox {
   // border: 3px solid red;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   right: 0;
@@ -20,13 +20,16 @@ $lightbox-margins: 5rem;
   position: absolute;
   top: $lightbox-margins;
   bottom: $lightbox-margins;
-  @include mobile {
-    right: calc(#{$lightbox-margins} / 2);
-    left: calc(#{$lightbox-margins} / 2);
+  right: $lightbox-margins;
+  left: $lightbox-margins;
+  @include mobile-small {
+    // right: calc(#{$lightbox-margins} / 2);
+    // left: calc(#{$lightbox-margins} / 2);
+    right: 0;
+    left: 0;
   }
   @include desktop {
-    right: $lightbox-margins;
-    left: $lightbox-margins;
+
   }
 }
 .lightbox__slide {
@@ -112,13 +115,14 @@ $lightbox-margins: 5rem;
   display: flex;
   // justify-content: center;
   align-items: center;
-  @include mobile {
+  width: $lightbox-margins;
+  font-size: 3rem;
+  @include mobile-small {
     width: calc(#{$lightbox-margins} /2);
     font-size: 2rem;
   }
   @include desktop {
-    width: $lightbox-margins;
-    font-size: 4rem;
+    
   }
   .icon__line {
     background-color: #f4f4f4;
