@@ -1,0 +1,105 @@
+$lightbox-margins: 5rem;
+
+.lightbox {
+  border: 3px solid red;
+  @include desktop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+}
+.lightbox__content {
+  border: 3px solid blue;
+  @include desktop {
+    position: absolute;
+    top: $lightbox-margins;
+    right: $lightbox-margins;
+    bottom: $lightbox-margins;
+    left: $lightbox-margins;
+  }
+}
+.lightbox__slide {
+  border: 3px solid green;
+  @include desktop {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+}
+.lightbox__figure {
+  @include desktop {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+  }
+  
+}
+.lightbox__image {
+  @include desktop {
+    max-width: 100%;
+    max-height: 96%;
+    height: auto;
+    width: auto;
+    border: 1px solid red;
+  }
+}
+.lightbox__figcaption {
+  @include desktop {
+
+    border: 1px solid green;
+    height: 4%;
+    width: 500px;
+  }
+}
+.lightbox__btn {
+  border: 1px solid red;
+  @include desktop {
+    position: absolute;
+    width: $lightbox-margins;
+    height: $lightbox-margins;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+  }
+  
+}
+.lightbox__close-button {
+  @include desktop {
+    top: 0;
+    right: 0;
+    font-size: 3rem;
+  }
+}
+.lightbox__previous-button {
+  @include desktop {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    height: calc(#{$lightbox-margins} * 1.5);
+  }
+}
+.lightbox__next-button {
+  @include desktop {
+    top: 50%;
+    right: 0%;
+    transform: translateY(-50%);
+    height: calc(#{$lightbox-margins} * 1.5);
+  }
+}
+.lightbox__btn-inner {
+
+  @include desktop {
+
+  }
+}

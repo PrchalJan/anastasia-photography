@@ -170,7 +170,7 @@
 
 
     <!-- Reusing css from archive section -->
-    <section class="diary">
+    <section class="diary" style="display: none">
       <div class="imageContainer">
         <div class="diary__images">
           <figure class="diary__figure">
@@ -201,7 +201,7 @@
             <img class="diary__img" src="https://unsplash.it/509" alt="">
           </figure>
           <figure class="diary__figure">
-            <img class="diary__img" src="https://unsplash.it/503" alt="">
+            <img class="diary__img" src="https://unsplash.it/510" alt="">
           </figure>
           <figure class="diary__figure">
             <img class="diary__img" src="https://unsplash.it/501" alt="">
@@ -356,9 +356,10 @@
       </div>
 
     </section>
+
   </main>
 
-  <footer class="footer" style="">
+  <footer class="footer" style="display: none">
     <div class="footer__content">
       <div class="container">
         <div class="footer__contact">
@@ -386,7 +387,45 @@
       <p class="footer__copy">&copy; Anastasia Oss</p>
     </div>
   </footer>
+
+  <section class="lightbox">
+    <div class="lightbox__index-caption">
+      <span>1 / 1</span>
+    </div>
+    <div class="lightbox__close-button lightbox__btn">
+      <div class="icon icon--close-menu">
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+      </div>
+    </div>
+    <div class="lightbox__previous-button lightbox__btn">
+      <div class="icon icon--previous">
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+      </div>
+    </div>
+    <div class="lightbox__next-button lightbox__btn">
+      <div class="icon icon--next">
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+        <div class="icon__line"></div>
+      </div>
+    </div>
+    <div class="lightbox__content">
+      <div class="lightbox__previous-space"></div>
+      <div class="lightbox__next-space"></div>
+      <div class="lightbox__slide">
+        <figure class="lightbox__figure">
+          <img src="img/header/home/mobile/1280/01.jpg" alt="" class="lightbox__image">
+          <figcaption class="lightbox__figcaption">Figcaption</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
   
+
   <script src="js/variables.js"></script>
   <script src="js/nav.js"></script>
   <script src="js/images.js"></script>
