@@ -1,0 +1,29 @@
+{
+  "name": "anastasia-photography",
+  "version": "1.0.0",
+  "description": "photography portfolio website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --output-public-path=/build/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PrchalJan/anastasia-photography.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PrchalJan/anastasia-photography/issues"
+  },
+  "homepage": "https://github.com/PrchalJan/anastasia-photography#readme",
+  "devDependencies": {
+    "@babel/core": "^7.4.5",
+    "@babel/preset-env": "^7.4.5",
+    "babel-loader": "^8.0.6",
+    "webpack": "^4.33.0",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
+  }
+}
