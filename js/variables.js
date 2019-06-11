@@ -3,17 +3,17 @@ export const variables = function() {
   'use strict'
   window.states = {
     clicked: false,
-    navMobileOpen: false,
+    nav: false,
     lightbox: false
   }
   
   
-  window.icon = {
+  window.icons = {
     openMenu: document.querySelector('.header__menu-icon'),
     closeMenu: document.querySelector('.nav__menu-icon'),
   }
   
-  window.navButtons = {
+  window.navBtns = {
     artworks: document.querySelector('.nav__main-li--artworks'),
     magazines: document.querySelector('.nav__main-li--magazines'),
     archive: document.querySelector('.nav__main-li--archive'),
