@@ -5,6 +5,12 @@ export const nav = function() {
 for(let section in sections) {
   sections[section].style.display = 'none';
 }
+// Show only Home Section on page load
+showSection(sections.home);
+
+function showSection(section) {
+  section.style.display = 'block';
+}
 
 
 
