@@ -8,6 +8,8 @@ $lightbox-margins: 5rem;
   right: 0;
   bottom: 0;
   left: 0;
+  transform: scale(0);
+  transition: transform 1s;
   @include mobile {
 
   }
@@ -161,5 +163,11 @@ $lightbox-margins: 5rem;
 
   @include desktop {
 
+  }
+}
+
+.lightbox-open {
+  .lightbox {
+    transform: scale(1);
   }
 }

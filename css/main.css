@@ -1426,6 +1426,12 @@ ul {
   right: 0;
   bottom: 0;
   left: 0;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
 }
 
 .lightbox__content {
@@ -1569,5 +1575,10 @@ ul {
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   height: calc(5rem * 1.5);
+}
+
+.lightbox-open .lightbox {
+  -webkit-transform: scale(1);
+          transform: scale(1);
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,5 +1,14 @@
 
 export const nav = function() {
+
+// Hide All Sections On Page Load
+for(let section in sections) {
+  sections[section].style.display = 'none';
+}
+
+
+
+
   // Expand/Hide artworks on click
   navButtons.artworks.addEventListener('click', function(e) {
     if(e.target === this) {
