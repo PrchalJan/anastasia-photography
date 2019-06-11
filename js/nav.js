@@ -13,15 +13,33 @@ showSection(sections.home);
 // Close mobile menu on mobile menu close button click;
 icons.closeMenu.addEventListener('click', function() {
   closeMenu();
+  hideMenuSections();
 })
 // Close mobile menu on menu gap click
 components.nav.addEventListener('click', function(e) {
   if(e.target === components.nav) {
     closeMenu();
+    hideMenuSections();
+  }
+})
+// Expand/Hide artworks on click
+navBtns.artworks.addEventListener('click', function(e) {
+  if(e.target === this) {
+    this.classList.toggle('nav__main-li--open');
+  }
+})
+// Expand/Hide magazines on click
+navBtns.magazines.addEventListener('click', function(e) {
+  if(e.target === this) {
+    this.classList.toggle('nav__main-li--open');
   }
 })
 
 
+function hideMenuSections() {
+  navBtns.artworks.classList.remove('nav__main-li--open');
+  navBtns.magazines.classList.remove('nav__main-li--open');
+}
 
 // Show a single section
 // in: section
@@ -62,18 +80,8 @@ function closeMenu() {
 
 
 
-  // Expand/Hide artworks on click
-  navBtns.artworks.addEventListener('click', function(e) {
-    if(e.target === this) {
-      this.classList.toggle('nav__main-li--open');
-    }
-  })
-  // Expand/Hide magazines on click
-  navBtns.magazines.addEventListener('click', function(e) {
-    if(e.target === this) {
-      this.classList.toggle('nav__main-li--open');
-    }
-  })
+
+
 
 
 
