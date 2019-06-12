@@ -375,14 +375,19 @@ main {
 
 @media (min-width: 900px) {
   main {
-    margin-left: 20rem;
     min-height: 100%;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
-    -webkit-transition: left 800ms, -webkit-transform 800ms;
-    transition: left 800ms, -webkit-transform 800ms;
-    transition: left 800ms, transform 800ms;
-    transition: left 800ms, transform 800ms, -webkit-transform 800ms;
+    -webkit-transition: margin-left 800ms, -webkit-transform 800ms;
+    transition: margin-left 800ms, -webkit-transform 800ms;
+    transition: margin-left 800ms, transform 800ms;
+    transition: margin-left 800ms, transform 800ms, -webkit-transform 800ms;
+  }
+}
+
+@media (min-width: 900px) {
+  .home--clicked main {
+    margin-left: 20rem;
   }
 }
 

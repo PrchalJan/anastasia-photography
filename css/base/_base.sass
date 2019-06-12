@@ -28,16 +28,16 @@ main
     // top: 0
     // right: 0
     // left: 0
-    margin-left: $header-desktop-width;
+    
     min-height: 100%
     transform: translateZ(0);
-    transition: left $home-animation-duration, transform $home-animation-duration
+    transition: margin-left $home-animation-duration, transform $home-animation-duration
     
 
 .home--clicked
   main
     @include desktop
-      
+      margin-left: $header-desktop-width;
     
 nav
   *

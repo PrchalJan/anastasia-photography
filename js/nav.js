@@ -13,13 +13,11 @@ showSection(sections.home);
 // Close mobile menu on mobile menu close button click;
 icons.closeMenu.addEventListener('click', function() {
   closeMenu();
-  hideMenuSections();
 })
 // Close mobile menu on menu gap click
 components.nav.addEventListener('click', function(e) {
   if(e.target === components.nav) {
     closeMenu();
-    hideMenuSections();
   }
 })
 // Expand/Hide artworks on click
@@ -36,10 +34,14 @@ navBtns.magazines.addEventListener('click', function(e) {
 })
 
 
-function hideMenuSections() {
-  navBtns.artworks.classList.remove('nav__main-li--open');
-  navBtns.magazines.classList.remove('nav__main-li--open');
-}
+// Show desktop menu on click
+window.document.addEventListener('click', function() {
+  if((window.innerWidth > 899) && !states.clicked) {
+    document.body.classList.add('home--clicked');
+  }
+})
+
+
 
 // Show a single section
 // in: section
@@ -54,6 +56,11 @@ function hideSections() {
   }
 }
 
+function hideMenuSections() {
+  navBtns.artworks.classList.remove('nav__main-li--open');
+  navBtns.magazines.classList.remove('nav__main-li--open');
+}
+
 // Open main mobile menu
 function openMenu() {
   if(!states.nav) {
@@ -64,6 +71,7 @@ function openMenu() {
 function closeMenu() {
   if(states.nav) {
     document.body.classList.remove('nav-mobile-open');
+    hideMenuSections();
   }
   states.nav = false;
 }
