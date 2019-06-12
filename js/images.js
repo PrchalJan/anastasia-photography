@@ -8,9 +8,9 @@ export const images = function() {
 let currentHomeIndex = 0;
 let previousHomeIndex = 0;
 
-const homeInterval = setInterval(function() {
+setInterval(function() {
   showSlide(currentHomeIndex + 1, imgs.home);
-}, 3000);
+}, 4000);
 
 
 function showSlide(index, slides) {
@@ -22,24 +22,21 @@ function showSlide(index, slides) {
   if(index < 0) {
     index = slides.length -1;
   }
-  for(let slide of slides) {
-    slide.style.display = 'none';
+  // for(let slide of slides) {
+  //   slide.style.display = 'none';
+  // }
+  for(let i = 0; i < slides.length; i++) {
+    slides[i].style.display = 'none';
+    console.log(i);
   }
   slides[index].style.display = 'block';
-  console.log(slides[index]);
+  // console.log(slides[index]);
   currentHomeIndex = index;
   // slides[window.previousIndex].style.display = 'none';
   // slides[index].style.display = 'block';
 
   // window.previousHomeIndex = index;
 }
-
-
-
-
-
-
-
 
 
 

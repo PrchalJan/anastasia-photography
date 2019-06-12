@@ -948,10 +948,10 @@ ul {
 
 @media (min-width: 900px) {
   .home--clicked .home__image-container {
-    top: 1rem;
-    right: 1rem;
-    bottom: 1rem;
-    left: 1rem;
+    top: 2.5rem;
+    right: 2.5rem;
+    bottom: 2.5rem;
+    left: 2.5rem;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
   }
