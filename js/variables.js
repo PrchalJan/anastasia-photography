@@ -4,18 +4,24 @@ export const variables = function() {
   window.states = {
     clicked: false,
     nav: false,
-    lightbox: false
+    lightbox: false,
+    footer: false
   }
   
   
   window.icons = {
     openMenu: document.querySelector('.header__menu-icon'),
     closeMenu: document.querySelector('.nav__menu-icon'),
+    headerTitle: document.querySelector('.header__title'),
   }
   
   window.navBtns = {
     artworks: document.querySelector('.nav__main-li--artworks'),
     magazines: document.querySelector('.nav__main-li--magazines'),
+
+  }
+
+  window.navBtnsDirect = {
     archive: document.querySelector('.nav__main-li--archive'),
     about: document.querySelector('.nav__main-li--about'),
     contact: document.querySelector('.nav__main-li--contact'),

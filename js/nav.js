@@ -41,12 +41,30 @@ window.document.addEventListener('click', function() {
   }
 })
 
+// Show Archive/about/contact on click
+for( let btn in navBtnsDirect) {
+  navBtnsDirect[btn].addEventListener('click', function() {
+    hideSections();
+    showSection(sections[btn], true);
+  })
+}
+
+// Go home on header title click
+icons.headerTitle.addEventListener('click', function() {
+  hideSections();
+  showSection(sections.home);
+})
 
 
 // Show a single section
-// in: section
-function showSection(section) {
+// in: section, footer(yes/no)
+function showSection(section, footer=false) {
   section.style.display = 'block';
+  if(footer) {
+    components.footer.style.display = 'block';
+  } else {
+    components.footer.style.display = 'none';
+  }
 }
 
 // Hide all sections

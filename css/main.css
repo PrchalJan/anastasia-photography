@@ -493,6 +493,10 @@ ul {
   }
 }
 
+.header__title {
+  cursor: pointer;
+}
+
 @media (max-width: 899px) {
   .header__title {
     height: 6rem;
@@ -1163,6 +1167,12 @@ ul {
     color: #111;
     font-family: "Roboto", sans-serif;
     font-weight: 300;
+  }
+}
+
+@media (min-width: 900px) {
+  .footer {
+    display: none;
   }
 }
 

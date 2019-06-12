@@ -10,7 +10,7 @@
     @include font($font-light);
   }
   @include desktop {
-    
+    display: none;
   }
   .container {
     @include desktop {
@@ -27,7 +27,6 @@
   // border: 3px solid blue;
   @include desktop {
     margin-left :$header-desktop-width;
-
   }
 }
 
