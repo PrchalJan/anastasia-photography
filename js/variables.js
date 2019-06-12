@@ -51,6 +51,12 @@ export const variables = function() {
     footer: document.querySelector('.footer')
   }
 
+  // All home images
+  // Cannot use keyword images because the file is called images
+  window.imgs = {
+    home: document.querySelectorAll('.home__image'),
+  }
+
 
 
 
