@@ -4,7 +4,12 @@ export const nav = function() {
 // Hide All Sections On Page Load
 hideSections();
 // Show only Home Section on page load
-showSection(sections.home);
+if(window.innerWidth > 899) {
+  showSection(sections.home);
+} else {
+  showSection(sections.home, true);
+}
+
 
  // Open mobile menu on header icon click
  icons.openMenu.addEventListener('click', function() {
