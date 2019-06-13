@@ -6,8 +6,7 @@ export const images = function() {
 
 
 
-let currentHomeIndex = 0;
-let previousHomeIndex = 0;
+
 
 setInterval(function() {
   showSlide(currentHomeIndex + 1, imgs.home);

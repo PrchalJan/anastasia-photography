@@ -1,18 +1,25 @@
 export const resize = function() {
 
-// Set up the correct mobile height:
 
-if(window.innerWidth < 900) {
-  // sections.home.style.height = 200;
-  // console.log(sections.home.computedStyle.height);
-  console.log();
-  sections.home.style.height = `${window.innerHeight -60}px`;
+
+
+
+
+// Set up the correct home height:
+properHomeHeight();
+
+
+
+
+// RESIZING EVENTS
+window.addEventListener('resize', function() {
   
-}
+} )
 
-console.log(window.innerWidth);
-console.log(window.innerHeight);
-
+// Resize home height on window change
+window.addEventListener('resize', debounce(function() {
+  properHomeHeight();
+}, 350));
 
 
 

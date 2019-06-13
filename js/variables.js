@@ -1,6 +1,11 @@
 
 export const variables = function() {
   'use strict'
+  
+  window.previousHomeIndex = 0;
+  window.currentHomeIndex = 0;
+
+
   window.states = {
     clicked: false,
     nav: false,
