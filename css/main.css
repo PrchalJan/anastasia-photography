@@ -848,6 +848,10 @@ ul {
   }
 }
 
+.home {
+  border: 3px solid yellow;
+}
+
 @media (min-width: 900px) {
   .home {
     position: absolute;
@@ -905,37 +909,85 @@ ul {
 
 @media (max-width: 899px) {
   .home__image:nth-of-type(1) {
-    background-image: url(../../img/home/1280/home01.jpg);
+    background-image: url(../../img/home/tall/1280/home01.jpg);
   }
 }
 
 @media (min-width: 900px) {
   .home__image:nth-of-type(1) {
-    background-image: url(../../img/home/1920/home02.jpg);
+    background-image: url(../../img/home/wide/1920/home01.jpg);
   }
 }
 
 @media (max-width: 899px) {
   .home__image:nth-of-type(2) {
-    background-image: url(../../img/home/1280/home03.jpg);
+    background-image: url(../../img/home/tall/1280/home02.jpg);
   }
 }
 
 @media (min-width: 900px) {
   .home__image:nth-of-type(2) {
-    background-image: url(../../img/home/1920/home04.jpg);
+    background-image: url(../../img/home/wide/1920/home02.jpg);
   }
 }
 
 @media (max-width: 899px) {
   .home__image:nth-of-type(3) {
-    background-image: url(../../img/home/1280/home05.jpg);
+    background-image: url(../../img/home/tall/1280/home03.jpg);
   }
 }
 
 @media (min-width: 900px) {
   .home__image:nth-of-type(3) {
-    background-image: url(../../img/home/1920/home06.jpg);
+    background-image: url(../../img/home/wide/1920/home03.jpg);
+  }
+}
+
+@media (max-width: 899px) {
+  .home__image:nth-of-type(4) {
+    background-image: url(../../img/home/tall/1280/home04.jpg);
+  }
+}
+
+@media (min-width: 900px) {
+  .home__image:nth-of-type(4) {
+    background-image: url(../../img/home/wide/1920/home04.jpg);
+  }
+}
+
+@media (max-width: 899px) {
+  .home__image:nth-of-type(5) {
+    background-image: url(../../img/home/tall/1280/home05.jpg);
+  }
+}
+
+@media (min-width: 900px) {
+  .home__image:nth-of-type(5) {
+    background-image: url(../../img/home/wide/1920/home05.jpg);
+  }
+}
+
+@media (max-width: 899px) {
+  .home__image:nth-of-type(6) {
+    background-image: url(../../img/home/tall/1280/home06.jpg);
+  }
+}
+
+@media (min-width: 900px) {
+  .home__image:nth-of-type(6) {
+    background-image: url(../../img/home/wide/1920/home06.jpg);
+  }
+}
+
+@media (max-width: 899px) {
+  .home__image:nth-of-type(7) {
+    background-image: url(../../img/home/tall/1280/home07.jpg);
+  }
+}
+
+@media (min-width: 900px) {
+  .home__image:nth-of-type(7) {
+    background-image: url(../../img/home/wide/1920/home07.jpg);
   }
 }
 

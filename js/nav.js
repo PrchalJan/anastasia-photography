@@ -10,6 +10,17 @@ if(window.innerWidth > 899) {
   showSection(sections.home, true);
 }
 
+// RESIZING EVENTS
+window.addEventListener('resize', function() {
+
+} )
+
+
+
+
+
+
+
 
  // Open mobile menu on header icon click
  icons.openMenu.addEventListener('click', function() {
@@ -61,43 +72,7 @@ icons.headerTitle.addEventListener('click', function() {
 })
 
 
-// Show a single section
-// in: section, footer(yes/no)
-function showSection(section, footer=false) {
-  section.style.display = 'block';
-  if(footer) {
-    components.footer.style.display = 'block';
-  } else {
-    components.footer.style.display = 'none';
-  }
-}
 
-// Hide all sections
-function hideSections() {
-  for(let section in sections) {
-    sections[section].style.display = 'none';
-  }
-}
-
-function hideMenuSections() {
-  navBtns.artworks.classList.remove('nav__main-li--open');
-  navBtns.magazines.classList.remove('nav__main-li--open');
-}
-
-// Open main mobile menu
-function openMenu() {
-  if(!states.nav) {
-    document.body.classList.add('nav-mobile-open');
-  }
-  states.nav = true;
-}
-function closeMenu() {
-  if(states.nav) {
-    document.body.classList.remove('nav-mobile-open');
-    hideMenuSections();
-  }
-  states.nav = false;
-}
 
 
 

@@ -2,7 +2,7 @@
 $home-image-margins: 2.5rem;
 
 .home {
-  // border: 3px solid yellow;
+  border: 3px solid yellow;
   @include mobile {
     // height: calc(100vh - 60px);
     // height: 100%;
@@ -53,26 +53,58 @@ $home-image-margins: 2.5rem;
 .home__image:nth-of-type(1) {
   display: block;
   @include mobile {
-    background-image: url(../../img/home/1280/home01.jpg);
+    background-image: url(../../img/home/tall/1280/home01.jpg);
   }
   @include desktop {
-    background-image: url(../../img/home/1920/home02.jpg);
+    background-image: url(../../img/home/wide/1920/home01.jpg);
   }
 }
 .home__image:nth-of-type(2) {
   @include mobile {
-    background-image: url(../../img/home/1280/home03.jpg);
+    background-image: url(../../img/home/tall/1280/home02.jpg);
   }
   @include desktop {
-    background-image: url(../../img/home/1920/home04.jpg);
+    background-image: url(../../img/home/wide/1920/home02.jpg);
   }
 }
 .home__image:nth-of-type(3) {
   @include mobile {
-    background-image: url(../../img/home/1280/home05.jpg);
+    background-image: url(../../img/home/tall/1280/home03.jpg);
   }
   @include desktop {
-    background-image: url(../../img/home/1920/home06.jpg);
+    background-image: url(../../img/home/wide/1920/home03.jpg);
+  }
+}
+.home__image:nth-of-type(4) {
+  @include mobile {
+    background-image: url(../../img/home/tall/1280/home04.jpg);
+  }
+  @include desktop {
+    background-image: url(../../img/home/wide/1920/home04.jpg);
+  }
+}
+.home__image:nth-of-type(5) {
+  @include mobile {
+    background-image: url(../../img/home/tall/1280/home05.jpg);
+  }
+  @include desktop {
+    background-image: url(../../img/home/wide/1920/home05.jpg);
+  }
+}
+.home__image:nth-of-type(6) {
+  @include mobile {
+    background-image: url(../../img/home/tall/1280/home06.jpg);
+  }
+  @include desktop {
+    background-image: url(../../img/home/wide/1920/home06.jpg);
+  }
+}
+.home__image:nth-of-type(7) {
+  @include mobile {
+    background-image: url(../../img/home/tall/1280/home07.jpg);
+  }
+  @include desktop {
+    background-image: url(../../img/home/wide/1920/home07.jpg);
   }
 }
 
