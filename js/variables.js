@@ -61,6 +61,8 @@ export const variables = function() {
 
   // All home images
   // Cannot use keyword images because the file is called images
+  window.homeImgContainer = document.querySelector('.home__image-container');
+  
   window.imgs = {
     home: document.querySelectorAll('.home__image'),
   }
