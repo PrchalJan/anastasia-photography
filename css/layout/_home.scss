@@ -8,7 +8,7 @@ $home-image-margins: 2.5rem;
     // height: 100%;
     // margin-top: - $header-mobile-height;
     // padding-top: $header-mobile-height;
-    overflow-x: auto;
+    overflow-x: hidden;
   }
   @include desktop {
     position: absolute;

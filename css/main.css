@@ -851,7 +851,7 @@ ul {
 
 @media (max-width: 899px) {
   .home {
-    overflow-x: auto;
+    overflow-x: hidden;
   }
 }
 
