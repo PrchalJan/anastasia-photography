@@ -5,11 +5,14 @@ export const images = function() {
 
 
 
-document.addEventListener('load', function() {
+window.addEventListener('load', function() {
+  console.log('loaded');
   setInterval(function() {
     showSlide(currentHomeIndex + 1, imgs.home);
   }, 4000);
 })
+
+
 
 
 
