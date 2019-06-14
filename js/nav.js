@@ -59,6 +59,7 @@ for( let btn in navBtnsDirect) {
   navBtnsDirect[btn].addEventListener('click', function() {
     hideSections();
     showSection(sections[btn], true);
+    closeMenu();
   })
 }
 

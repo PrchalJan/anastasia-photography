@@ -60,7 +60,7 @@ window.showSlide = function(index, slides) {
 }
 
 // Sets the height of the home section appropriately
-window.properHomeHeight = function() {
+window.setProperHomeHeight = function() {
   if(window.innerWidth < 900) {
     sections.home.style.height = `${window.innerHeight -60}px`;
   } else {

@@ -1003,7 +1003,7 @@ ul {
     top: 2.5rem;
     right: 2.5rem;
     bottom: 2.5rem;
-    left: 2.5rem;
+    left: 1rem;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
   }

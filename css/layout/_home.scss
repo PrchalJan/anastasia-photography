@@ -120,7 +120,8 @@ $home-image-margins: 2.5rem;
       top: $home-image-margins;
       right: $home-image-margins;
       bottom: $home-image-margins;
-      left: $home-image-margins;
+      // left: $home-image-margins;
+      left: 1rem;
       transform: translateZ(0);
     }
   }
