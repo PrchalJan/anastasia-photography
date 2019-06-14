@@ -22,7 +22,7 @@ homeImgContainer.style.width = `${homeImageLength * 100}%`;
 
 
 // homeImgContainer.style.transform = 'translateX(-5%)';
-homeImgContainer.style.transform = `translateX(-${singleIteration*1}%)`;
+// homeImgContainer.style.transform = `translateX(-${singleIteration*1}%)`;
 
 
 
