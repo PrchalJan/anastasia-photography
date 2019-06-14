@@ -8,7 +8,7 @@ $home-image-margins: 2.5rem;
     // height: 100%;
     // margin-top: - $header-mobile-height;
     // padding-top: $header-mobile-height;
-    overflow-x: hidden;
+    
   }
   @include desktop {
     position: absolute;
@@ -21,15 +21,31 @@ $home-image-margins: 2.5rem;
     transition: transform $home-animation-duration;
   }
 }
-.home__image-container {
-  // border: 5px solid red;
+.home__container {
+  // border: 5px solid gold;
+  overflow-x: hidden;
   @include mobile {
     width: 100%;
     height: 100%;
-    display: flex;
-    align-items: center;
-    
-
+  }
+  @include desktop {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    // doesn't work... don't know why..
+    transform: translateZ(0);
+    transition: all $home-animation-duration;
+  }
+}
+.home__image-container {
+  // border: 5px solid red;
+  display: flex;
+  align-items: center;
+  @include mobile {
+    width: 100%;
+    height: 100%;
   }
   @include desktop {
     position: absolute;
@@ -54,8 +70,8 @@ $home-image-margins: 2.5rem;
     // min-width: 100%;
   }
   @include desktop {
-    position: absolute;
-    display: none;
+    // position: absolute;
+    // display: none;
   }
 
 }
@@ -66,7 +82,7 @@ $home-image-margins: 2.5rem;
   }
   @include desktop {
     background-image: url(../../img/home/wide/1920/home01.jpg);
-    display: block;
+    // display: block;
   }
 }
 .home__image:nth-of-type(2) {
@@ -125,7 +141,7 @@ $home-image-margins: 2.5rem;
       transform: translateZ(0);
     }
   }
-  .home__image-container {
+  .home__container {
     @include desktop {
       top: $home-image-margins;
       right: $home-image-margins;

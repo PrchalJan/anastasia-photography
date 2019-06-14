@@ -17,6 +17,10 @@ export const images = function() {
 const homeImageLength = homeImgContainer.children.length
 const singleIteration = (100 / homeImageLength);
 // Set the proper width of image container
+if(window.innerWidth < 899) {
+  
+}
+
 homeImgContainer.style.width = `${homeImageLength * 100}%`;
 
 
