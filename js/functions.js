@@ -14,6 +14,16 @@ window.showSection = function(section, footer=false) {
   }
 }
 
+// Show Proper Home Section
+window.showHomeSection = function() {
+  hideSections();
+  if(window.innerWidth > 899) {
+    showSection(sections.home);
+  } else {
+    showSection(sections.home, true);
+  }
+}
+
 // Hide all sections
 window.hideSections = function() {
   for(let section in sections) {

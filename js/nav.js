@@ -65,8 +65,7 @@ for( let btn in navBtnsDirect) {
 
 // Go home on header title click
 icons.headerTitle.addEventListener('click', function() {
-  hideSections();
-  showSection(sections.home);
+  showHomeSection();
 })
 
 

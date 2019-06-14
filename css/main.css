@@ -1204,6 +1204,12 @@ ul {
   font-weight: 300;
 }
 
+@media (max-width: 899px) {
+  .contact {
+    min-height: 100vh;
+  }
+}
+
 .contact__h2 {
   font-weight: 300;
 }

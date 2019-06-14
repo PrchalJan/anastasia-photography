@@ -1,5 +1,8 @@
 .contact {
   @include font($font-light);
+  @include mobile {
+    min-height: 100vh;
+  }
 }
 .contact__h2 {
   font-weight: $font-light;
