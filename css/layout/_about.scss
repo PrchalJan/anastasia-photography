@@ -1,5 +1,7 @@
 .about {
-
+  @include mobile {
+    min-height: calc(100vh - #{$header-mobile-height});
+  }
 }
 .about__h2 {
   font-weight: $font-light;

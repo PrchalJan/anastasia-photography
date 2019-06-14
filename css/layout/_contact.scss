@@ -1,7 +1,7 @@
 .contact {
   @include font($font-light);
   @include mobile {
-    min-height: 100vh;
+    min-height: calc(100vh - #{$header-mobile-height});
   }
 }
 .contact__h2 {

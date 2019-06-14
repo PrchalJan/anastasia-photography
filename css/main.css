@@ -1191,6 +1191,12 @@ ul {
   display: inline-block;
 }
 
+@media (max-width: 899px) {
+  .about {
+    min-height: calc(100vh - 6rem);
+  }
+}
+
 .about__h2 {
   font-weight: 300;
 }
@@ -1206,7 +1212,7 @@ ul {
 
 @media (max-width: 899px) {
   .contact {
-    min-height: 100vh;
+    min-height: calc(100vh - 6rem);
   }
 }
 
