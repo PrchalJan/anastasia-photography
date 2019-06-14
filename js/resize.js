@@ -18,19 +18,13 @@ window.addEventListener('resize', function() {
 
 // Resize home height on window change
 window.addEventListener('resize', debounce(function() {
-  console.log(widthBank);
-  if(!(widthBank === window.innerWidth)) {
+  if(!(widthBank === window.innerWidth) || window.innerWidth > 899) {
     setProperHomeHeight();
-    
     if(sections.home.style.display === 'block') {
       showHomeSection();
     }
   }
   widthBank = window.innerWidth;
-  console.log(sections.home.style.display);
-
-  
-
 }, 350));
 
 
