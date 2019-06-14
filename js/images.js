@@ -27,10 +27,17 @@ homeImgContainer.style.width = `${homeImageLength * 100}%`;
 let homeImageIndex = 0;
 
 function show(index) {
+  if(index > homeImageLength -1) {
+    index = 0;
+  }
+  if(index < 0) {
+    index = homeImageLength -1;
+  }
   homeImgContainer.style.transform = `translateX(-${singleIteration*index}%)`;
+  homeImageIndex = index;
 }
 
-document.body.addEventListener('click', function() {
+homeImgContainer.addEventListener('click', function() {
   show(homeImageIndex += 1);
 })
 
