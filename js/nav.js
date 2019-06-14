@@ -10,10 +10,7 @@ if(window.innerWidth > 899) {
   showSection(sections.home, true);
 }
 
-// RESIZING EVENTS
-window.addEventListener('resize', function() {
 
-} )
 
 
 

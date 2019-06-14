@@ -13,7 +13,7 @@
     background-color: rgba(255, 255, 255, 0.0);
     display: flex;
     justify-content: flex-end;
-    transition: background-color 800ms;
+    transition: background-color $menu-animation-duration;
     // hidden by default
     transform: translateX(100%);
   }

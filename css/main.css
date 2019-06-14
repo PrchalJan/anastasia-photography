@@ -602,8 +602,8 @@ ul {
     -webkit-box-pack: end;
         -ms-flex-pack: end;
             justify-content: flex-end;
-    -webkit-transition: background-color 800ms;
-    transition: background-color 800ms;
+    -webkit-transition: background-color 350ms;
+    transition: background-color 350ms;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
   }
