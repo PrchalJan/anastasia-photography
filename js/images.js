@@ -13,12 +13,16 @@ export const images = function() {
 // })
 
 
-console.log(homeImgContainer.children.length);
 
+const homeImageLength = homeImgContainer.children.length
+const singleIteration = (100 / homeImageLength);
 // Set the proper width of image container
-homeImgContainer.style.width = `${homeImgContainer.children.length * 100}%`;
+homeImgContainer.style.width = `${homeImageLength * 100}%`;
 
-// homeImgContainer.style.transform = 'translateX(-15%)';
+
+
+// homeImgContainer.style.transform = 'translateX(-5%)';
+homeImgContainer.style.transform = `translateX(-${singleIteration*1}%)`;
 
 
 

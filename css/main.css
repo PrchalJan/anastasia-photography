@@ -367,6 +367,7 @@ html {
 body {
   font-size: 16px;
   height: 100%;
+  overflow-x: hidden;
 }
 
 main {
@@ -845,6 +846,12 @@ ul {
   .home--clicked .nav {
     -webkit-transform: translateX(0);
             transform: translateX(0);
+  }
+}
+
+@media (max-width: 899px) {
+  .home {
+    overflow-x: auto;
   }
 }
 
