@@ -5,6 +5,9 @@ export const variables = function() {
   window.previousHomeIndex = 0;
   window.currentHomeIndex = 0;
 
+  // Width Bank
+  window.widthBank = window.innerWidth;
+
 
   window.states = {
     clicked: false,
