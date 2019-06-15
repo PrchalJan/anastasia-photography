@@ -14,14 +14,17 @@ export const images = function() {
 
 
 
-const homeImageLength = homeImgContainer.children.length
-const singleIteration = (100 / homeImageLength);
+const homeImageCount = home.imageContainer.children.length
+const singleIteration = (100 / homeImageCount);
 // Set the proper width of image container
 if(window.innerWidth < 899) {
   
 }
 
-homeImgContainer.style.width = `${homeImageLength * 100}%`;
+home.imageContainer.style.width = `${homeImageCount * 100}%`;
+console.log(home.imageContainer);
+console.log(home.imageContainer.style.width);
+
 
 
 
@@ -31,17 +34,20 @@ homeImgContainer.style.width = `${homeImageLength * 100}%`;
 let homeImageIndex = 0;
 
 function show(index) {
-  if(index > homeImageLength -1) {
+  if(index > homeImageCount -1) {
     index = 0;
   }
   if(index < 0) {
-    index = homeImageLength -1;
+    index = homeImageCount -1;
   }
-  homeImgContainer.style.transform = `translateX(-${singleIteration*index}%)`;
+  home.imageContainer.style.transform = `translateX(-${singleIteration*index}%)`;
   homeImageIndex = index;
 }
 
-homeImgContainer.addEventListener('click', function() {
+home.left.addEventListener('click', function() {
+  show(homeImageIndex -= 1);
+})
+home.right.addEventListener('click', function() {
   show(homeImageIndex += 1);
 })
 
