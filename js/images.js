@@ -59,8 +59,12 @@ home.right.addEventListener('click', function() {
 sections.home.addEventListener('touchstart', handleTouchStart, false);
 sections.home.addEventListener('touchmove', function(e) {
   handleTouchMove(e,
-                  show(homeImageIndex -= 1),
-                  show(homeImageIndex += 1))
+                  function() {
+                    show(homeImageIndex -= 1)
+                  },
+                  function() {
+                    show(homeImageIndex += 1)
+                  })
 }, false);
 
 
