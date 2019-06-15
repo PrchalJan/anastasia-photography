@@ -5,12 +5,13 @@ export const images = function() {
 
 
 
-// window.addEventListener('load', function() {
-//   console.log('loaded');
-//   setInterval(function() {
-//     showSlide(currentHomeIndex + 1, imgs.home);
-//   }, 4000);
-// })
+window.addEventListener('load', function() {
+  console.log('loaded');
+  setInterval(function() {
+    // showSlide(currentHomeIndex + 1, imgs.home);
+    show(homeImageIndex += 1);
+  }, 4000);
+})
 
 
 
