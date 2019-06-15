@@ -85,6 +85,8 @@ window.setProperHomeHeight = function() {
 
 
 
+
+
 // Postpone resizing events
 window.debounce = function(func, wait, immediate) {
   var timeout;
