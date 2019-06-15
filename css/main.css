@@ -921,10 +921,10 @@ ul {
       -ms-flex-align: center;
           align-items: center;
   z-index: -1;
-  -webkit-transition: -webkit-transform 500ms;
-  transition: -webkit-transform 500ms;
-  transition: transform 500ms;
-  transition: transform 500ms, -webkit-transform 500ms;
+  -webkit-transition: -webkit-transform 450ms;
+  transition: -webkit-transform 450ms;
+  transition: transform 450ms;
+  transition: transform 450ms, -webkit-transform 450ms;
 }
 
 @media (max-width: 899px) {
