@@ -44,13 +44,25 @@ function show(index) {
   home.imageContainer.style.transform = `translateX(-${singleIteration*index}%)`;
   homeImageIndex = index;
 }
-
+// Change image to previous  on left side click
 home.left.addEventListener('click', function() {
   show(homeImageIndex -= 1);
 })
+// Change image to next on right side click
 home.right.addEventListener('click', function() {
   show(homeImageIndex += 1);
 })
+// Change image on swipe
+
+
+// Detect swipe:
+sections.home.addEventListener('touchstart', handleTouchStart, false);
+sections.home.addEventListener('touchmove', function(e) {
+  handleTouchMove(e,
+                  show(homeImageIndex -= 1),
+                  show(homeImageIndex += 1))
+}, false);
+
 
 
 
