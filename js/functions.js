@@ -127,7 +127,7 @@ window.handleTouchMove = function(e, left, right, up, down) {
   var yDiff = yDown - yUp;
 
   if(Math.abs(xDiff) > Math.abs(yDiff)) {
-    if(xDiff < 0) {
+    if(xDiff > 0) {
       // Left Swipe
       left();
     } else {
