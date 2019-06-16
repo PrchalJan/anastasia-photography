@@ -46,6 +46,9 @@ $home-image-margins: 2.5rem;
   top: 0;
   bottom: 0;
   // z-index: 3;
+  @include desktop {
+    display: none;
+  }
 }
 .home__left {
   left: 0;
@@ -184,6 +187,11 @@ $home-image-margins: 2.5rem;
       // left: $home-image-margins;
       left: 1rem;
       transform: translateZ(0);
+    }
+  }
+  .home__navigation {
+    @include desktop {
+      display: block;
     }
   }
 }

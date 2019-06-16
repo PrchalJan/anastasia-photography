@@ -907,6 +907,12 @@ ul {
   bottom: 0;
 }
 
+@media (min-width: 900px) {
+  .home__navigation {
+    display: none;
+  }
+}
+
 .home__left {
   left: 0;
   right: 50%;
@@ -1080,6 +1086,12 @@ ul {
     left: 1rem;
     -webkit-transform: translateZ(0);
             transform: translateZ(0);
+  }
+}
+
+@media (min-width: 900px) {
+  .home--clicked .home__navigation {
+    display: block;
   }
 }
 
