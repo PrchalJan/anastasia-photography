@@ -1079,6 +1079,11 @@ ul {
   }
 }
 
+.home--immediate-transition .home__image-container {
+  -webkit-transition: none;
+  transition: none;
+}
+
 @media (min-width: 900px) {
   .artworks .container {
     position: relative;

@@ -75,16 +75,25 @@ function showPreviousImage(set) {
   showImage(set);
 }
 function showImage(set) {
-  setProperIndex(set);
+  console.log('Before Check Index: ' + imageIndexes[set])
+  checkIndex(set);
+  console.log('After Check Index: ' + imageIndexes[set])
   setContainerPosition(set);
 }
-function setProperIndex(set) {
+function checkIndex(set) {
   if(imageIndexes[set] > imageCount[set] -1) {
+    document.body.classList.add('home--immediate-transition');
+    console.log(document.body);
     imageIndexes[set] = 0;
+    setContainerPosition(set);
+    
+    imageIndexes[set] = 1;
+    console.log(document.body);
   }
   if(imageIndexes[set] < 0) {
     imageIndexes[set] = imageCount[set] -1;
   }
+  document.body.classList.remove('home--immediate-transition');
 }
 function setContainerPosition(set) {
   // multiply the width of a signle image times nth-index
