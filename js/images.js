@@ -92,10 +92,18 @@ function checkIndex(set) {
       document.body.classList.remove('home--immediate-transition');
       imageIndexes[set] = 1;
       // 7 ms for ie
-    }, .1)
+    }, 7)
   }
   if(imageIndexes[set] < 0) {
+    document.body.classList.add('home--immediate-transition');
     imageIndexes[set] = imageCount[set] -1;
+    setContainerPosition(set);
+    setTimeout(function() {
+      document.body.classList.remove('home--immediate-transition');
+      // imageIndexes[set] = 1;
+      imageIndexes[set] = imageCount[set] -2;
+      // 7 ms for ie
+    }, 7)
   }
   // imageContainers[set].style.transition = 'transform 1s';
   // document.body.classList.remove('home--immediate-transition');
@@ -111,7 +119,7 @@ function setContainerPositionDelayed(set) {
     const position = getSingleIteration(set) * imageIndexes[set];
     imageContainers[set].style.transform = `translateX(-${position}%)`;
     // 7 ms for ie
-  }, .1)
+  }, 7)
 }
 // Divide the container by the number of images
 function getSingleIteration(set) {
