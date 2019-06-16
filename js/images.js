@@ -11,7 +11,6 @@ window.addEventListener('load', function() {
   startHomeIteration()
 })
 
-
 function startHomeIteration() {
   interval.home = setInterval(function() {
     showNextImage('home');
@@ -22,37 +21,10 @@ function startHomeIteration() {
 function setImageContainerWidth(set) {
   imageContainers[set].style.width = `${imageCount[set] * 100}%`
 }
-
 setImageContainerWidth('home');
 
 
-// const homeImageCount = home.imageContainer.children.length
-// const singleIteration = (100 / homeImageCount);
-// // Set the proper width of image container
-// if(window.innerWidth < 899) {
-  
-// }
 
-// home.imageContainer.style.width = `${homeImageCount * 100}%`;
-// console.log(home.imageContainer);
-// console.log(home.imageContainer.style.width);
-
-
-// homeImgContainer.style.transform = 'translateX(-5%)';
-// homeImgContainer.style.transform = `translateX(-${singleIteration*1}%)`;
-
-// let homeImageIndex = 0;
-
-// function show(index) {
-//   if(index > homeImageCount -1) {
-//     index = 0;
-//   }
-//   if(index < 0) {
-//     index = homeImageCount -1;
-//   }
-  // home.imageContainer.style.transform = `translateX(-${singleIteration*index}%)`;
-  // homeImageIndex = index;
-// }
 // Change image to previous  on left side click
 home.left.addEventListener('click', function() {
   showPreviousHomeImage();
@@ -61,9 +33,10 @@ home.left.addEventListener('click', function() {
 home.right.addEventListener('click', function() {
   showNextHomeImage();
 })
+
+
+
 // Change image on swipe
-
-
 // Detect swipe:
 sections.home.addEventListener('touchstart', handleTouchStart, false);
 sections.home.addEventListener('touchmove', function(e) {
@@ -79,23 +52,20 @@ sections.home.addEventListener('touchmove', function(e) {
 
 
 function showNextHomeImage() {
-  clearInterval(interval.home);
-  clearTimeout(timeout.home);
-  timeout.home = setTimeout(function() {
-    startHomeIteration()
-  }, 6000);
-  showNextImage('home')
+  postponeIteration('home');
+  showNextImage('home');
 }
 function showPreviousHomeImage() {
-  clearInterval(interval.home);
-  clearTimeout(timeout.home);
-  timeout.home = setTimeout(function() {
+  postponeIteration('home');
+  showPreviousImage('home');
+}
+function postponeIteration(set) {
+  clearInterval(interval[set]);
+  clearTimeout(timeout[set]);
+  timeout[set] = setTimeout(function() {
     startHomeIteration()
   }, 6000);
-  showPreviousImage('home')
 }
-
-
 function showNextImage(set) {
   imageIndexes[set] += 1;
   showImage(set);
@@ -104,12 +74,10 @@ function showPreviousImage(set) {
   imageIndexes[set] -= 1;
   showImage(set);
 }
-
 function showImage(set) {
   setProperIndex(set);
   setContainerPosition(set);
 }
-
 function setProperIndex(set) {
   if(imageIndexes[set] > imageCount[set] -1) {
     imageIndexes[set] = 0;
