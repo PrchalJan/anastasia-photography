@@ -1,3 +1,5 @@
+// import { TIMEOUT } from "dns";
+
 export const images = function() {
 
 // keep changing home images
@@ -53,13 +55,11 @@ setImageContainerWidth('home');
 // }
 // Change image to previous  on left side click
 home.left.addEventListener('click', function() {
-  clearInterval(interval.home);
-  showPreviousImage('home');
+  showPreviousHomeImage();
 })
 // // Change image to next on right side click
 home.right.addEventListener('click', function() {
-  clearInterval(interval.home);
-  showNextImage('home');
+  showNextHomeImage();
 })
 // Change image on swipe
 
@@ -69,13 +69,31 @@ sections.home.addEventListener('touchstart', handleTouchStart, false);
 sections.home.addEventListener('touchmove', function(e) {
   handleTouchMove(e,
                   function() {
-                    showPreviousImage('home');
+                    showPreviousHomeImage();
                   },
                   function() {
-                    showNextImage('home');
+                    showNextHomeImage();
                   })
 }, false);
 
+
+
+function showNextHomeImage() {
+  clearInterval(interval.home);
+  clearTimeout(timeout.home);
+  timeout.home = setTimeout(function() {
+    startHomeIteration()
+  }, 6000);
+  showNextImage('home')
+}
+function showPreviousHomeImage() {
+  clearInterval(interval.home);
+  clearTimeout(timeout.home);
+  timeout.home = setTimeout(function() {
+    startHomeIteration()
+  }, 6000);
+  showPreviousImage('home')
+}
 
 
 function showNextImage(set) {

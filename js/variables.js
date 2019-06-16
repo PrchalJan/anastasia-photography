@@ -21,6 +21,9 @@ export const variables = function() {
   window.interval = {
     home: null,
   }
+  window.timeout = {
+    home: null,
+  }
 
   window.imageIndexes = {
     home: 0,
