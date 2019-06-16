@@ -191,6 +191,6 @@ $home-image-margins: 2.5rem;
 
 .home--immediate-transition {
   .home__image-container {
-    transition: none;
+    transition-property: none;
   } 
 }

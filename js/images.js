@@ -78,27 +78,38 @@ function showImage(set) {
   console.log('Before Check Index: ' + imageIndexes[set])
   checkIndex(set);
   console.log('After Check Index: ' + imageIndexes[set])
-  setContainerPosition(set);
+  setContainerPositionDelayed(set);
+  // document.body.classList.remove('home--immediate-transition');
 }
 function checkIndex(set) {
+  
   if(imageIndexes[set] > imageCount[set] -1) {
     document.body.classList.add('home--immediate-transition');
-    console.log(document.body);
     imageIndexes[set] = 0;
+    // imageContainers[set].style.transform = 'translateX(0)';
     setContainerPosition(set);
-    
-    imageIndexes[set] = 1;
-    console.log(document.body);
+    setTimeout(function() {
+      document.body.classList.remove('home--immediate-transition');
+      imageIndexes[set] = 1;
+    }, .1)
   }
   if(imageIndexes[set] < 0) {
     imageIndexes[set] = imageCount[set] -1;
   }
-  document.body.classList.remove('home--immediate-transition');
+  // imageContainers[set].style.transition = 'transform 1s';
+  // document.body.classList.remove('home--immediate-transition');
 }
 function setContainerPosition(set) {
   // multiply the width of a signle image times nth-index
   const position = getSingleIteration(set) * imageIndexes[set];
   imageContainers[set].style.transform = `translateX(-${position}%)`;
+}
+function setContainerPositionDelayed(set) {
+  // multiply the width of a signle image times nth-index
+  setTimeout(function() {
+    const position = getSingleIteration(set) * imageIndexes[set];
+    imageContainers[set].style.transform = `translateX(-${position}%)`;
+  },.1)
 }
 // Divide the container by the number of images
 function getSingleIteration(set) {
