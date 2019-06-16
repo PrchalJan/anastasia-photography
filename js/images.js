@@ -91,6 +91,7 @@ function checkIndex(set) {
     setTimeout(function() {
       document.body.classList.remove('home--immediate-transition');
       imageIndexes[set] = 1;
+      // 7 ms for ie
     }, .1)
   }
   if(imageIndexes[set] < 0) {
@@ -109,7 +110,8 @@ function setContainerPositionDelayed(set) {
   setTimeout(function() {
     const position = getSingleIteration(set) * imageIndexes[set];
     imageContainers[set].style.transform = `translateX(-${position}%)`;
-  },.1)
+    // 7 ms for ie
+  }, .1)
 }
 // Divide the container by the number of images
 function getSingleIteration(set) {
