@@ -15,6 +15,31 @@ export const variables = function() {
     lightbox: false,
     footer: false
   }
+
+
+// IMAGE VARIABLES START
+  window.interval = {
+    home: null,
+  }
+
+  window.imageIndexes = {
+    home: 0,
+  }
+
+  window.imageContainers = {
+    home: document.querySelector('.home__image-container'),
+  }
+
+  window.imageSets = {
+    home: imageContainers.home.children,
+  }
+
+  window.imageCount = {
+    home: imageSets.home.length,
+  }
+// IMAGE VARIABLES FINISH
+
+
   
   
   window.icons = {

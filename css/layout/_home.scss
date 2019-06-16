@@ -60,11 +60,13 @@ $home-image-margins: 2.5rem;
   display: flex;
   align-items: center;
   z-index: -1;
-  transition: transform $slide-animation-duration;
+  // transition: transform $slide-animation-duration;
+  transition-property: transform;
   @include mobile {
     width: 100%;
     height: 100%;
     position: relative;
+    transition-duration: $mobile-slide-animation-duration;
     // z-index: -1;
   }
   @include desktop {
@@ -73,10 +75,13 @@ $home-image-margins: 2.5rem;
     right: 0;
     bottom: 0;
     left: 0;
+    transition-duration: $desktop-slide-animation-duration;
+    transition-timing-function: ease-in-out;
     // doesn't work... don't know why..
     // transform: translateZ(0);
-    
-    
+  }
+  @include desktop-large {
+    transition-duration: $desktop-big-slide-animation-duration;
   }
 }
 .home__image {
