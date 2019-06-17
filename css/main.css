@@ -1167,31 +1167,31 @@ ul {
 
 @media (max-width: 899px) {
   .archive__figure {
-    padding: 2px;
+    padding: 4px;
   }
 }
 
 @media (max-width: 600px) {
   .archive__figure {
-    padding: 1px;
+    padding: 2px;
   }
 }
 
 @media (min-width: 900px) {
   .archive__figure {
-    padding: 2px;
+    padding: 6px;
   }
 }
 
 @media (min-width: 1249px) {
   .archive__figure {
-    padding: 4px;
+    padding: 8px;
   }
 }
 
 @media (min-width: 1800px) {
   .archive__figure {
-    padding: 5px;
+    padding: 10px;
   }
 }
 

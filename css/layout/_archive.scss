@@ -33,21 +33,21 @@
   position: absolute;
   
   @include mobile {
-    padding: 2px;
+    padding: 4px;
 
   }
   @include mobile-small {
-    padding: 1px;
+    padding: 2px;
   }
   @include desktop {
-    padding: 2px;
+    padding: 6px;
 
   }
   @include desktop-mid {
-    padding: 4px;
+    padding: 8px;
   }
   @include desktop-large {
-    padding: 5px;
+    padding: 10px;
   }
 }
 

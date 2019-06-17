@@ -74,7 +74,7 @@ window.addEventListener("load", function() {
 window.addEventListener("resize", function() {
   setTimeout(function() {
     renderArchiveGrid();
-  }, 1000);
+  }, 1);
 }, false);
 
 
