@@ -1,26 +1,26 @@
 export const grid = function() {
 
-// function renderGrid(blocks, cols, padding){
+// function renderGrid(grids, colCount, padding){
 //   var pad = padding || 0;
 //   var newleft, newtop;
-//   for(var i = 1; i < blocks.length; i++){
-//     if (i % cols == 0) {
-//       newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
-//         blocks[i].style.top = newtop+"px";
+//   for(var i = 1; i < grids.length; i++){
+//     if (i % colCount == 0) {
+//       newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight) + pad;
+//         grids[i].style.top = newtop+"px";
 //     } else {
-//       if(blocks[i-cols]){
-//         newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
-//         blocks[i].style.top = newtop+"px";
+//       if(grids[i-colCount]){
+//         newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight) + pad;
+//         grids[i].style.top = newtop+"px";
 //       }
-//       newleft = (blocks[i-1].offsetLeft + blocks[i-1].offsetWidth) + pad;
-//       blocks[i].style.left = newleft+"px";	
+//       newleft = (grids[i-1].offsetLeft + grids[i-1].offsetWidth) + pad;
+//       grids[i].style.left = newleft+"px";	
 //     }
 //     }
 // }
 
-// function renderArchiveGrid(cols, padding) {
-//   const blocks = document.querySelectorAll('.archive__figure');
-//   return renderGrid.call(this, blocks, cols, padding)
+// function renderArchiveGrid(colCount, padding) {
+//   const grids = document.querySelectorAll('.archive__figure');
+//   return renderGrid.call(this, grids, colCount, padding)
 // }
 
 // window.document.body.addEventListener('load', function() {
@@ -29,35 +29,56 @@ export const grid = function() {
 
 // from scratch
 
-function renderGrid(columns,padding){
-  var pad = padding || 0;
-  var cols = columns || 1;
-  var blocks = document.querySelectorAll('.archive__figure');
-  var container = blocks[0].parentElement;
-  console.log(container);
-  for(let i = 0; i < blocks.length; i++) {
-    blocks[i].style.width = ((100 / cols) + '%');
-    console.log(blocks[i]);
+function setGridBlockElementsWidth(grids, colCount) {
+  for(let i = 0; i < grids.length; i++) {
+    grids[i].style.width = ((100 / colCount) + '%');
+    console.log(grids[i]);
   }
-	var newleft, newtop;
-	for(var i = 1; i < blocks.length; i++){
-		if (i % cols == 0) {
-			newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
-		    blocks[i].style.top = newtop+"px";
-		} else {
-			if(blocks[i-cols]){
-				newtop = (blocks[i-cols].offsetTop + blocks[i-cols].offsetHeight) + pad;
-				blocks[i].style.top = newtop+"px";
-			}
-			newleft = (blocks[i-1].offsetLeft + blocks[i-1].offsetWidth) + pad;
-			blocks[i].style.left = newleft+"px";	
-		}
+}
+
+function renderGrid(columns){
+  var colCount = columns || 1;
+  var grids = document.querySelectorAll('.archive__figure');
+  var container = grids[0].parentElement;
+  setGridBlockElementsWidth(grids, colCount)
+
+
+	// var newleft, newtop;
+	// for(var i = 1; i < grids.length; i++){
+	// 	if (i % colCount == 0) {
+	// 		newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight);
+	// 	    grids[i].style.top = newtop+"px";
+	// 	} else {
+	// 		if(grids[i-colCount]){
+	// 			newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight);
+	// 			grids[i].style.top = newtop+"px";
+	// 		}
+	// 		newleft = (grids[i-1].offsetLeft + grids[i-1].offsetWidth);
+	// 		grids[i].style.left = newleft+"px";	
+	// 	}
+  // }
+  function placeElements(grids,colCount) {
+    let newleft, newtop;
+    for(let i = 1; i < grids.length; i++){
+      if (i % colCount == 0) {
+        newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight);
+          grids[i].style.top = newtop + "px";
+      } else {
+        if(grids[i-colCount]){
+          newtop = (grids[i-colCount].offsetTop + grids[i-colCount].offsetHeight);
+          grids[i].style.top = newtop + "px";
+        }
+        newleft = (grids[i-1].offsetLeft + grids[i-1].offsetWidth);
+        grids[i].style.left = newleft + "px";	
+      }
+    }
   }
+  placeElements(grids, colCount);
   
   var containerHeight = 0;
-  for(var i = ((blocks.length - cols)-1); i < blocks.length -1; i++) {
-    let topPosition = blocks[i].offsetTop;
-    let height = parseInt(getComputedStyle(blocks[i]).height);
+  for(var i = ((grids.length - colCount)-1); i < grids.length -1; i++) {
+    let topPosition = grids[i].offsetTop;
+    let height = parseInt(getComputedStyle(grids[i]).height);
     let newContainerHeight = topPosition + height;
     if(containerHeight > newContainerHeight) {
       continue;
@@ -66,17 +87,17 @@ function renderGrid(columns,padding){
     }
   }
 
-  var lastBlockTopPosition = blocks[blocks.length -1].offsetTop;
-  var lastBlockHeight = parseInt(getComputedStyle(blocks[blocks.length -1]).height);
+  var lastBlockTopPosition = grids[grids.length -1].offsetTop;
+  var lastBlockHeight = parseInt(getComputedStyle(grids[grids.length -1]).height);
   console.log(lastBlockTopPosition + lastBlockHeight);
   container.style.height = (containerHeight) + 'px';
 
 }
 window.addEventListener("load", function() {
-  renderGrid(2);
+  renderGrid(3);
 }, false);
 window.addEventListener("resize", function() {
-  renderGrid(2);
+  renderGrid(3);
 }, false);
 
 

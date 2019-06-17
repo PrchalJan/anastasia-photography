@@ -2,13 +2,14 @@
 // I'm also styling diaryofagirl section here
 
 .archive {
-  border: 4px solid blue;
+  // border: 4px solid blue;
   @include desktop {
-    padding: $section-margin 0;
+    padding-bottom: $section-margin;
+    padding-top: $top-margin;
   }
 }
 .archive__content {
-  border: 3px solid red;
+  // border: 3px solid red;
   position: relative;
   min-height: 100vh;
 
@@ -28,18 +29,21 @@
   position: absolute;
   
   @include mobile {
+    padding: 2px;
 
   }
   @include mobile-small {
-
+    padding: 1px;
   }
   @include desktop {
-    width: 33.34%;
-    padding: 5px;
+    padding: 2px;
 
   }
   @include desktop-mid {
-
+    padding: 4px;
+  }
+  @include desktop-large {
+    padding: 5px;
   }
 }
 
