@@ -4,12 +4,14 @@ export const nav = function() {
 // Hide All Sections On Page Load
 hideSections();
 // Show only Home Section on page load
-if(window.innerWidth > 899) {
-  showSection(sections.home);
-} else {
-  showSection(sections.home, true);
-}
+// if(window.innerWidth > 899) {
+//   showSection(sections.home);
+// } else {
+//   showSection(sections.home, true);
+// }
 
+showSection(sections.archive, true);
+document.body.classList.add('home--clicked');
 
 
 

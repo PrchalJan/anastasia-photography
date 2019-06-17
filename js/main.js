@@ -9,6 +9,8 @@ import { nav } from './nav';
 nav();
 import { images } from './images';
 images();
+import { grid } from './grid';
+grid();
 
 
 
