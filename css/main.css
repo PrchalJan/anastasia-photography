@@ -1151,8 +1151,8 @@ ul {
 
 @media (min-width: 900px) {
   .archive {
-    padding-bottom: 7rem;
     padding-top: 3rem;
+    padding-bottom: 7rem;
   }
 }
 

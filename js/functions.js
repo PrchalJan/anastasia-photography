@@ -99,9 +99,13 @@ window.debounce = function(func, wait, immediate) {
       timeout = null;
       if (!immediate) {
         func.apply(context, args);
+        console.log('debounced')
       }
     }, wait);
-    if (callNow) func.apply(context, args);
+    if (callNow) {
+      func.apply(context, args);
+      console.log('debounced');
+    } 
   }
 }
 

@@ -37,8 +37,7 @@ function setGridContainerHeight(grids, colCount) {
   }
   container.style.height = (containerHeight) + 'px';
 }
-
-function renderGrid(columns){
+function renderGrid(grids, columns){
   var colCount = columns || 1;
   var grids = document.querySelectorAll('.archive__figure');
 
@@ -46,11 +45,36 @@ function renderGrid(columns){
   placeGrids(grids, colCount);
   setGridContainerHeight(grids, colCount);
 }
+
+
+
+
+
+function renderResponsiveGrid(grids) {
+  if(window.innerWidth < 601) {
+    return renderGrid.call(this, grids, 2);
+  }else if(window.innerWidth < 900) {
+    return renderGrid.call(this, grids, 3);
+  }else {
+    return renderGrid.call(this, grids, 4);
+  }
+}
+
+function renderArchiveGrid() {
+  var grids = document.querySelectorAll('.archive__figure');
+  return renderResponsiveGrid.call(this, grids)
+}
+
+
+
+// Call the functions
 window.addEventListener("load", function() {
-  renderGrid(3);
+  renderArchiveGrid();
 }, false);
 window.addEventListener("resize", function() {
-  renderGrid(3);
+  setTimeout(function() {
+    renderArchiveGrid();
+  }, 1000);
 }, false);
 
 

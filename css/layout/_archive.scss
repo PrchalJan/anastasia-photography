@@ -3,9 +3,13 @@
 
 .archive {
   // border: 4px solid blue;
+  
+  @include mobile {
+    
+  }
   @include desktop {
-    padding-bottom: $section-margin;
     padding-top: $top-margin;
+    padding-bottom: $section-margin;
   }
 }
 .archive__content {
