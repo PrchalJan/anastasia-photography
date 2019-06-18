@@ -1168,7 +1168,7 @@ ul {
 
 @media (max-width: 899px) {
   .archive__content {
-    margin: calc(2 * 3px) calc(-2 * 3px);
+    margin: calc(2 * 3px) calc(3px);
     margin-top: calc(3px);
     margin-bottom: calc(3px);
   }
@@ -1176,7 +1176,7 @@ ul {
 
 @media (max-width: 600px) {
   .archive__content {
-    margin: calc(2 * 2px) calc(-2 * 2px);
+    margin: calc(2 * 2px) calc(2px);
     margin-top: calc(2px);
     margin-bottom: calc(2px);
   }
