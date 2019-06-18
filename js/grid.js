@@ -76,11 +76,14 @@ function renderArchiveGrid() {
 window.addEventListener("load", function() {
   renderArchiveGrid();
 }, false);
-window.addEventListener("resize", function() {
-  setTimeout(function() {
-    renderArchiveGrid();
-  }, 1);
-}, false);
+// window.addEventListener("resize", function() {
+//   setTimeout(function() {
+//     renderArchiveGrid();
+//   }, 1);
+// }, false);
+window.addEventListener("resize", debounce(function() {
+  renderArchiveGrid();
+}, 400), false);
 
 
 
