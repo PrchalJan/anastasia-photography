@@ -3,6 +3,7 @@
 
 .archive {
   // border: 4px solid blue;
+  overflow: hidden;
  
   @include desktop {
     padding-top: $top-margin;
@@ -13,6 +14,7 @@
   // border: 3px solid red;
   position: relative;
   min-height: 100vh;
+  overflow: hidden;
 
 
   @include mobile {
@@ -42,6 +44,7 @@
 .archive__figure {
   // border: 3px solid yellow;
   position: absolute;
+  overflow: hidden;
   
   @include mobile {
     padding: $grid-mobile-margin;
