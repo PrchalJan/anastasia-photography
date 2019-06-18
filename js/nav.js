@@ -1,6 +1,9 @@
 
 export const nav = function() {
 
+setProperHomeHeight();
+
+
 // Hide All Sections On Page Load
 hideSections();
 // Show only Home Section on page load
@@ -82,6 +85,13 @@ icons.headerTitle.addEventListener('click', function() {
 
 
 
+
+// ONE FUNCTION FOR ALL RESIZING EVENTS
+window.addEventListener('resize', debounce(function() {
+
+  // Resize home height on window change
+  setProperHomeHeightOnResize();
+}, 400));
 
 
 

@@ -77,7 +77,15 @@ window.setProperHomeHeight = function() {
     sections.home.style.height = `${window.innerHeight}px`;
   }
 }
-
+window.setProperHomeHeightOnResize = function() {
+  if(!(widthBank === window.innerWidth) || window.innerWidth > 899) {
+    setProperHomeHeight();
+    if(sections.home.style.display === 'block') {
+      showHomeSection();
+    }
+  }
+  widthBank = window.innerWidth;
+}
 
 
 
