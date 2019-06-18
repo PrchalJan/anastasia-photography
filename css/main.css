@@ -1170,7 +1170,7 @@ ul {
   .archive__content {
     margin: calc(2 * 3px) calc(3px);
     margin-top: calc(3px);
-    margin-bottom: calc(3px);
+    margin-bottom: calc(2 * 3px);
   }
 }
 
@@ -1178,7 +1178,7 @@ ul {
   .archive__content {
     margin: calc(2 * 2px) calc(-1 * 2px);
     margin-top: calc(2px);
-    margin-bottom: calc(2px);
+    margin-bottom: calc(2 * 2px);
   }
 }
 
