@@ -3,6 +3,7 @@
 
 .archive {
   // border: 4px solid blue;
+ 
   @include desktop {
     padding-top: $top-margin;
     padding-bottom: $section-margin;
@@ -13,6 +14,7 @@
   position: relative;
   min-height: 100vh;
 
+
   @include mobile {
     margin: calc(2 * #{$grid-mobile-margin}) - $grid-mobile-margin;
     margin-top: calc(#{$grid-mobile-margin});
@@ -21,7 +23,8 @@
 
   }
   @include mobile-small {
-    margin: calc(2 * #{$grid-mobile-small-margin}) - $grid-mobile-small-margin;
+    margin: calc(2 * #{$grid-mobile-small-margin})  calc(-2 * #{$grid-mobile-small-margin});
+    // margin: calc(2 * #{$grid-mobile-small-margin}) - 50px;
     margin-top: calc(#{$grid-mobile-small-margin});
     margin-bottom: calc(2 * #{$grid-mobile-small-margin});
   
