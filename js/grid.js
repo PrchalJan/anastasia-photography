@@ -1,10 +1,16 @@
 export const grid = function() {
 
-function setGridsWidth(grids, colCount) {
+function setGridsWidths(grids, colCount) {
   for(let i = 0; i < grids.length; i++) {
     grids[i].style.width = ((100 / colCount) + '%');
-    // console.log(grids[i]);
   }
+}
+// Needed for resizing
+function resetGridsPositions(grids) {
+  for(let i = 0; i < grids.length; i++) {
+		grids[i].style.top = 0;
+		grids[i].style.left = 0;
+	}
 }
 function placeGrids(grids,colCount) {
   let newleft, newtop;
@@ -41,7 +47,8 @@ function renderGrid(grids, columns){
   var colCount = columns || 1;
   var grids = document.querySelectorAll('.archive__figure');
 
-  setGridsWidth(grids, colCount)
+  setGridsWidths(grids, colCount);
+  resetGridsPositions(grids);
   placeGrids(grids, colCount);
   setGridContainerHeight(grids, colCount);
 }

@@ -12,6 +12,29 @@
   // border: 3px solid red;
   position: relative;
   min-height: 100vh;
+
+  @include mobile {
+    margin: calc(2 * #{$grid-mobile-margin}) - $grid-mobile-margin;
+    margin-top: calc(#{$grid-mobile-margin});
+    margin-bottom: calc(2 * #{$grid-mobile-margin});
+ 
+
+  }
+  @include mobile-small {
+    margin: calc(2 * #{$grid-mobile-small-margin}) - $grid-mobile-small-margin;
+    margin-top: calc(#{$grid-mobile-small-margin});
+    margin-bottom: calc(2 * #{$grid-mobile-small-margin});
+  
+  }
+  @include desktop {
+    margin: - $grid-desktop-margin;
+  }
+  @include desktop-mid {
+    margin: - $grid-desktop-mid-margin;
+  }
+  @include desktop-large {
+    margin: - $grid-desktop-large-margin;
+  }
 }
 .archive__figure {
   // border: 3px solid yellow;
@@ -23,6 +46,15 @@
   }
   @include mobile-small {
     padding: $grid-mobile-small-margin;
+  }
+  @include desktop {
+    padding: $grid-desktop-margin;
+  }
+  @include desktop-mid {
+    padding: $grid-desktop-mid-margin;
+  }
+  @include desktop-large {
+    padding: $grid-desktop-large-margin;
   }
 }
 
