@@ -3,10 +3,6 @@
 
 .archive {
   // border: 4px solid blue;
-  
-  @include mobile {
-    
-  }
   @include desktop {
     padding-top: $top-margin;
     padding-bottom: $section-margin;
@@ -16,38 +12,17 @@
   // border: 3px solid red;
   position: relative;
   min-height: 100vh;
-
-  
-  @include mobile {
-
-  }
-  @include mobile-small {
- 
-  }
-  @include desktop {
-
-  }
 }
 .archive__figure {
   // border: 3px solid yellow;
   position: absolute;
   
   @include mobile {
-    padding: 4px;
+    padding: $grid-mobile-margin;
 
   }
   @include mobile-small {
-    padding: 2px;
-  }
-  @include desktop {
-    padding: 6px;
-
-  }
-  @include desktop-mid {
-    padding: 8px;
-  }
-  @include desktop-large {
-    padding: 10px;
+    padding: $grid-mobile-small-margin;
   }
 }
 
