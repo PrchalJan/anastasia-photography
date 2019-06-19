@@ -88,7 +88,8 @@ export const variables = function() {
   window.components = {
     header: document.querySelector('.header'),
     nav: document.querySelector('#nav'),
-    footer: document.querySelector('.footer')
+    footer: document.querySelector('.footer'),
+    lightbox: document.querySelector('.lightbox'),
   }
 
   // All home images
@@ -97,6 +98,9 @@ export const variables = function() {
     imageContainer: document.querySelector('.home__image-container'),
     left: document.querySelector('.home__left'),
     right: document.querySelector('.home__right')
+  }
+  window.lightbox = {
+    closeBtn: document.querySelector('.lightbox__close-button'),
   }
 
   window.imgs = {

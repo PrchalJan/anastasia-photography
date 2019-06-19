@@ -1779,10 +1779,12 @@ h2 {
   right: 0;
   bottom: 0;
   left: 0;
-  -webkit-transition: -webkit-transform 1s;
-  transition: -webkit-transform 1s;
-  transition: transform 1s;
-  transition: transform 1s, -webkit-transform 1s;
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: -webkit-transform .1s ease-in;
+  transition: -webkit-transform .1s ease-in;
+  transition: transform .1s ease-in;
+  transition: transform .1s ease-in, -webkit-transform .1s ease-in;
 }
 
 .lightbox__content {
@@ -1992,5 +1994,9 @@ h2 {
 .lightbox-open .lightbox {
   -webkit-transform: scale(1);
           transform: scale(1);
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
 }
 /*# sourceMappingURL=main.css.map */

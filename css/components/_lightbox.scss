@@ -9,8 +9,8 @@ $lightbox-mobile-margins: 5rem;
   right: 0;
   bottom: 0;
   left: 0;
-  // transform: scale(0);
-  transition: transform 1s;
+  transform: scale(0);
+  transition: transform .1s ease-in;
   @include mobile {
 
   }
@@ -195,5 +195,6 @@ $lightbox-mobile-margins: 5rem;
 .lightbox-open {
   .lightbox {
     transform: scale(1);
+    transition: transform .5s;
   }
 }

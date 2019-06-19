@@ -11,6 +11,8 @@ import { images } from './images';
 images();
 import { grid } from './grid';
 grid();
+import { lightbox } from './lightbox';
+lightbox();
 
 
 

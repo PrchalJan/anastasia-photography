@@ -1,4 +1,3 @@
-
 export const nav = function() {
 
 setProperHomeHeight();
@@ -135,6 +134,10 @@ icons.headerTitle.addEventListener('click', function() {
 // Close mobile menu on mobile menu close button click;
 icons.closeMenu.addEventListener('click', function() {
   closeMenu();
+})
+console.log(lightbox.closeBtn);
+lightbox.closeBtn.addEventListener('click', function() {
+  closeLightboxClick();
 })
 
 

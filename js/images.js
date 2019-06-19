@@ -75,9 +75,7 @@ function showPreviousImage(set) {
   showImage(set);
 }
 function showImage(set) {
-  console.log('Before Check Index: ' + imageIndexes[set])
   checkIndex(set);
-  console.log('After Check Index: ' + imageIndexes[set])
   setContainerPositionDelayed(set);
   // document.body.classList.remove('home--immediate-transition');
 }
