@@ -105,6 +105,11 @@ export const variables = function() {
 
   window.imgs = {
     home: document.querySelectorAll('.home__image'),
+    archive: document.querySelectorAll('.archive__figure'),
+  }
+
+  window.clicks = {
+    archiveContainer: document.querySelector('#archive__content'),
   }
 
 

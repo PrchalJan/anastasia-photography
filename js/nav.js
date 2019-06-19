@@ -128,16 +128,25 @@ icons.headerTitle.addEventListener('click', function() {
 })
 
  // Open mobile menu on header icon click
- icons.openMenu.addEventListener('click', function() {
+icons.openMenu.addEventListener('click', function() {
   openMenu();
 })
 // Close mobile menu on mobile menu close button click;
 icons.closeMenu.addEventListener('click', function() {
   closeMenu();
 })
-console.log(lightbox.closeBtn);
+
 lightbox.closeBtn.addEventListener('click', function() {
-  closeLightboxClick();
+  closeLightboxBtnClick();
+})
+// Open Archive Lightbox
+clicks.archiveContainer.addEventListener('click', function(e) {
+  openArchiveLightboxClick(e);
+})
+
+// Lightbox Clicks
+components.lightbox.addEventListener('click', function(e) {
+  closeLightboxGapClick(e);
 })
 
 

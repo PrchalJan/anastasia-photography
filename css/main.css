@@ -1994,9 +1994,9 @@ h2 {
 .lightbox-open .lightbox {
   -webkit-transform: scale(1);
           transform: scale(1);
-  -webkit-transition: -webkit-transform .5s;
-  transition: -webkit-transform .5s;
-  transition: transform .5s;
-  transition: transform .5s, -webkit-transform .5s;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s;
 }
 /*# sourceMappingURL=main.css.map */
