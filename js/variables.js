@@ -13,7 +13,11 @@ export const variables = function() {
     clicked: false,
     nav: false,
     lightbox: false,
-    footer: false
+    footer: false,
+  }
+
+  window.sectionStates = {
+    archive: false,
   }
 
 
@@ -83,7 +87,7 @@ export const variables = function() {
 
   window.components = {
     header: document.querySelector('.header'),
-    nav: document.querySelector('.nav'),
+    nav: document.querySelector('#nav'),
     footer: document.querySelector('.footer')
   }
 

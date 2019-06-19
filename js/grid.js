@@ -65,11 +65,22 @@ function renderResponsiveGrid(grids) {
   }
 }
 
-function renderArchiveGrid() {
+window.renderArchiveGrid = function() {
   var grids = document.querySelectorAll('.archive__figure');
   return renderResponsiveGrid.call(this, grids)
 }
 
+window.renderArchiveGridOnResize = function() {
+  if(sectionStates.archive) {
+    renderArchiveGrid();
+    setTimeout(function() {
+      renderArchiveGrid();
+      setTimeout(function() {
+        renderArchiveGrid();
+      }, 100)
+    }, 100)
+  }
+}
 
 
 // Call the functions
@@ -81,9 +92,13 @@ window.addEventListener("load", function() {
 //     renderArchiveGrid();
 //   }, 1);
 // }, false);
-window.addEventListener("resize", debounce(function() {
-  renderArchiveGrid();
-}, 400), false);
+// window.addEventListener("resize", debounce(function() {
+//   renderArchiveGrid();
+// }, 400), false);
+
+
+
+
 
 
 

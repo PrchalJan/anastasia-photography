@@ -1,13 +1,17 @@
 .contact {
+  // border: 3px solid red;
   @include font($font-light);
   @include mobile {
     min-height: calc(100vh - #{$header-mobile-height});
+  }
+  @include desktop {
+    padding: $section-margin 0;
   }
 }
 .contact__h2 {
   font-weight: $font-light;
   @include mobile {
-    margin-top: 1.5em;
+    margin-top: 0;
     font-size: 2rem;
   }
 }

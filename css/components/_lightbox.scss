@@ -1,14 +1,15 @@
 $lightbox-margins: 5rem;
+$lightbox-mobile-margins: 5rem;
 
 .lightbox {
-  // border: 3px solid red;
+  border: 3px solid red;
   background-color: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-  transform: scale(0);
+  // transform: scale(0);
   transition: transform 1s;
   @include mobile {
 
@@ -34,8 +35,8 @@ $lightbox-margins: 5rem;
 
   }
 }
-.lightbox__slide {
-  // border: 3px solid green;
+.lightbox__slides {
+  border: 3px solid green;
   width: 100%;
   height: 100%;
   display: flex;
@@ -52,12 +53,13 @@ $lightbox-margins: 5rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: absolute;
   @include desktop {
   }
   
 }
 .lightbox__image {
-  // border: 1px solid red;
+  border: 2px solid red;
   max-width: 100%;
   max-height: 100%;
   min-height: 10rem;
@@ -70,11 +72,13 @@ $lightbox-margins: 5rem;
 }
 .lightbox__figcaption {
   color: #f4f4f4;
-  // border: 1px solid green;
-  height: 1rem;
-  width: 90%;
+  border: 2px solid green;
+  height: auto;
+  width: auto;
   text-align: center;
+  // position: absolute;
   @include desktop {
+    position: absolute;
   }
 }
 .lightbox__index-caption {
@@ -86,23 +90,25 @@ $lightbox-margins: 5rem;
 
 // Now you can click on the image to change it to previous/next
 .lightbox__previous-space {
-  // border: 5px solid yellow;
+  border: 2px solid yellow;
   position: absolute;
   top: 0;
   left: 0;
   right: 50%;
   bottom: 0;
+  z-index: 5;
   @include desktop {
 
   }
 }
 .lightbox__next-space {
-  // border: 5px solid yellow;
+  border: 2px solid yellow;
   position: absolute;
   top: 0;
   left: 50%;
   right: 0;
   bottom: 0;
+  z-index: 5;
   @include desktop {
 
   }
@@ -131,6 +137,7 @@ $lightbox-margins: 5rem;
   }
 }
 .lightbox__close-button {
+  border: 2px solid red;
   top: 0;
   right: 0;
   @include mobile {
@@ -142,27 +149,46 @@ $lightbox-margins: 5rem;
   }
 }
 .lightbox__previous-button {
+  border: 2px solid red;
   top: 50%;
   left: 0;
   transform: translateY(-50%);
   height: calc(#{$lightbox-margins} * 1.5);
-  @include desktop {
-
+  @include mobile {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 75px;
+    height: $lightbox-mobile-margins;
   }
 }
 .lightbox__next-button {
+  border: 2px solid red;
   top: 50%;
   right: 0%;
   transform: translateY(-50%);
   height: calc(#{$lightbox-margins} * 1.5);
-  @include desktop {
-
+  @include mobile {
+    top: auto;
+    bottom: 0;
+    transform: none;
+    width: 75px;
+    height: $lightbox-mobile-margins;
   }
 }
-.lightbox__btn-inner {
-
+.lightbox__mobile-black-line {
+  border: 2px solid yellow;
   @include desktop {
-
+    display: none;
+  }
+  @include mobile {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: $lightbox-mobile-margins;
+    background: #000;
+    z-index: -1;
   }
 }
 

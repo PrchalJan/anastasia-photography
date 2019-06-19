@@ -3,38 +3,6 @@ export const functions = function() {
 
 // NAVIGATION
 
-// Show a single section
-// in: section, footer(yes/no)
-window.showSection = function(section, footer=false) {
-  section.style.display = 'block';
-  if(footer) {
-    components.footer.style.display = 'block';
-  } else {
-    components.footer.style.display = 'none';
-  }
-}
-
-// Show Proper Home Section
-window.showHomeSection = function() {
-  hideSections();
-  if(window.innerWidth > 899) {
-    showSection(sections.home);
-  } else {
-    showSection(sections.home, true);
-  }
-}
-
-// Hide all sections
-window.hideSections = function() {
-  for(let section in sections) {
-    sections[section].style.display = 'none';
-  }
-}
-
-window.hideMenuSections = function() {
-  navBtns.artworks.classList.remove('nav__main-li--open');
-  navBtns.magazines.classList.remove('nav__main-li--open');
-}
 
 // Open main mobile menu
 window.openMenu = function() {
@@ -50,6 +18,52 @@ window.closeMenu = function() {
   }
   states.nav = false;
 }
+window.closeMenuGapClick = function(e) {
+  if(e.target === components.nav && window.innerWidth < 900) {
+    closeMenu();
+  }
+}
+
+// Hide all sections
+window.hideSections = function() {
+  for(let section in sections) {
+    sections[section].style.display = 'none';
+  }
+  for(let state in sectionStates) {
+    sectionStates[state] = false;
+  }
+}
+// Show a single section
+// in: section, footer(yes/no)
+window.showSection = function(section, footer=false) {
+  hideSections();
+  section.style.display = 'block';
+  if(footer) {
+    components.footer.style.display = 'block';
+  } else {
+    components.footer.style.display = 'none';
+  }
+  closeMenu();
+}
+
+// Show Proper Home Section
+window.showHomeSection = function() {
+  hideSections();
+  if(window.innerWidth > 899) {
+    showSection(sections.home);
+  } else {
+    showSection(sections.home, true);
+  }
+}
+
+
+
+window.hideMenuSections = function() {
+  navBtns.artworks.classList.remove('nav__main-li--open');
+  navBtns.magazines.classList.remove('nav__main-li--open');
+}
+
+
 
 
 

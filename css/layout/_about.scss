@@ -2,6 +2,9 @@
   @include mobile {
     min-height: calc(100vh - #{$header-mobile-height});
   }
+  @include desktop {
+    padding: $section-margin 0;
+  }
 }
 .about__h2 {
   font-weight: $font-light;

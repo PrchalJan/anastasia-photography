@@ -18,8 +18,8 @@ grid();
 
 
 
-// Debugger
-window.document.addEventListener('click', function(e) {
-  console.log(e.target);
-})
+// // Debugger
+// window.document.addEventListener('click', function(e) {
+//   console.log(e.target);
+// })
 

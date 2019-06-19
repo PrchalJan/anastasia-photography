@@ -6,9 +6,10 @@
   overflow: hidden;
  
   @include desktop {
-    padding-top: $top-margin;
+    padding-top: calc(2rem + #{$top-margin});
     padding-bottom: $section-margin;
   }
+
 }
 .archive__content {
   // border: 3px solid red;
