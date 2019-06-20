@@ -37,6 +37,16 @@ window.setLightboxImages = function(imgSet, index, quality) {
   lightboxImage.src = src;
 }
 
+window.setResponsiveLightboxImages = function(imgSet, index) {
+  if(window.innerWidth < 602) {
+    setLightboxImages(imgSet, index, 640);
+  } else if(window.innerWidth < 1602) {
+    setLightboxImages(imgSet, index, 1280);
+  } else if(window.innerWidth > 1601) {
+    setLightboxImages(imgSet, index, 1920);
+  }
+}
+
 // setLightboxImages(imgs.archive, 0, 1920);
 
 
@@ -66,7 +76,8 @@ window.openArchiveLightboxClick = function(e) {
   if(img.classList.contains('archive__img')) {
     const imgIndex = getClickedImageIndex(imgs, img);
     openLightbox();
-    setLightboxImages(imgs, imgIndex, 1280)
+    // setRLightboxImages(imgs, imgIndex, 1280);
+    setResponsiveLightboxImages(imgs, imgIndex);
   }
 }
 
