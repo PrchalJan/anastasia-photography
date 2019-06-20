@@ -20,6 +20,12 @@ window.openLightbox = function() {
   }
 }
 
+window.setLightboxImage = function(src) {
+  const lightboxImage = document.querySelector('#lightbox__image');
+  lightboxImage.src = src;
+}
+
+
 // window.addEventListener('click', function() {
 //   console.log('triggered');
 //   console.log(states.lightbox);
@@ -33,8 +39,6 @@ window.openLightbox = function() {
 // });
 
 window.openArchiveLightboxClick = function(e) {
-  console.log(e.target.firstElementChild);
-  console.log(e.target.firstElementChild.classList);
   if(e.target.firstElementChild.classList.contains('archive__img')) {
     openLightbox();
   }
