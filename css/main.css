@@ -1908,7 +1908,7 @@ h2 {
   right: 0;
 }
 
-@media (max-width: 899px) {
+@media (max-width: 600px) {
   .lightbox__close-button {
     font-size: 3rem;
     width: 5rem;
@@ -1929,7 +1929,7 @@ h2 {
   height: calc(5rem * 1.5);
 }
 
-@media (max-width: 899px) {
+@media (max-width: 600px) {
   .lightbox__previous-button {
     top: auto;
     bottom: 0;
@@ -1948,7 +1948,7 @@ h2 {
   height: calc(5rem * 1.5);
 }
 
-@media (max-width: 899px) {
+@media (max-width: 600px) {
   .lightbox__next-button {
     top: auto;
     bottom: 0;
@@ -1960,13 +1960,31 @@ h2 {
 }
 
 @media (min-width: 900px) {
-  .lightbox__mobile-black-line {
+  .lightbox__mobile-black-line-top {
     display: none;
   }
 }
 
-@media (max-width: 899px) {
-  .lightbox__mobile-black-line {
+@media (max-width: 600px) {
+  .lightbox__mobile-black-line-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5rem;
+    background: #000;
+    z-index: -1;
+  }
+}
+
+@media (min-width: 900px) {
+  .lightbox__mobile-black-line-bottom {
+    display: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .lightbox__mobile-black-line-bottom {
     position: absolute;
     bottom: 0;
     left: 0;

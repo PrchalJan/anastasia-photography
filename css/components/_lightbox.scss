@@ -141,7 +141,7 @@ $lightbox-mobile-margins: 5rem;
   // border: 2px solid red;
   top: 0;
   right: 0;
-  @include mobile {
+  @include mobile-small { /////// CHANGED TO mobile-small
     font-size: 3rem;
     width: $lightbox-margins;
   }
@@ -155,7 +155,7 @@ $lightbox-mobile-margins: 5rem;
   left: 0;
   transform: translateY(-50%);
   height: calc(#{$lightbox-margins} * 1.5);
-  @include mobile {
+  @include mobile-small {  /////// CHANGED TO mobile-small
     top: auto;
     bottom: 0;
     transform: none;
@@ -169,7 +169,7 @@ $lightbox-mobile-margins: 5rem;
   right: 0%;
   transform: translateY(-50%);
   height: calc(#{$lightbox-margins} * 1.5);
-  @include mobile {
+  @include mobile-small {  //////////// CHANGED TO mobile-small
     top: auto;
     bottom: 0;
     transform: none;
@@ -177,12 +177,27 @@ $lightbox-mobile-margins: 5rem;
     height: $lightbox-mobile-margins;
   }
 }
-.lightbox__mobile-black-line {
+.lightbox__mobile-black-line-top {
   // border: 2px solid yellow;
   @include desktop {
     display: none;
   }
-  @include mobile {
+  @include mobile-small {   ///////////////// CHANGED TO mobile-small
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: $lightbox-mobile-margins;
+    background: #000;
+    z-index: -1;
+  }
+}
+.lightbox__mobile-black-line-bottom {
+  // border: 2px solid yellow;
+  @include desktop {
+    display: none;
+  }
+  @include mobile-small {   ///////////////// CHANGED TO mobile-small
     position: absolute;
     bottom: 0;
     left: 0;
