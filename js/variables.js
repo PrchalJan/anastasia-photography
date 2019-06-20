@@ -14,9 +14,14 @@ export const variables = function() {
     nav: false,
     lightbox: false,
     footer: false,
+    homeIteration: false,
   }
 
   window.sectionStates = {
+    archive: false,
+  }
+
+  window.highQuality = {
     archive: false,
   }
 
@@ -105,7 +110,10 @@ export const variables = function() {
 
   window.imgs = {
     home: document.querySelectorAll('.home__image'),
-    archive: document.querySelectorAll('.archive__figure'),
+    archive: document.querySelectorAll('.archive__img'),
+  }
+  window.imgsLength = {
+    archive: imgs.archive.length,
   }
 
   window.clicks = {

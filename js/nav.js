@@ -25,6 +25,7 @@ document.body.classList.add('home--clicked');
 
 
 
+
 // Close mobile menu on menu gap click
 // components.nav.addEventListener('click', function(e) {
 //   if(e.target === components.nav) {
@@ -85,20 +86,31 @@ function openDirectSectionListener(e) {
     if(e.target === navBtnsDirect[btn]) {
       if(e.target === navBtnsDirect.archive) {
         showSection(sections.archive, true);
+        loadResponsiveArchiveImages();
         renderArchiveGrid();
         sectionStates.archive = true;
       } else {
         showSection(sections[btn], true);
       }
-
     }
   }
-
 }
 
 
 
 
+
+
+//////////////////
+// LOAD EVENTS // 
+////////////////
+
+window.addEventListener('load', function() {
+  startHomeIterationLoad();
+
+
+  console.log('loaded');
+})
 
 
 
@@ -116,9 +128,13 @@ window.addEventListener('click', function(e) {
 components.nav.addEventListener('click', function(e) {
   // Open Archive/About/Contact on click
   openDirectSectionListener(e);
+
   closeMenuGapClick(e);
+
   expandHideArtworksClick(e)
+
   expandHideMagazinesClick(e)
+
 })
 
 
@@ -160,6 +176,9 @@ window.addEventListener('resize', debounce(function() {
 
   // If Archive open, rerender archive grid
   renderArchiveGridOnResize();
+
+  // Load better / worse archive images if the window size changes
+  loadArchiveImagesResize();
 }, 400));
 
 

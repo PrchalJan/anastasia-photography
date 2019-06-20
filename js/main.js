@@ -5,14 +5,19 @@ import { functions } from './functions';
 functions();
 import { resize } from './resize';
 resize();
-import { nav } from './nav';
-nav();
+
 import { images } from './images';
 images();
 import { grid } from './grid';
 grid();
 import { lightbox } from './lightbox';
 lightbox();
+import { archive } from './archive';
+archive();
+
+
+import { nav } from './nav';
+nav();
 
 
 

@@ -7,9 +7,12 @@ export const images = function() {
 
 
 
-window.addEventListener('load', function() {
-  startHomeIteration()
-})
+window.startHomeIterationLoad = function() {
+  if(!states.homeIteration) {
+    startHomeIteration();
+    states.homeIteration = true;
+  }
+}
 
 function startHomeIteration() {
   interval.home = setInterval(function() {
