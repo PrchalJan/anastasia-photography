@@ -105,7 +105,9 @@ export const variables = function() {
     right: document.querySelector('.home__right')
   }
   window.lightbox = {
+    indexCaption: document.querySelector('.lightbox__index-caption-text'),
     closeBtn: document.querySelector('.lightbox__close-button'),
+    images: null,
   }
 
   window.imgs = {

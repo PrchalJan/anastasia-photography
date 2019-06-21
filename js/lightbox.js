@@ -28,6 +28,10 @@ window.openLightbox = function() {
   }
 }
 
+window.setCaptionIndex = function(imgSet, index) {
+  window.lightbox.indexCaption.innerHTML = `${index +1} / ${imgSet.length}`;
+}
+
 
 window.setLightboxImages = function(imgSet, index, quality) {
   const lightboxImage = document.querySelector('#lightbox__image');
@@ -35,6 +39,8 @@ window.setLightboxImages = function(imgSet, index, quality) {
   const newSrc = image.getAttribute('data-src').replace('?', quality);
   const src = newSrc;
   lightboxImage.src = src;
+  lightbox.images = imgSet;
+  setCaptionIndex(imgSet, index);
 }
 
 window.setResponsiveLightboxImages = function(imgSet, index) {
