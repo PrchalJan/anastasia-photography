@@ -9,6 +9,11 @@ export const lightbox = function() {
     console.log('states.lightbox: ' + states.lightbox);
     console.log('lightbox.imgSet: ' + lightbox.imgSet);
     console.log('lightbox.img  source: ' + window.lightbox.img.src);
+    console.log('Caption index: ' + window.lightbox.captionIndex.innerHTML);
+    console.log('Caption text: ' + window.lightbox.captionText.innerHTML);
+    console.log('Current Index: ' + window.lightbox.currentIndex);
+    console.log('Next Index: ' + window.lightbox.nextIndex);
+    console.log('Previous Index: ' + window.lightbox.previousIndex);
 
     // console.log(lightbox.imgSet);
     // console.log('------------------');
@@ -27,6 +32,10 @@ function closeLightbox() {
   states.lightbox = false;
   window.lightbox.img.removeAttribute('src');
   lightbox.imgSet = null;
+  // Remove the caption index
+  window.lightbox.captionIndex.innerHTML = '';
+  // Remove the caption text
+  window.lightbox.captionText.innerHTML = '';
 
 }
 
@@ -49,19 +58,41 @@ window.openLightbox = function() {
   }
 }
 
-window.setCaptionIndex = function(imgSet, index) {
-  window.lightbox.indexCaption.innerHTML = `${index +1} / ${imgSet.length}`;
+function setLightboxCaptionIndex(imgSet, index) {
+  window.lightbox.captionIndex.innerHTML = `${index +1} / ${imgSet.length}`;
+}
+function setLightboxCaptionText(clickedImage) {
+  const text = clickedImage.getAttribute('alt');
+  window.lightbox.captionText.innerHTML = text;
+}
+function setLightboxImageIndexes(imgSet, index) {
+  window.lightbox.currentIndex = index;
+  if(index === imgSet.length -1) {
+    window.lightbox.nextIndex = 0;
+  } else {
+    window.lightbox.nextIndex = (index + 1);
+  }
+  if(index === 0) {
+    window.lightbox.previousIndex = (imgSet.length -1);
+  } else {
+    window.lightbox.previousIndex = (index - 1);
+  }
 }
 
 
 window.setLightboxImages = function(imgSet, index, quality) {
-  const lightboxImage = document.querySelector('#lightbox__image');
+  // Get The image that has been clicked on
   const image = imgSet[index];
+  // From the image, extract a new source that will be appended to the lightbox image
   const newSrc = image.getAttribute('data-src').replace('?', quality);
-  const src = newSrc;
-  lightboxImage.src = src;
+  // Add the source
+  window.lightbox.img.src = newSrc;
+  // Set the lightbox.imgSet variable to the images that has been passed in as an argument
   lightbox.imgSet = imgSet;
-  setCaptionIndex(imgSet, index);
+  // Set the Index Number that is shown
+  setLightboxCaptionIndex(imgSet, index);
+  setLightboxCaptionText(imgSet[index]);
+  setLightboxImageIndexes(imgSet, index);
 }
 
 window.setResponsiveLightboxImages = function(imgSet, index) {

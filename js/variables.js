@@ -105,13 +105,14 @@ export const variables = function() {
     right: document.querySelector('.home__right')
   }
   window.lightbox = {
-    indexCaption: document.querySelector('.lightbox__index-caption-text'),
-    textCaption: document.querySelector('.lightbox__figcaption'),
+    captionIndex: document.querySelector('.lightbox__index-caption-text'),
+    captionText: document.querySelector('.lightbox__figcaption'),
     closeBtn: document.querySelector('.lightbox__close-button'),
     imgSet: null,
     img: document.querySelector('#lightbox__image'),
     currentIndex: null,
     previousIndex: null,
+    nextIndex: null
   }
 
   window.imgs = {
