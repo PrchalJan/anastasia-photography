@@ -109,6 +109,9 @@ export const variables = function() {
     textCaption: document.querySelector('.lightbox__figcaption'),
     closeBtn: document.querySelector('.lightbox__close-button'),
     imgSet: null,
+    img: document.querySelector('#lightbox__image'),
+    currentIndex: null,
+    previousIndex: null,
   }
 
   window.imgs = {

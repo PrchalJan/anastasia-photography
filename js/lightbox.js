@@ -1,11 +1,32 @@
 export const lightbox = function() {
 
 
+  document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+    console.log('//////////////////////////')
+    console.log('// LIGHTBOX DEBUGGER //')
+
+    console.log('states.lightbox: ' + states.lightbox);
+    console.log('lightbox.imgSet: ' + lightbox.imgSet);
+    console.log('lightbox.img  source: ' + window.lightbox.img.src);
+
+    // console.log(lightbox.imgSet);
+    // console.log('------------------');
+    
+
+
+    console.log('//////////////////////////')
+
+
+  })
+
+
+
 function closeLightbox() {
-  const currentImage = document.querySelector('#lightbox__image');
   document.body.classList.remove('lightbox-open');
   states.lightbox = false;
-  currentImage.src = '';
+  window.lightbox.img.removeAttribute('src');
+  lightbox.imgSet = null;
 
 }
 
