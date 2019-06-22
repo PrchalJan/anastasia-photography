@@ -67,8 +67,6 @@ $lightbox-mobile-margins: 5rem;
   height: auto;
   width: auto;
   @include desktop {
-
-    
   }
 }
 .lightbox__figcaption {
@@ -146,7 +144,7 @@ $lightbox-mobile-margins: 5rem;
     width: $lightbox-margins;
   }
   @include desktop {
-    font-size: 3.5rem;
+    font-size: 3rem;
   }
 }
 .lightbox__previous-button {

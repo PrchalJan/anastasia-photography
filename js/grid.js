@@ -60,8 +60,10 @@ function renderGrid(grids, columns){
 function renderResponsiveGrid(grids) {
   if(window.innerWidth < 601) {
     return renderGrid.call(this, grids, 2);
-  } else{
+  } else if(window.innerWidth < 1250){
     return renderGrid.call(this, grids, 3);
+  } else {
+    return renderGrid.call(this, grids, 4);
   }
 }
 

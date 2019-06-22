@@ -106,14 +106,17 @@ export const variables = function() {
   }
   window.lightbox = {
     indexCaption: document.querySelector('.lightbox__index-caption-text'),
+    textCaption: document.querySelector('.lightbox__figcaption'),
     closeBtn: document.querySelector('.lightbox__close-button'),
-    images: null,
+    imgSet: null,
   }
 
   window.imgs = {
     home: document.querySelectorAll('.home__image'),
     archive: document.querySelectorAll('.archive__img'),
   }
+
+
   window.imgsLength = {
     archive: imgs.archive.length,
   }

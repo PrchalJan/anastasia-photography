@@ -28,10 +28,10 @@ window.loadArchiveImages = function(quality) {
 }
 
 window.loadResponsiveArchiveImages = function() {
-  if(window.innerWidth < 1602) {
-    loadArchiveImages(400);
+  if(window.innerWidth < 600) {
+    loadArchiveImages(300);
   } else {
-    loadArchiveImages(640);
+    loadArchiveImages(400);
     highQuality.archive = true;
   }
 }

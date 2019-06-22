@@ -39,17 +39,20 @@ window.setLightboxImages = function(imgSet, index, quality) {
   const newSrc = image.getAttribute('data-src').replace('?', quality);
   const src = newSrc;
   lightboxImage.src = src;
-  lightbox.images = imgSet;
+  lightbox.imgSet = imgSet;
   setCaptionIndex(imgSet, index);
 }
 
 window.setResponsiveLightboxImages = function(imgSet, index) {
   if(window.innerWidth < 602) {
     setLightboxImages(imgSet, index, 640);
+    // setLightboxImages(imgSet, index, 400);
   } else if(window.innerWidth < 1602) {
     setLightboxImages(imgSet, index, 1280);
+    // setLightboxImages(imgSet, index, 400);
   } else if(window.innerWidth > 1601) {
     setLightboxImages(imgSet, index, 1920);
+    // setLightboxImages(imgSet, index, 400);
   }
 }
 
