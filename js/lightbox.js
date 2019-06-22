@@ -28,12 +28,15 @@ export const lightbox = function() {
 
 
 function closeLightbox() {
-  document.body.classList.remove('lightbox-open');
-  states.lightbox = false;
+  hideLightbox();
   clearImages();
   clearCaptions();
   clearImageIndexes();
+}
 
+function hideLightbox() {
+  document.body.classList.remove('lightbox-open');
+  states.lightbox = false;
 }
 
 window.closeLightboxBtnClick = function() {
@@ -48,6 +51,10 @@ window.closeLightboxGapClick = function(e) {
 }
 
 window.openLightbox = function() {
+  showLightbox();
+}
+
+function showLightbox() {
   if(!states.lightbox) {
     document.body.classList.add('lightbox-open');
     states.lightbox = true;
