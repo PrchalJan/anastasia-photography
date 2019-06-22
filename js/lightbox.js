@@ -30,18 +30,14 @@ export const lightbox = function() {
 function closeLightbox() {
   document.body.classList.remove('lightbox-open');
   states.lightbox = false;
-  window.lightbox.img.removeAttribute('src');
-  lightbox.imgSet = null;
-  // Remove the caption index
-  window.lightbox.captionIndex.innerHTML = '';
-  // Remove the caption text
-  window.lightbox.captionText.innerHTML = '';
+  clearImages();
+  clearCaptions();
+  clearImageIndexes();
 
 }
 
 window.closeLightboxBtnClick = function() {
   if(states.lightbox) {
-
     closeLightbox();
   }
 }
@@ -58,14 +54,22 @@ window.openLightbox = function() {
   }
 }
 
-function setLightboxCaptionIndex(imgSet, index) {
+function setCaptionIndex(imgSet, index) {
   window.lightbox.captionIndex.innerHTML = `${index +1} / ${imgSet.length}`;
 }
-function setLightboxCaptionText(clickedImage) {
+function setCaptionText(clickedImage) {
   const text = clickedImage.getAttribute('alt');
   window.lightbox.captionText.innerHTML = text;
 }
-function setLightboxImageIndexes(imgSet, index) {
+function setCaptions(imgSet, index) {
+  setCaptionIndex(imgSet, index);
+  setCaptionText(imgSet[index]);
+}
+function clearCaptions() {
+    window.lightbox.captionIndex.innerHTML = '';
+    window.lightbox.captionText.innerHTML = '';
+}
+function setImageIndexes(imgSet, index) {
   window.lightbox.currentIndex = index;
   if(index === imgSet.length -1) {
     window.lightbox.nextIndex = 0;
@@ -78,9 +82,14 @@ function setLightboxImageIndexes(imgSet, index) {
     window.lightbox.previousIndex = (index - 1);
   }
 }
+function clearImageIndexes() {
+  window.lightbox.currentIndex = null;
+  window.lightbox.previousIndex = null;
+  window.lightbox.nextIndex = null;
+}
 
 
-window.setLightboxImages = function(imgSet, index, quality) {
+window.setImages = function(imgSet, index, quality) {
   // Get The image that has been clicked on
   const image = imgSet[index];
   // From the image, extract a new source that will be appended to the lightbox image
@@ -90,25 +99,28 @@ window.setLightboxImages = function(imgSet, index, quality) {
   // Set the lightbox.imgSet variable to the images that has been passed in as an argument
   lightbox.imgSet = imgSet;
   // Set the Index Number that is shown
-  setLightboxCaptionIndex(imgSet, index);
-  setLightboxCaptionText(imgSet[index]);
-  setLightboxImageIndexes(imgSet, index);
+  setCaptions(imgSet, index);
+  setImageIndexes(imgSet, index);
+}
+function clearImages() {
+  window.lightbox.img.removeAttribute('src');
+  lightbox.imgSet = null;
 }
 
 window.setResponsiveLightboxImages = function(imgSet, index) {
   if(window.innerWidth < 602) {
-    setLightboxImages(imgSet, index, 640);
-    // setLightboxImages(imgSet, index, 400);
+    setImages(imgSet, index, 640);
+    // setImages(imgSet, index, 400);
   } else if(window.innerWidth < 1602) {
-    setLightboxImages(imgSet, index, 1280);
-    // setLightboxImages(imgSet, index, 400);
+    setImages(imgSet, index, 1280);
+    // setImages(imgSet, index, 400);
   } else if(window.innerWidth > 1601) {
-    setLightboxImages(imgSet, index, 1920);
-    // setLightboxImages(imgSet, index, 400);
+    setImages(imgSet, index, 1920);
+    // setImages(imgSet, index, 400);
   }
 }
 
-// setLightboxImages(imgs.archive, 0, 1920);
+// setImages(imgs.archive, 0, 1920);
 
 
 // window.addEventListener('click', function() {
