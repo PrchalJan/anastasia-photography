@@ -117,7 +117,11 @@ export const variables = function() {
     img: document.querySelector('#lightbox__image'),
     currentIndex: null,
     previousIndex: null,
-    nextIndex: null
+    nextIndex: null,
+    imgQuality: null,
+
+    cache: document.querySelector('#lightbox__cache'),
+    cacheImages: document.querySelector('#lightbox__cache').children,
   }
 
   window.imgs = {

@@ -6,14 +6,18 @@ export const lightbox = function() {
     console.log('//////////////////////////')
     console.log('// LIGHTBOX DEBUGGER //')
 
-    console.log('states.lightbox: ' + window.states.lightbox);
+    console.log('states.lightbox: ', window.states.lightbox);
     console.log('lightbox.imgSet: ' + window.lightbox.imgSet);
-    console.log('lightbox.img  source: ' + window.lightbox.img.src);
-    console.log('Caption index: ' + window.lightbox.captionIndex.innerHTML);
-    console.log('Caption text: ' + window.lightbox.captionText.innerHTML);
-    console.log('Current Index: ' + window.lightbox.currentIndex);
-    console.log('Next Index: ' + window.lightbox.nextIndex);
-    console.log('Previous Index: ' + window.lightbox.previousIndex);
+    console.log('lightbox.img  source: ', window.lightbox.img.src);
+    console.log('Caption index: ', window.lightbox.captionIndex.innerHTML);
+    console.log('Caption text: ', window.lightbox.captionText.innerHTML);
+    console.log('Current Index: ', window.lightbox.currentIndex);
+    console.log('Next Index: ', window.lightbox.nextIndex);
+    console.log('Previous Index: ', window.lightbox.previousIndex);
+    console.log('imgQuality: ', window.lightbox.imgQuality);
+    console.log('Cache Images: ',  window.lightbox.cacheImages);
+
+
 
     // console.log(lightbox.imgSet);
     // console.log('------------------');
@@ -21,6 +25,43 @@ export const lightbox = function() {
 
 
   })
+
+setLightboxImageQuality();
+
+// <preload images>
+function checkImage(src) {
+  for(let i = 0; i < window.lightbox.cacheImages.length; i++) {
+    if(window.lightbox.cacheImages[i].getAttribute('src') === src) {
+      return true;
+    }
+  }
+  return false;
+}
+function pushImage(src) {
+  const newImage = document.createElement('img'); 
+  newImage.src = src;
+  window.lightbox.cache.appendChild(newImage);
+}
+function cacheImage(img) {
+  const newSrc = img.getAttribute('data-src').replace('?', window.lightbox.imgQuality);
+  if(!checkImage(newSrc)) {
+    pushImage(newSrc);
+  }
+}
+window.cacheImage = cacheImage;
+function preloadNextImage() {
+  cacheImage(window.lightbox.imgSet[window.lightbox.nextIndex]);
+}
+function preloadPreviousImage() {
+  cacheImage(window.lightbox.imgSet[window.lightbox.previousIndex]);
+}
+function preloadImages() {
+  preloadNextImage();
+  preloadPreviousImage();
+}
+// </preload images>
+
+
 
 
 // <close lightbox>
@@ -61,11 +102,21 @@ function closeLightbox() {
 
 
 // <open lightbox>
-function setImages(imgSet, index, quality) {
+function setLightboxImageQuality() {
+  if(window.innerWidth < 601) {
+    window.lightbox.imgQuality = 640;
+  } else if(window.innerWidth < 1602) {
+    window.lightbox.imgQuality = 1280;
+  } else if(window.innerWidth > 1601) {
+    window.lightbox.imgQuality = 1920;
+  }
+}
+window.setLightboxImageQuality = setLightboxImageQuality;
+function setImages(imgSet, index) {
   // Get The image that has been clicked on
   const image = imgSet[index];
   // From the image, extract a new source that will be appended to the lightbox image
-  const newSrc = image.getAttribute('data-src').replace('?', quality);
+  const newSrc = image.getAttribute('data-src').replace('?', window.lightbox.imgQuality);
   // Add the source
   window.lightbox.img.src = newSrc;
   // Set the lightbox.imgSet variable to the images that has been passed in as an argument
@@ -103,12 +154,13 @@ function showLightbox() {
   }
 }
 
-function openLightbox(imgSet, index, quality) {
-  clearImg();
-  setImages(imgSet, index, quality);
-  setCaptions(imgSet, index)
-  setImageIndexes(imgSet, index)
-  showLightbox()
+function openLightbox(imgSet, index) {
+  // clearImg();
+  setImages(imgSet, index);
+  setCaptions(imgSet, index);
+  setImageIndexes(imgSet, index);
+  showLightbox();
+  preloadImages();
 }
 
 
@@ -116,15 +168,9 @@ function openLightbox(imgSet, index, quality) {
 
 
 // <open lightbox -customize>
-function openLightbox_responsive(imgSet, index) {
-  if(window.innerWidth < 601) {
-    openLightbox(imgSet, index, 640);
-  } else if(window.innerWidth < 1602) {
-    openLightbox(imgSet, index, 1280);
-  } else if(window.innerWidth > 1601) {
-    openLightbox(imgSet, index, 1920);
-  }
-}
+// function openLightbox_responsive(imgSet, index) {
+//     openLightbox(imgSet, index);
+// }
 function getClickedImageIndex(imgSet, img) {
   for(let i = 0; i < imgSet.length; i++) {
     if(imgSet[i] === img) {
@@ -132,18 +178,18 @@ function getClickedImageIndex(imgSet, img) {
     }
   }
 }
-function openLightbox_responsive_click(e, imgSet, className) {
+function openLightbox_click(e, imgSet, className) {
   const img = e.target.firstElementChild;
   // className must be string
   if(img.classList.contains(className)) {
     const imgIndex = getClickedImageIndex(imgSet, img);
-    return openLightbox_responsive.call(this, imgSet, imgIndex);
+    return openLightbox.call(this, imgSet, imgIndex);
   }
 }
-function openLightbox_responsive_click_archive(e) {
-  return openLightbox_responsive_click.call(this, e, imgs.archive, 'archive__img');
+function openLightbox_click_archive(e) {
+  return openLightbox_click.call(this, e, imgs.archive, 'archive__img');
 }
-window.openLightbox_responsive_click_archive = openLightbox_responsive_click_archive;
+window.openLightbox_click_archive = openLightbox_click_archive;
 // </open lightbox -customize>
 
 
@@ -151,10 +197,10 @@ window.openLightbox_responsive_click_archive = openLightbox_responsive_click_arc
 
 // <next/prevous lightbox imge>
 function showNextImage() {
-  openLightbox_responsive(window.lightbox.imgSet, window.lightbox.nextIndex);
+  openLightbox(window.lightbox.imgSet, window.lightbox.nextIndex);
 }
 function showPreviousImage() {
-  openLightbox_responsive(window.lightbox.imgSet, window.lightbox.previousIndex);
+  openLightbox(window.lightbox.imgSet, window.lightbox.previousIndex);
 }
 // </next/prevous lightbox imge>
 

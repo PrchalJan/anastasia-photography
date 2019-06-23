@@ -171,6 +171,10 @@ window.addEventListener('resize', debounce(function() {
 
   // Load better / worse archive images if the window size changes
   loadArchiveImagesResize();
+
+  setLightboxImageQuality();
+
+  cacheImage(window.imgs.archive[0]);
 }, 400));
 
 

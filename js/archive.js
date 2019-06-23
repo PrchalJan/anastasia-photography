@@ -19,6 +19,9 @@ export const archive = function() {
 // console.log(image);
 // console.log(imgsLength.archive);
 
+cacheImage(window.imgs.archive[0]);
+
+
 window.loadArchiveImages = function(quality) {
   for(let i = 0; i < imgs.archive.length; i++) {
     let dataSource = imgs.archive[i].getAttribute('data-src');
@@ -40,14 +43,10 @@ window.loadArchiveImagesResize = function() {
   }
 }
 
-
-
-
-
 // Open Archive Lightbox
 clicks.archiveContainer.addEventListener('click', function(e) {
   if(!states.lightbox) {
-    openLightbox_responsive_click_archive(e)
+    openLightbox_click_archive(e)
   }
   
 })
