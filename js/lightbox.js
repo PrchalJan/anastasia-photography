@@ -6,8 +6,8 @@ export const lightbox = function() {
     console.log('//////////////////////////')
     console.log('// LIGHTBOX DEBUGGER //')
 
-    console.log('states.lightbox: ' + states.lightbox);
-    console.log('lightbox.imgSet: ' + lightbox.imgSet);
+    console.log('states.lightbox: ' + window.states.lightbox);
+    console.log('lightbox.imgSet: ' + window.lightbox.imgSet);
     console.log('lightbox.img  source: ' + window.lightbox.img.src);
     console.log('Caption index: ' + window.lightbox.captionIndex.innerHTML);
     console.log('Caption text: ' + window.lightbox.captionText.innerHTML);
@@ -30,7 +30,7 @@ function hideLightbox() {
 }
 function clearImages() {
   window.lightbox.img.removeAttribute('src');
-  lightbox.imgSet = null;
+  window.lightbox.imgSet = null;
 }
 function clearCaptions() {
   window.lightbox.captionIndex.innerHTML = '';
@@ -55,7 +55,7 @@ function closeLightbox() {
 
 
 // <open lightbox>
-window.setImages = function(imgSet, index, quality) {
+function setImages(imgSet, index, quality) {
   // Get The image that has been clicked on
   const image = imgSet[index];
   // From the image, extract a new source that will be appended to the lightbox image
@@ -63,7 +63,7 @@ window.setImages = function(imgSet, index, quality) {
   // Add the source
   window.lightbox.img.src = newSrc;
   // Set the lightbox.imgSet variable to the images that has been passed in as an argument
-  lightbox.imgSet = imgSet;
+  window.lightbox.imgSet = imgSet;
   // Set the Index Number that is shown
 }
 function setCaptionIndex(imgSet, index) {
@@ -91,8 +91,10 @@ function setImageIndexes(imgSet, index) {
   }
 }
 function showLightbox() {
+  if(!states.lightbox) {
     document.body.classList.add('lightbox-open');
     states.lightbox = true;
+  }
 }
 
 function openLightbox(imgSet, index, quality) {
@@ -138,6 +140,23 @@ window.openLightbox_responsive_click_archive = openLightbox_responsive_click_arc
 // </open lightbox -customize>
 
 
+
+
+// <next/prevous lightbox imge>
+function showNextImage() {
+  openLightbox_responsive(window.lightbox.imgSet, window.lightbox.nextIndex);
+}
+function showPreviousImage() {
+  openLightbox_responsive(window.lightbox.imgSet, window.lightbox.previousIndex);
+}
+// </next/prevous lightbox imge>
+
+
+
+
+
+
+
 // <click modified FUNCITONS>
 function closeLightboxGapClick(e) {
   if(states.lightbox && e.target === components.lightbox) {
@@ -153,15 +172,21 @@ function closeLightboxBtnClick() {
 
 // <lightbox click events>
 
-
 components.lightbox.addEventListener('click', function(e) {
+  // Close lightbox on gap click
   closeLightboxGapClick(e);
 })
 
 
 
 window.lightbox.closeBtn.addEventListener('click', function() {
-  closeLightboxBtnClick()
+  closeLightboxBtnClick();
+})
+window.lightbox.nextBtn.addEventListener('click', function() {
+  showNextImage();
+})
+window.lightbox.previousBtn.addEventListener('click', function() {
+  showPreviousImage();
 })
 
 // </lightbox click events>

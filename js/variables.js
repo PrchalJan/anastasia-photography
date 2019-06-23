@@ -108,6 +108,9 @@ export const variables = function() {
     captionIndex: document.querySelector('.lightbox__index-caption-text'),
     captionText: document.querySelector('.lightbox__figcaption'),
     closeBtn: document.querySelector('.lightbox__close-button'),
+    nextBtn: document.querySelector('.lightbox__next-button'),
+    previousBtn: document.querySelector('.lightbox__previous-button'),
+    
     imgSet: null,
     img: document.querySelector('#lightbox__image'),
     currentIndex: null,
