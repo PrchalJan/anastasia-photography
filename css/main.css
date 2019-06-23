@@ -1772,7 +1772,7 @@ h2 {
 }
 
 .lightbox {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
   position: fixed;
   top: 0;
   right: 0;
@@ -1842,7 +1842,7 @@ h2 {
 }
 
 .lightbox__figcaption {
-  color: #f4f4f4;
+  color: #777;
   height: auto;
   width: auto;
   text-align: center;
@@ -1858,7 +1858,8 @@ h2 {
   position: absolute;
   top: .3rem;
   left: 1rem;
-  color: #f4f4f4;
+  color: #777;
+  font-weight: 300;
 }
 
 .lightbox__previous-space {
@@ -1900,7 +1901,7 @@ h2 {
 }
 
 .lightbox__btn .icon__line {
-  background-color: #f4f4f4;
+  background-color: #777;
 }
 
 .lightbox__close-button {

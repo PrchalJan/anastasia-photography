@@ -28,9 +28,15 @@ function hideLightbox() {
   document.body.classList.remove('lightbox-open');
   states.lightbox = false;
 }
-function clearImages() {
+function clearImg() {
   window.lightbox.img.removeAttribute('src');
+}
+function clearImgSet() {
   window.lightbox.imgSet = null;
+}
+function clearImages() {
+  clearImg();
+  clearImgSet();
 }
 function clearCaptions() {
   window.lightbox.captionIndex.innerHTML = '';
@@ -98,6 +104,7 @@ function showLightbox() {
 }
 
 function openLightbox(imgSet, index, quality) {
+  clearImg();
   setImages(imgSet, index, quality);
   setCaptions(imgSet, index)
   setImageIndexes(imgSet, index)
