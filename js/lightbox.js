@@ -1,30 +1,36 @@
 export const lightbox = function() {
 
 
-  document.addEventListener('contextmenu', function(e) {
-    e.preventDefault();
-    console.log('//////////////////////////')
-    console.log('// LIGHTBOX DEBUGGER //')
+  // document.addEventListener('contextmenu', function(e) {
+  //   e.preventDefault();
+  //   console.log('//////////////////////////')
+  //   console.log('// LIGHTBOX DEBUGGER //')
 
-    console.log('states.lightbox: ', window.states.lightbox);
-    console.log('lightbox.imgSet: ' + window.lightbox.imgSet);
-    console.log('lightbox.img  source: ', window.lightbox.img.src);
-    console.log('Caption index: ', window.lightbox.captionIndex.innerHTML);
-    console.log('Caption text: ', window.lightbox.captionText.innerHTML);
-    console.log('Current Index: ', window.lightbox.currentIndex);
-    console.log('Next Index: ', window.lightbox.nextIndex);
-    console.log('Previous Index: ', window.lightbox.previousIndex);
-    console.log('imgQuality: ', window.lightbox.imgQuality);
-    console.log('Cache Images: ',  window.lightbox.cacheImages);
-
-
-
-    // console.log(lightbox.imgSet);
-    // console.log('------------------');
-    
+  //   console.log('states.lightbox: ', window.states.lightbox);
+  //   console.log('lightbox.imgSet: ' + window.lightbox.imgSet);
+  //   console.log('lightbox.img  source: ', window.lightbox.img.src);
+  //   console.log('Caption index: ', window.lightbox.captionIndex.innerHTML);
+  //   console.log('Caption text: ', window.lightbox.captionText.innerHTML);
+  //   console.log('Current Index: ', window.lightbox.currentIndex);
+  //   console.log('Next Index: ', window.lightbox.nextIndex);
+  //   console.log('Previous Index: ', window.lightbox.previousIndex);
+  //   console.log('imgQuality: ', window.lightbox.imgQuality);
+  //   console.log('Cache Images: ',  window.lightbox.cacheImages);
+  // })
 
 
-  })
+document.addEventListener('contextmenu', function(e) {
+  e.preventDefault();
+  // console.log(window.lightbox.img.offsetHeight);
+  // console.log(window.lightbox.img.offsetTop);
+  // console.log(window.lightbox.img.offsetLeft);
+  // console.log('computed')
+  const top = (window.lightbox.img.offsetTop + window.lightbox.img.offsetHeight) + 'px';
+  const left = window.lightbox.img.offsetLeft + 'px';
+  console.log(top);
+  window.lightbox.captionText.style.top = top;
+  window.lightbox.captionText.style.left = left;
+});
 
 setLightboxImageQuality();
 

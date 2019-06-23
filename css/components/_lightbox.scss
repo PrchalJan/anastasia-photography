@@ -78,6 +78,8 @@ $lightbox-mobile-margins: 5rem;
   // position: absolute;
   @include desktop {
     position: absolute;
+    top: 0;
+    left: 0;
   }
 }
 .lightbox__index-caption {
@@ -202,7 +204,7 @@ $lightbox-mobile-margins: 5rem;
     left: 0;
     right: 0;
     height: $lightbox-mobile-margins;
-    background: #fff;
+    background: #f4f4f4;
     z-index: -1;
   }
 }
