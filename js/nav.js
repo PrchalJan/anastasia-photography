@@ -72,14 +72,14 @@ function endFullScreenClick() {
 //   })
 // }
 
-function openArchiveSectionListener(e) {
-  console.log(e.target);
-  console.log(navBtnsDirect.archive);
-  if(e.target === navBtnsDirect.archive) {
-    console.log('e.target=== sections.archive');
-    showSection(sections.archive, true);
-  }
-}
+// function openArchiveSectionListener(e) {
+//   console.log(e.target);
+//   console.log(navBtnsDirect.archive);
+//   if(e.target === navBtnsDirect.archive) {
+//     console.log('e.target=== sections.archive');
+//     showSection(sections.archive, true);
+//   }
+// }
 
 function openDirectSectionListener(e) {
   for(let btn in navBtnsDirect) {
@@ -152,15 +152,10 @@ icons.closeMenu.addEventListener('click', function() {
   closeMenu();
 })
 
-lightbox.closeBtn.addEventListener('click', function() {
-  closeLightboxBtnClick();
-})
 
 
-// Lightbox Clicks
-components.lightbox.addEventListener('click', function(e) {
-  closeLightboxGapClick(e);
-})
+
+
 
 
 ////////////////////

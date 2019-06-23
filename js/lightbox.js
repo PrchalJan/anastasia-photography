@@ -49,16 +49,8 @@ function closeLightbox() {
   clearImageIndexes();
 }
 
-window.closeLightboxBtnClick = function() {
-  if(states.lightbox) {
-    closeLightbox();
-  }
-}
-window.closeLightboxGapClick = function(e) {
-  if(states.lightbox && e.target === components.lightbox) {
-    closeLightbox();
-  }
-}
+
+
 // </close lightbox>
 
 
@@ -136,18 +128,43 @@ function openLightbox_responsive_click(e, imgSet, className) {
   // className must be string
   if(img.classList.contains(className)) {
     const imgIndex = getClickedImageIndex(imgSet, img);
-    openLightbox_responsive(imgSet, imgIndex);
+    return openLightbox_responsive.call(this, imgSet, imgIndex);
   }
 }
 function openLightbox_responsive_click_archive(e) {
-  openLightbox_responsive_click(e, imgs.archive, 'archive__img')
+  return openLightbox_responsive_click.call(this, e, imgs.archive, 'archive__img');
 }
 window.openLightbox_responsive_click_archive = openLightbox_responsive_click_archive;
+// </open lightbox -customize>
+
+
+// <click modified FUNCITONS>
+function closeLightboxGapClick(e) {
+  if(states.lightbox && e.target === components.lightbox) {
+    closeLightbox();
+  }
+}
+function closeLightboxBtnClick() {
+  if(states.lightbox) {
+    closeLightbox();
+  }
+}
+// </click modified FUNCITONS>
+
+// <lightbox click events>
+
+
+components.lightbox.addEventListener('click', function(e) {
+  closeLightboxGapClick(e);
+})
 
 
 
+window.lightbox.closeBtn.addEventListener('click', function() {
+  closeLightboxBtnClick()
+})
 
-
+// </lightbox click events>
 
 
 
