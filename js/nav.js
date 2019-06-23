@@ -155,10 +155,7 @@ icons.closeMenu.addEventListener('click', function() {
 lightbox.closeBtn.addEventListener('click', function() {
   closeLightboxBtnClick();
 })
-// Open Archive Lightbox
-clicks.archiveContainer.addEventListener('click', function(e) {
-  openArchiveLightboxClick(e);
-})
+
 
 // Lightbox Clicks
 components.lightbox.addEventListener('click', function(e) {

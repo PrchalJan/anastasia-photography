@@ -20,9 +20,6 @@ export const lightbox = function() {
     
 
 
-    console.log('//////////////////////////')
-
-
   })
 
 
@@ -65,19 +62,18 @@ window.closeLightboxGapClick = function(e) {
 // </close lightbox>
 
 
-
-
-window.openLightbox = function() {
-  showLightbox();
+// <open lightbox>
+window.setImages = function(imgSet, index, quality) {
+  // Get The image that has been clicked on
+  const image = imgSet[index];
+  // From the image, extract a new source that will be appended to the lightbox image
+  const newSrc = image.getAttribute('data-src').replace('?', quality);
+  // Add the source
+  window.lightbox.img.src = newSrc;
+  // Set the lightbox.imgSet variable to the images that has been passed in as an argument
+  lightbox.imgSet = imgSet;
+  // Set the Index Number that is shown
 }
-
-function showLightbox() {
-  if(!states.lightbox) {
-    document.body.classList.add('lightbox-open');
-    states.lightbox = true;
-  }
-}
-
 function setCaptionIndex(imgSet, index) {
   window.lightbox.captionIndex.innerHTML = `${index +1} / ${imgSet.length}`;
 }
@@ -89,7 +85,6 @@ function setCaptions(imgSet, index) {
   setCaptionIndex(imgSet, index);
   setCaptionText(imgSet[index]);
 }
-
 function setImageIndexes(imgSet, index) {
   window.lightbox.currentIndex = index;
   if(index === imgSet.length -1) {
@@ -103,70 +98,55 @@ function setImageIndexes(imgSet, index) {
     window.lightbox.previousIndex = (index - 1);
   }
 }
+function showLightbox() {
+    document.body.classList.add('lightbox-open');
+    states.lightbox = true;
+}
 
-
-
-window.setImages = function(imgSet, index, quality) {
-  // Get The image that has been clicked on
-  const image = imgSet[index];
-  // From the image, extract a new source that will be appended to the lightbox image
-  const newSrc = image.getAttribute('data-src').replace('?', quality);
-  // Add the source
-  window.lightbox.img.src = newSrc;
-  // Set the lightbox.imgSet variable to the images that has been passed in as an argument
-  lightbox.imgSet = imgSet;
-  // Set the Index Number that is shown
-  setCaptions(imgSet, index);
-  setImageIndexes(imgSet, index);
+function openLightbox(imgSet, index, quality) {
+  setImages(imgSet, index, quality);
+  setCaptions(imgSet, index)
+  setImageIndexes(imgSet, index)
+  showLightbox()
 }
 
 
-window.setResponsiveLightboxImages = function(imgSet, index) {
-  if(window.innerWidth < 602) {
-    setImages(imgSet, index, 640);
-    // setImages(imgSet, index, 400);
+// </open lightbox>
+
+
+// <open lightbox -customize>
+function openLightbox_responsive(imgSet, index) {
+  if(window.innerWidth < 601) {
+    openLightbox(imgSet, index, 640);
   } else if(window.innerWidth < 1602) {
-    setImages(imgSet, index, 1280);
-    // setImages(imgSet, index, 400);
+    openLightbox(imgSet, index, 1280);
   } else if(window.innerWidth > 1601) {
-    setImages(imgSet, index, 1920);
-    // setImages(imgSet, index, 400);
+    openLightbox(imgSet, index, 1920);
   }
 }
-
-// setImages(imgs.archive, 0, 1920);
-
-
-// window.addEventListener('click', function() {
-//   console.log('triggered');
-//   console.log(states.lightbox);
-//   if(!states.lightbox) {
-//     document.body.classList.add('lightbox-open');
-//     states.lightbox = true;
-//   } else {
-//     document.body.classList.remove('lightbox-open');
-//     states.lightbox = false;
-//   }
-// });
-
-function getClickedImageIndex(imgArr, img) {
-  for(let i = 0; i < imgArr.length; i++) {
-    if(imgArr[i] === img) {
+function getClickedImageIndex(imgSet, img) {
+  for(let i = 0; i < imgSet.length; i++) {
+    if(imgSet[i] === img) {
       return i
     }
   }
 }
-
-window.openArchiveLightboxClick = function(e) {
-  const imgs = document.querySelectorAll('.archive__img');
+function openLightbox_responsive_click(e, imgSet, className) {
   const img = e.target.firstElementChild;
-  if(img.classList.contains('archive__img')) {
-    const imgIndex = getClickedImageIndex(imgs, img);
-    openLightbox();
-    // setRLightboxImages(imgs, imgIndex, 1280);
-    setResponsiveLightboxImages(imgs, imgIndex);
+  // className must be string
+  if(img.classList.contains(className)) {
+    const imgIndex = getClickedImageIndex(imgSet, img);
+    openLightbox_responsive(imgSet, imgIndex);
   }
 }
+function openLightbox_responsive_click_archive(e) {
+  openLightbox_responsive_click(e, imgs.archive, 'archive__img')
+}
+window.openLightbox_responsive_click_archive = openLightbox_responsive_click_archive;
+
+
+
+
 
 
 

@@ -26,7 +26,6 @@ window.loadArchiveImages = function(quality) {
     imgs.archive[i].src = newSource;
   }
 }
-
 window.loadResponsiveArchiveImages = function() {
   if(window.innerWidth < 600) {
     loadArchiveImages(300);
@@ -35,7 +34,6 @@ window.loadResponsiveArchiveImages = function() {
     highQuality.archive = true;
   }
 }
-
 window.loadArchiveImagesResize = function() {
   if(sectionStates.archive && (!highQuality.archive)) {
     loadResponsiveArchiveImages();
@@ -46,7 +44,13 @@ window.loadArchiveImagesResize = function() {
 
 
 
-
+// Open Archive Lightbox
+clicks.archiveContainer.addEventListener('click', function(e) {
+  if(!states.lightbox) {
+    openLightbox_responsive_click_archive(e)
+  }
+  
+})
 
 
 
