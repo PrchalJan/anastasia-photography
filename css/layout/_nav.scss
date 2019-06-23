@@ -45,12 +45,19 @@
     align-items: center;
     z-index: 1;
     color: $dark;
+
   }
   @include mobile-small {
+    // font-size: 2.5rem;
     font-size: 2.5rem;
   }
   @include desktop {
     display: none;
+  }
+  .icon {
+    .icon__line {
+      background-color: $light;
+    }
   }
 
 }
@@ -188,7 +195,7 @@
 .nav-mobile-open {
   .nav {
     @include mobile {
-      background-color: rgba(255, 255, 255, 0.9);
+      background-color: rgba(7, 7, 7, 0.9);
       transform: translateX(0);
 
     }

@@ -124,13 +124,13 @@ $lightbox-mobile-margins: 5rem;
   // justify-content: center;
   align-items: center;
   width: $lightbox-margins;
-  font-size: 3rem;
+  // font-size: 3rem;
   @include mobile-small {
     width: calc(#{$lightbox-margins} /2);
     font-size: 2rem;
   }
   @include desktop {
-    
+    font-size: 2.5rem;
   }
   .icon__line {
     background-color: $lightbox-text-color;
@@ -141,11 +141,11 @@ $lightbox-mobile-margins: 5rem;
   top: 0;
   right: 0;
   @include mobile-small { /////// CHANGED TO mobile-small
-    font-size: 3rem;
+    font-size: 2.5rem;
     width: $lightbox-margins;
   }
   @include desktop {
-    font-size: 3rem;
+    font-size: 2.5rem;
   }
 }
 .lightbox__previous-button {
