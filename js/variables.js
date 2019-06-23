@@ -110,6 +110,8 @@ export const variables = function() {
     closeBtn: document.querySelector('.lightbox__close-button'),
     nextBtn: document.querySelector('.lightbox__next-button'),
     previousBtn: document.querySelector('.lightbox__previous-button'),
+    nextSpace: document.querySelector('.lightbox__next-space'),
+    previousSpace: document.querySelector('.lightbox__previous-space'),
     
     imgSet: null,
     img: document.querySelector('#lightbox__image'),

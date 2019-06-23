@@ -168,13 +168,26 @@ function closeLightboxBtnClick() {
     closeLightbox();
   }
 }
+function showNextImageClick(e) {
+  if(e.target === window.lightbox.nextSpace) {
+    showNextImage()
+  }
+}
+function showPreviousImageClick(e) {
+  if(e.target === window.lightbox.previousSpace) {
+    showPreviousImage()
+  }
+}
 // </click modified FUNCITONS>
 
-// <lightbox click events>
 
+
+// <lightbox click events>
 components.lightbox.addEventListener('click', function(e) {
   // Close lightbox on gap click
   closeLightboxGapClick(e);
+  showNextImageClick(e);
+  showPreviousImageClick(e);
 })
 
 
@@ -188,7 +201,6 @@ window.lightbox.nextBtn.addEventListener('click', function() {
 window.lightbox.previousBtn.addEventListener('click', function() {
   showPreviousImage();
 })
-
 // </lightbox click events>
 
 
