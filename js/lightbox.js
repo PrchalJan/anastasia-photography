@@ -26,17 +26,30 @@ export const lightbox = function() {
   })
 
 
+// <close lightbox>
+function hideLightbox() {
+  document.body.classList.remove('lightbox-open');
+  states.lightbox = false;
+}
+function clearImages() {
+  window.lightbox.img.removeAttribute('src');
+  lightbox.imgSet = null;
+}
+function clearCaptions() {
+  window.lightbox.captionIndex.innerHTML = '';
+  window.lightbox.captionText.innerHTML = '';
+}
+function clearImageIndexes() {
+  window.lightbox.currentIndex = null;
+  window.lightbox.previousIndex = null;
+  window.lightbox.nextIndex = null;
+}
 
 function closeLightbox() {
   hideLightbox();
   clearImages();
   clearCaptions();
   clearImageIndexes();
-}
-
-function hideLightbox() {
-  document.body.classList.remove('lightbox-open');
-  states.lightbox = false;
 }
 
 window.closeLightboxBtnClick = function() {
@@ -49,6 +62,10 @@ window.closeLightboxGapClick = function(e) {
     closeLightbox();
   }
 }
+// </close lightbox>
+
+
+
 
 window.openLightbox = function() {
   showLightbox();
@@ -72,10 +89,7 @@ function setCaptions(imgSet, index) {
   setCaptionIndex(imgSet, index);
   setCaptionText(imgSet[index]);
 }
-function clearCaptions() {
-    window.lightbox.captionIndex.innerHTML = '';
-    window.lightbox.captionText.innerHTML = '';
-}
+
 function setImageIndexes(imgSet, index) {
   window.lightbox.currentIndex = index;
   if(index === imgSet.length -1) {
@@ -89,11 +103,7 @@ function setImageIndexes(imgSet, index) {
     window.lightbox.previousIndex = (index - 1);
   }
 }
-function clearImageIndexes() {
-  window.lightbox.currentIndex = null;
-  window.lightbox.previousIndex = null;
-  window.lightbox.nextIndex = null;
-}
+
 
 
 window.setImages = function(imgSet, index, quality) {
@@ -109,10 +119,7 @@ window.setImages = function(imgSet, index, quality) {
   setCaptions(imgSet, index);
   setImageIndexes(imgSet, index);
 }
-function clearImages() {
-  window.lightbox.img.removeAttribute('src');
-  lightbox.imgSet = null;
-}
+
 
 window.setResponsiveLightboxImages = function(imgSet, index) {
   if(window.innerWidth < 602) {
