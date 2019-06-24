@@ -1670,11 +1670,11 @@ h2 {
 .icon .icon__line {
   background: #111;
   width: 1em;
-  height: .035em;
+  height: 1px;
 }
 
 .icon--open-menu .icon__line {
-  margin: calc(.94em / 4) 0;
+  margin: calc(.91em / 4) 0;
 }
 
 .icon--close-menu {
