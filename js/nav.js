@@ -175,6 +175,8 @@ window.addEventListener('resize', debounce(function() {
   setLightboxImageQuality();
 
   cacheImage(window.imgs.archive[0]);
+
+  setCaptionPosition_resize();
 }, 400));
 
 
