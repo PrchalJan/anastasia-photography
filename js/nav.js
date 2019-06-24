@@ -6,32 +6,28 @@ setProperHomeHeight();
 // Hide All Sections On Page Load
 
 // Show only Home Section on page load
-// if(window.innerWidth > 899) {
-//   showSection(sections.home);
-// } else {
-//   showSection(sections.home, true);
-// }
+if(window.innerWidth > 899) {
+  showSection(sections.home);
+} else {
+  showSection(sections.home, true);
+}
 
 // showSection(sections.archive, true);
-showSection(sections.home);
-document.body.classList.add('home--clicked');
+// showSection(sections.home);
+// document.body.classList.add('home--clicked');
+
+function endFullScreenClick() {
+  // if((window.innerWidth > 899) && !states.clicked) {
+  if(!states.clicked) {
+    document.body.classList.add('home--clicked');
+    states.clicked = true;
+  }
+}
 
 
 
 
 
-
-
-
-
-
-
-// Close mobile menu on menu gap click
-// components.nav.addEventListener('click', function(e) {
-//   if(e.target === components.nav) {
-//     closeMenu();
-//   }
-// })
 
 
 
@@ -53,33 +49,10 @@ function expandHideMagazinesClick(e) {
 
 // Show desktop menu on click
 window.document.addEventListener('click', function() {
-
+  endFullScreenClick();
 })
 
-function endFullScreenClick() {
-  if((window.innerWidth > 899) && !states.clicked) {
-    document.body.classList.add('home--clicked');
-    states.clicked = true;
-  }
-}
 
-// Show Archive/about/contact on click
-// for( let btn in navBtnsDirect) {
-//   navBtnsDirect[btn].addEventListener('click', function() {
-//     hideSections();
-//     showSection(sections[btn], true);
-//     closeMenu();
-//   })
-// }
-
-// function openArchiveSectionListener(e) {
-//   console.log(e.target);
-//   console.log(navBtnsDirect.archive);
-//   if(e.target === navBtnsDirect.archive) {
-//     console.log('e.target=== sections.archive');
-//     showSection(sections.archive, true);
-//   }
-// }
 
 function openDirectSectionListener(e) {
   for(let btn in navBtnsDirect) {
@@ -96,6 +69,35 @@ function openDirectSectionListener(e) {
   }
 }
 
+function openSection_artworks(e) {
+  if(e.target) {
+
+  }
+}
+
+
+function openSection_artworks_click(e) {
+  const artworksClicks = window.navSections.artworks.children;
+  for(let i = 0; i < artworksClicks.length; i++) {
+    // console.log(artworksClicks[i]);
+    let cls = `nav__secondary-li--artworks-0${i}`;
+    if(e.target.classList.contains(cls)) {
+      let section = window.sections[`artworks0${i}`];
+      showSection(section, true);
+      console.log('This is the class: ', cls);
+    } else if(e.target.classList.contains('nav__secondary-li--diary')) {
+      showSection(window.sections.diary, true);
+    }
+    // console.log(artworksClicks[i]);
+  }
+  if(e.target.classList.contains('nav__secondary-li--artworks')) {
+    // console.log('contains artworks')
+  }
+}
+
+// console.log(window.navSections.artworks.children);
+
+// openSection_artworks_click();
 
 
 
@@ -135,6 +137,8 @@ components.nav.addEventListener('click', function(e) {
 
   expandHideMagazinesClick(e)
 
+  openSection_artworks_click(e)
+
 })
 
 
@@ -151,9 +155,6 @@ icons.openMenu.addEventListener('click', function() {
 icons.closeMenu.addEventListener('click', function() {
   closeMenu();
 })
-
-
-
 
 
 

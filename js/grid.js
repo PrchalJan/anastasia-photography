@@ -43,9 +43,9 @@ function setGridContainerHeight(grids, colCount) {
   }
   container.style.height = (containerHeight) + 'px';
 }
-function renderGrid(grids, columns){
+function renderGrid(grid, columns){
   var colCount = columns || 1;
-  var grids = document.querySelectorAll('.archive__figure');
+  var grids = grid.children;
 
   setGridsWidths(grids, colCount);
   resetGridsPositions(grids);
@@ -54,22 +54,19 @@ function renderGrid(grids, columns){
 }
 
 
-
-
-
-function renderResponsiveGrid(grids) {
+function renderResponsiveGrid(grid) {
   if(window.innerWidth < 601) {
-    return renderGrid.call(this, grids, 2);
+    return renderGrid.call(this, grid, 2);
   } else if(window.innerWidth < 1250){
-    return renderGrid.call(this, grids, 3);
+    return renderGrid.call(this, grid, 3);
   } else {
-    return renderGrid.call(this, grids, 4);
+    return renderGrid.call(this, grid, 4);
   }
 }
 
 window.renderArchiveGrid = function() {
-  var grids = document.querySelectorAll('.archive__figure');
-  return renderResponsiveGrid.call(this, grids)
+  var grid = document.querySelector('.archive__content');
+  return renderResponsiveGrid.call(this, grid)
 }
 
 window.renderArchiveGridOnResize = function() {
@@ -89,14 +86,6 @@ window.renderArchiveGridOnResize = function() {
 window.addEventListener("load", function() {
   renderArchiveGrid();
 }, false);
-// window.addEventListener("resize", function() {
-//   setTimeout(function() {
-//     renderArchiveGrid();
-//   }, 1);
-// }, false);
-// window.addEventListener("resize", debounce(function() {
-//   renderArchiveGrid();
-// }, 400), false);
 
 
 

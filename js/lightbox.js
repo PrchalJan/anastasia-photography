@@ -23,13 +23,6 @@ export const lightbox = function() {
 
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
-  console.log(window.lightbox.img.offsetWidth);
-  const imgWidth = window.lightbox.img.offsetWidth + 'px';
-  window.lightbox.captionText.style.width = imgWidth;
-  // console.log(window.lightbox.img.offsetTop);
-  // console.log(window.lightbox.img.offsetLeft);
-  // console.log('computed')
-  
 });
 
 

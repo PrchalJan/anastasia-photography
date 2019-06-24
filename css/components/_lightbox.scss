@@ -1,6 +1,6 @@
 $lightbox-margins: 5rem;
 $lightbox-margins-side: 5rem;
-$lightbox-margins-top: 5rem;
+$lightbox-margins-top: 3rem;
 $lightbox-mobile-margins: 5rem;
 
 $lightbox-text: 1.4rem;
@@ -44,8 +44,8 @@ $lightbox-text: 1.4rem;
     bottom: $lightbox-margins;
   }
   @include desktop {
-    top: $lightbox-margins;
-    bottom: $lightbox-margins;
+    top: $lightbox-margins-top;
+    bottom: $lightbox-margins-top;
     right: $lightbox-margins;
     left: $lightbox-margins;
   }
