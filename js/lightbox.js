@@ -1,6 +1,8 @@
 export const lightbox = function() {
 
 
+
+
   // document.addEventListener('contextmenu', function(e) {
   //   e.preventDefault();
   //   console.log('//////////////////////////')
@@ -21,12 +23,16 @@ export const lightbox = function() {
 
 document.addEventListener('contextmenu', function(e) {
   e.preventDefault();
-  // console.log(window.lightbox.img.offsetHeight);
+  console.log(window.lightbox.img.offsetWidth);
+  const imgWidth = window.lightbox.img.offsetWidth + 'px';
+  window.lightbox.captionText.style.width = imgWidth;
   // console.log(window.lightbox.img.offsetTop);
   // console.log(window.lightbox.img.offsetLeft);
   // console.log('computed')
   
 });
+
+
 
 
 
@@ -152,16 +158,35 @@ function setImageIndexes(imgSet, index) {
     window.lightbox.previousIndex = (index - 1);
   }
 }
-function setCaptionPosition(topPad, leftPad) {
-  topPad = topPad || 0;
-  leftPad = leftPad || 0;
+// function setCaptionPosition(topPad, leftPad) {
+//   topPad = topPad || 0;
+//   leftPad = leftPad || 0;
 
+//   setTimeout(function() {
+//     const top = (window.lightbox.img.offsetTop + window.lightbox.img.offsetHeight + topPad) + 'px';
+//     const left = (window.lightbox.img.offsetLeft + leftPad) + 'px';
+//     window.lightbox.captionText.style.top = top;
+//     window.lightbox.captionText.style.left = left;
+//   }, 300)
+
+// }
+
+function setWidth() {
+  const imgWidth = window.lightbox.img.offsetWidth + 'px';
+  window.lightbox.captionText.style.width = imgWidth;
+}
+
+function setCaptionWidth() {
+  setWidth()
   setTimeout(function() {
-    const top = (window.lightbox.img.offsetTop + window.lightbox.img.offsetHeight + topPad) + 'px';
-    const left = (window.lightbox.img.offsetLeft + leftPad) + 'px';
-    window.lightbox.captionText.style.top = top;
-    window.lightbox.captionText.style.left = left;
+    setWidth();
   }, 300)
+  setTimeout(function() {
+    setWidth();
+  }, 600)
+  setTimeout(function() {
+    setWidth();
+  }, 900)
 
 }
 function showLightbox() {
@@ -176,7 +201,8 @@ function openLightbox(imgSet, index) {
   setImages(imgSet, index);
   setCaptions(imgSet, index);
   setImageIndexes(imgSet, index);
-  setCaptionPosition(0, 5);
+  // setCaptionPosition(0, 5);
+  setCaptionWidth()
   showLightbox();
   preloadImages();
 }
@@ -255,12 +281,12 @@ function showPreviousImageClick(e) {
 
 
 // <resize modified FUNCITONS>
-function setCaptionPosition_resize() {
-  if(states.lightbox) {
-    setCaptionPosition(0, 5);
-  }
-}
-window.setCaptionPosition_resize = setCaptionPosition_resize;
+// function setCaptionPosition_resize() {
+//   if(states.lightbox) {
+//     setCaptionPosition(0, 5);
+//   }
+// }
+// window.setCaptionPosition_resize = setCaptionPosition_resize;
 // </resize modified FUNCITONS>
 
 
