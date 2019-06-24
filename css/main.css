@@ -550,7 +550,6 @@ h2 {
 }
 
 .header__menu-icon {
-  border: 2px solid red;
   cursor: pointer;
 }
 
@@ -1671,11 +1670,11 @@ h2 {
 .icon .icon__line {
   background: #111;
   width: 1em;
-  height: .04em;
+  height: .035em;
 }
 
 .icon--open-menu .icon__line {
-  margin: calc(.9em / 4) 0;
+  margin: calc(.94em / 4) 0;
 }
 
 .icon--close-menu {
@@ -1800,10 +1799,30 @@ h2 {
   left: 5rem;
 }
 
+@media (max-width: 899px) {
+  .lightbox__content {
+    top: 1rem;
+    bottom: 1rem;
+    right: 5rem;
+    left: 5rem;
+  }
+}
+
 @media (max-width: 600px) {
   .lightbox__content {
     right: 0;
     left: 0;
+    top: 5rem;
+    bottom: 5rem;
+  }
+}
+
+@media (min-width: 900px) {
+  .lightbox__content {
+    top: 5rem;
+    bottom: 5rem;
+    right: 5rem;
+    left: 5rem;
   }
 }
 
@@ -1853,16 +1872,18 @@ h2 {
   width: auto;
   text-align: center;
   font-weight: 300;
+  font-size: 1.4rem;
   text-align: left;
   padding-left: 5px;
 }
 
 .lightbox__index-caption {
   position: absolute;
-  top: .3rem;
-  left: 1rem;
+  top: .1rem;
+  left: .5rem;
   color: #777;
   font-weight: 300;
+  font-size: 1.4rem;
 }
 
 .lightbox__previous-space {
@@ -1895,6 +1916,12 @@ h2 {
   width: 5rem;
 }
 
+@media (max-width: 899px) {
+  .lightbox__btn {
+    font-size: 2rem;
+  }
+}
+
 @media (max-width: 600px) {
   .lightbox__btn {
     width: calc(5rem /2);
@@ -1915,6 +1942,12 @@ h2 {
 .lightbox__close-button {
   top: 0;
   right: 0;
+}
+
+@media (max-width: 899px) {
+  .lightbox__close-button {
+    font-size: 2.5rem;
+  }
 }
 
 @media (max-width: 600px) {

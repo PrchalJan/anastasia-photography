@@ -3,6 +3,8 @@ $lightbox-margins-side: 5rem;
 $lightbox-margins-top: 5rem;
 $lightbox-mobile-margins: 5rem;
 
+$lightbox-text: 1.4rem;
+
 .lightbox {
   // border: 3px solid red;
   background-color: rgba(255, 255, 255, 0.99);
@@ -23,18 +25,29 @@ $lightbox-mobile-margins: 5rem;
 .lightbox__content {
   // border: 3px solid blue;
   position: absolute;
-  top: $lightbox-margins-top;
-  bottom: $lightbox-margins-top;
-  right: $lightbox-margins-side;
-  left: $lightbox-margins-side;
+  top: $lightbox-margins;
+  bottom: $lightbox-margins;
+  right: $lightbox-margins;
+  left: $lightbox-margins;
+  @include mobile {
+    top: 1rem;
+    bottom: 1rem;
+    right: $lightbox-margins;
+    left: $lightbox-margins;
+  }
   @include mobile-small {
     // right: calc(#{$lightbox-margins} / 2);
     // left: calc(#{$lightbox-margins} / 2);
     right: 0;
     left: 0;
+    top: $lightbox-margins;
+    bottom: $lightbox-margins;
   }
   @include desktop {
-
+    top: $lightbox-margins;
+    bottom: $lightbox-margins;
+    right: $lightbox-margins;
+    left: $lightbox-margins;
   }
 }
 .lightbox__slides {
@@ -79,9 +92,10 @@ $lightbox-mobile-margins: 5rem;
   text-align: center;
   // position: absolute;
   font-weight: $font-light;
+  font-size: $lightbox-text;
   text-align: left;
   padding-left: 5px;
-  @include desktop {
+  @include mobile {
     // position: absolute;
     // bottom: 0;
     // left: 0;
@@ -89,10 +103,11 @@ $lightbox-mobile-margins: 5rem;
 }
 .lightbox__index-caption {
   position: absolute;
-  top: .3rem;
-  left: 1rem;
+  top: .1rem;
+  left: .5rem;
   color: $lightbox-text-color;
   font-weight: $font-light;
+  font-size: $lightbox-text;
 }
 
 // Now you can click on the image to change it to previous/next
@@ -132,6 +147,9 @@ $lightbox-mobile-margins: 5rem;
   align-items: center;
   width: $lightbox-margins;
   // font-size: 3rem;
+  @include mobile {
+    font-size: 2rem;
+  }
   @include mobile-small {
     width: calc(#{$lightbox-margins} /2);
     font-size: 2rem;
@@ -148,6 +166,9 @@ $lightbox-mobile-margins: 5rem;
   // border: 2px solid red;
   top: 0;
   right: 0;
+  @include mobile {
+    font-size: 2.5rem;
+  }
   @include mobile-small { /////// CHANGED TO mobile-small
     font-size: 2.5rem;
     width: $lightbox-margins;

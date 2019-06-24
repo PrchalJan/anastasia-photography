@@ -176,7 +176,9 @@ window.addEventListener('resize', debounce(function() {
 
   cacheImage(window.imgs.archive[0]);
 
-  setCaptionPosition_resize();
+  setCaptionWidth_resize();
+
+  // setCaptionPosition_resize();
 }, 400));
 
 

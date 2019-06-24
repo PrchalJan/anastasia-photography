@@ -287,6 +287,13 @@ function showPreviousImageClick(e) {
 //   }
 // }
 // window.setCaptionPosition_resize = setCaptionPosition_resize;
+
+function setCaptionWidth_resize() {
+  if(states.lightbox) {
+    setCaptionWidth()
+  }
+}
+window.setCaptionWidth_resize = setCaptionWidth_resize;
 // </resize modified FUNCITONS>
 
 
