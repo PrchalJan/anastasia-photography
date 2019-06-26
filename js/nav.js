@@ -2,27 +2,28 @@ export const nav = function() {
 
 setProperHomeHeight();
 
+hideSections();
 
 // Hide All Sections On Page Load
 
 // Show only Home Section on page load
-if(window.innerWidth > 899) {
-  showSection(sections.home);
-} else {
-  showSection(sections.home, true);
-}
+// if(window.innerWidth > 899) {
+//   showSection(sections.home);
+// } else {
+//   showSection(sections.home, true);
+// }
 
 // showSection(sections.archive, true);
 // showSection(sections.home);
-// document.body.classList.add('home--clicked');
+document.body.classList.add('home--clicked');
 
-function endFullScreenClick() {
-  // if((window.innerWidth > 899) && !states.clicked) {
-  if(!states.clicked) {
-    document.body.classList.add('home--clicked');
-    states.clicked = true;
-  }
-}
+// function endFullScreenClick() {
+//   // if((window.innerWidth > 899) && !states.clicked) {
+//   if(!states.clicked) {
+//     document.body.classList.add('home--clicked');
+//     states.clicked = true;
+//   }
+// }
 
 
 
